@@ -13,6 +13,83 @@
   <!-- cdn link for ionicons icon -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    .wrapper {
+      /* max-width: 1100px; */
+      width: 100%;
+      position: relative;
+    }
+ 
+    .wrapper .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 4));
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+ 
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+ 
+    .carousel.no-transition {
+      scroll-behavior: auto;
+    }
+ 
+    .carousel.dragging {
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+ 
+    .carousel.dragging .card {
+      cursor: grab;
+      user-select: none;
+    }
+ 
+    .carousel :where(.card, .img) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+    .carousel .card {
+      scroll-snap-align: start;
+      height: 260px;
+      list-style: none;
+      background: #fff;
+      cursor: pointer;
+      padding-bottom: 15px;
+      flex-direction: column;
+      border-radius: 8px;
+    }
+ 
+    .carousel .card .img {
+      background: #8B53FF;
+      width: 253px;
+    }
+ 
+    .card .img img {
+      width: 253px;
+      object-fit: cover;
+      border: 2px solid #F1EEEE;
+    }
+ 
+    @media screen and (max-width: 900px) {
+      .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+      }
+    }
+ 
+    @media screen and (max-width: 600px) {
+      .wrapper .carousel {
+        grid-auto-columns: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -124,13 +201,13 @@
       <h3 class="pt-3">Shirt</h3>
     </div>
   </div>
-
   <!-- Product Galery End-->
 
   <!-- Services Start-->
-  <div class="md:flex md:justify-between justify-center md:items-center lg:mx-56 md:mx-36 py-10">
+  <div class="md:flex md:justify-between justify-center lg:mx-56 md:mx-36 py-10">
     <div>
-      <ion-icon name="settings-outline" class="size-14 border rounded-full p-5 border-gray-400 text-gray-500"></ion-icon>
+      <ion-icon name="settings-outline"
+        class="size-14 border rounded-full p-5 border-gray-400 text-gray-500"></ion-icon>
       <h1 class="md:text-2xl md:text-xl font-semibold">Development</h1>
     </div>
     <div>
@@ -142,40 +219,75 @@
       <h1 class="md:text-2xl md:text-xl font-semibold">Merchandising</h1>
     </div>
     <div>
-      <ion-icon name="settings-outline" class="size-14 border rounded-full p-5 border-gray-400 text-gray-500"></ion-icon>
+      <ion-icon name="settings-outline"
+        class="size-14 border rounded-full p-5 border-gray-400 text-gray-500"></ion-icon>
       <h1 class="md:text-2xl md:text-xl font-semibold">shipping</h1>
     </div>
   </div>
   <!-- Services End-->
 
+  <!-- certificate Start-->
+  <div class="pt-16">
+    <div>
+      <h1 class="md:text-3xl text-sm font-semibold text-center">COMPLIANCE CERTIFICATE</h1>
+      <hr class="md:w-96 w-16 h-0.5 mx-auto my-4 bg-gray-500 border-0 md:my-1">
+    </div>
+    <div class="wrapper">
+      <ul class="carousel mx-24">
+        <li class="card">
+          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/BSCI-1.jpg" alt="img"
+              draggable="false"></div>
+        </li>
+        <li class="card">
+          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/GOTS1.jpg" alt="img"
+              draggable="false"></div>
+        </li>
+        <li class="card">
+          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/OEKO-TEX1.jpg" alt="img"
+              draggable="false"></div>
+        </li>
+        <li class="card">
+          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/ACCORD-1.jpg" alt="img"
+              draggable="false"></div>
+        </li>
+        <li class="card">
+          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/ALLIANCE-1.jpg" alt="img"
+              draggable="false"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- certificate End-->
+
   <!-- Footer Start-->
-  <footer class="bg-cyan-600 mt-10 mb-0 w-full md:flex md:justify-between md:items-center px-20 py-5">
-    <div class="">
-      <a href="#" class="pl-10">
+  <footer class="bg-cyan-600 mb-0 w-full md:flex md:justify-between md:items-center md:px-24 px-16 py-2">
+    <div class="pb-5 md:pb-0">
+      <a href="#" class="">
         <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
       </a>
     </div>
-    <div class="text-white text-sm">
-      <ol class="list-disc">
-        <li>Telephone: +8801329692671</li>
-        <li>WhatsApp: +88 01715 819 086</li>
-        <li>Urgent Call: +88 01715 819 086</li>
-        <li>E-mail: prabir@duttatex.com</li>
-      </ol>
-    </div>
-    <div class="text-white text-sm">
+    <div class="text-white text-sm pb-5 md:pb-0">
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Products</a></li>
-        <li><a href="">Serices</a></li>
-        <li><a href="">Contact</a></li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Telephone : +8801329692671</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819 086</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715 819 086</li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
       </ul>
     </div>
-    <div>
+    <div class="text-white text-sm pb-5 md:pb-0">
+      <ul>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Home</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">About</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Products</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Serices</a></li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ml-0">
       <form class="">
+        <label for="" class="block pb-2 text-white text-lg">Get Notified About The Next Update!</label>
         <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
-        <button class="bg-sky-700 p-2 rounded" type="submit" name="" value="">subscribe</button>
+        <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name="" value="">Subscribe</button>
       </form>
     </div>
   </footer>
@@ -209,6 +321,96 @@
       x[myIndex - 1].style.display = "block";
       setTimeout(carousel, 2000); // Change image every 2 seconds
     }
+
+    //certificate slider start
+
+    const wrapper = document.querySelector(".wrapper");
+    const carousel2 = document.querySelector(".carousel");
+    const firstCardWidth = carousel2.querySelector(".card").offsetWidth;
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const carouselChildrens = [...carousel2.children];
+
+    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+    // Get the number of cards that can fit in the carousel at once
+    let cardPerView = Math.round(carousel2.offsetWidth / firstCardWidth);
+
+    // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+      carousel2.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+
+    // Insert copies of the first few cards to end of carousel for infinite scrolling
+    carouselChildrens.slice(0, cardPerView).forEach(card => {
+      carousel2.insertAdjacentHTML("beforeend", card.outerHTML);
+    });
+
+    // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+    carousel2.classList.add("no-transition");
+    carousel2.scrollLeft = carousel.offsetWidth;
+    carousel2.classList.remove("no-transition");
+
+    // Add event listeners for the arrow buttons to scroll the carousel left and right
+    arrowBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        carousel2.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+      });
+    });
+
+    const dragStart = (e) => {
+      isDragging = true;
+      carousel2.classList.add("dragging");
+      // Records the initial cursor and scroll position of the carousel
+      startX = e.pageX;
+      startScrollLeft = carousel.scrollLeft;
+    }
+
+    const dragging = (e) => {
+      if (!isDragging) return; // if isDragging is false return from here
+      // Updates the scroll position of the carousel based on the cursor movement
+      carousel2.scrollLeft = startScrollLeft - (e.pageX - startX);
+    }
+
+    const dragStop = () => {
+      isDragging = false;
+      carousel2.classList.remove("dragging");
+    }
+
+    const infiniteScroll = () => {
+      // If the carousel is at the beginning, scroll to the end
+      if (carousel2.scrollLeft === 0) {
+        carousel2.classList.add("no-transition");
+        carousel2.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel2.classList.remove("no-transition");
+      }
+      // If the carousel is at the end, scroll to the beginning
+      else if (Math.ceil(carousel2.scrollLeft) === carousel2.scrollWidth - carousel2.offsetWidth) {
+        carousel2.classList.add("no-transition");
+        carousel2.scrollLeft = carousel2.offsetWidth;
+        carousel2.classList.remove("no-transition");
+      }
+
+      // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+      clearTimeout(timeoutId);
+      if (!wrapper.matches(":hover")) autoPlay();
+    }
+
+    const autoPlay = () => {
+      if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+      // Autoplay the carousel after every 2500 ms
+      timeoutId = setTimeout(() => carousel2.scrollLeft += firstCardWidth, 1000);
+    }
+    autoPlay();
+
+    carousel2.addEventListener("mousedown", dragStart);
+    carousel2.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    carousel2.addEventListener("scroll", infiniteScroll);
+    wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);
+
+    //certificate slider end
+
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
