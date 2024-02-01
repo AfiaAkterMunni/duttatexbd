@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuttaTex</title>
+    <!-- cdn link for tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <!-- cdn link for ionicons icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Start-->
+    <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2">
+        <div class="flex justify-between items-center ">
+            <a href="#" class="md:pl-10 pl-0 z-[16] md:z-auto ">
+                <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
+            </a>
+            <span class="text-3xl text-white cursor-pointer md:hidden block mx-2 z-[16] md:z-auto">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+            </span>
+        </div>
+        <ul
+            class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
+            <li class="py-3 px-4">
+                <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
+            </li>
+            <li class="py-3 px-4">
+                <a href="about.html" class="text-lg hover:text-cyan-200">About</a>
+            </li>
+            <li class="py-3 px-4">
+                <a href="#" class="text-lg hover:text-cyan-200">Products</a>
+            </li>
+            <li class="py-3 px-4">
+                <a href="services.html" class="text-lg hover:text-cyan-200">Services</a>
+            </li>
+            <li class="py-3 px-4">
+                <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Navigation End-->
+
+    <!-- Contact Start-->
+    <div class="lg:flex lg:flex-row py-16 font-sans px-16">
+        <div class="lg:basis-1/3 p-10">
+            <div class="pb-8">
+                <h1 class="text-3xl font-semibold tracking-wider">Locate Our Presence</h1>
+            </div>
+            <div class="pb-7">
+                <h3 class="text-lg font-semibold tracking-wider pb-3 tracking-widest">Head Office</h3>
+                <p class="pb-3 text-sm tracking-wider leading-6">House# 21, Flat# 102 Road# 06, Block-D, Niketon,
+                    Gulshan-1, Dhaka-1212, Bangladesh.</p>
+                <ul class="text-sm">
+                    <li class="pt-2.5"><ion-icon name="call-outline"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            Urgent Call: +88 01715 819 086</a></li>
+                    <li class="pt-2.5"><ion-icon name="call-outline"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            +8801329692671</a></li>
+                    <li class="pt-2.5"><ion-icon name="logo-whatsapp"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            whatsapp: +88 01715 819 086</a></li>
+                    <li class="pt-2.5"><ion-icon name="mail-outline"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            E-mail: prabir@duttatex.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold tracking-wider pb-3 tracking-widest">Italy Office</h3>
+                <p class="pb-3 text-sm tracking-wider leading-6">Via Ferdinando Magellano, 820863 Concorezzo (MB) Italia
+                </p>
+                <ul class="text-sm">
+                    <li class="pt-2.5"><ion-icon name="call-outline"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            Mobile: +39 329 193 4197</a> </li>
+                    <li class="pt-2.5"><ion-icon name="logo-whatsapp"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            whatsapp: +39 329 193 4197</a> </li>
+                    <li class="pt-2.5"><ion-icon name="mail-outline"
+                            class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
+                            E-mail: info@duttatex.com</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="lg:basis-2/3 p-10 mx-auto">
+            <h1 class="text-3xl font-semibold tracking-wider">Send Us Your Requirement</h1>
+            <div class="bg-white rounded-lg">
+                <div class="py-6">
+
+                    <div class="mb-1">
+                        <input type="text" placeholder="Name"
+                            class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                    </div>
+
+                    <div class="mb-1">
+                        <input type="text" placeholder="Phone Number"
+                            class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                    </div>
+
+                    <div class="mb-1">
+                        <input type="email" placeholder="Email"
+                            class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                    </div>
+                    
+                    <div class="mb-1">
+                        <textarea type="text" placeholder="Message"
+                        class="h-24 py-1 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50"></textarea>
+                    </div>
+                    
+                    <div class="mb-1">
+                        <input type="file"
+                            class="h-10 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50">
+                    </div>
+
+                    <div class="mt-3">
+                        <button class="h-12 w-28 bg-sky-600 rounded text-white hover:bg-sky-700">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End-->
+
+    <!-- Footer Start-->
+    <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 py-2">
+        <div class="pb-5 md:pb-0">
+            <a href="#" class="">
+                <img src="img/duttatex-Logo.png" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo" />
+            </a>
+        </div>
+        <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+            <ul>
+                <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Telephone :
+                    +8801329692671</li>
+                <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819
+                    086</li>
+                <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715
+                    819 086</li>
+                <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
+            </ul>
+        </div>
+        <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+            <ul>
+                <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
+                        class="hover:underline">Home</a></li>
+                <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
+                        class="hover:underline">About</a></li>
+                <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
+                        class="hover:underline">Products</a></li>
+                <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
+                        class="hover:underline">Serices</a></li>
+                <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
+                        class="hover:underline">Contact</a></li>
+            </ul>
+        </div>
+        <div class="ml-0">
+            <form class="">
+                <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
+                <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
+                <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name=""
+                    value="">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+    <!-- Footer End-->
+</body>
+
+</html>
