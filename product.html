@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuttaTex</title>
+  <!-- cdn link for tailwind css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+  <!-- cdn link for ionicons icon -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    .wrapper {
+      /* max-width: 1100px; */
+      width: 100%;
+      position: relative;
+    }
+ 
+    .wrapper .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 4));
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+ 
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+ 
+    .carousel.no-transition {
+      scroll-behavior: auto;
+    }
+ 
+    .carousel.dragging {
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+ 
+    .carousel.dragging .card {
+      cursor: grab;
+      user-select: none;
+    }
+ 
+    .carousel :where(.card, .img) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+    .carousel .card {
+      scroll-snap-align: start;
+      height: 260px;
+      list-style: none;
+      background: #fff;
+      cursor: pointer;
+      padding-bottom: 15px;
+      flex-direction: column;
+      border-radius: 8px;
+    }
+ 
+    .carousel .card .img {
+      background: #8B53FF;
+      width: 253px;
+    }
+ 
+    .card .img img {
+      width: 253px;
+      object-fit: cover;
+      border: 2px solid #F1EEEE;
+    }
+ 
+    @media screen and (max-width: 900px) {
+      .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+      }
+    }
+ 
+    @media screen and (max-width: 600px) {
+      .wrapper .carousel {
+        grid-auto-columns: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Start-->
+  <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2">
+    <div class="flex justify-between items-center ">
+      <a href="#" class="md:pl-10 pl-0 z-[16] md:z-auto ">
+        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
+      </a>
+      <span class="text-3xl text-white cursor-pointer md:hidden block mx-2 z-[16] md:z-auto">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+    <ul
+      class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
+      <li class="py-3 px-4">
+        <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="about.html" class="text-lg hover:text-cyan-200">About</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="product.html" class="text-lg hover:text-cyan-200">Products</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="services.html" class="text-lg hover:text-cyan-200">Services</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Navigation End-->
+
+  <!-- Product Galery Start-->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-10 lg:px-24 md:px-20 px-16 text-center uppercase text-lg">
+    <div>
+      <img src="img/4.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/1.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/3.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/5.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/6.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/7.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/8.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+    <div>
+      <img src="img/4.jpg" class="h-auto max-w-full rounded-lg border-2" alt="">
+      <h3 class="pt-3">Shirt</h3>
+    </div>
+  </div>
+  <!-- Product Galery End-->
+
+  <!-- Footer Start-->
+  <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 py-2">
+    <div class="pb-5 md:pb-0">
+      <a href="#" class="">
+        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo"/>
+      </a>
+    </div>
+    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+      <ul>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Telephone : +8801329692671</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819 086</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715 819 086</li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
+      </ul>
+    </div>
+    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+      <ul>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Home</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">About</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Products</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Serices</a></li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ml-0">
+      <form class="">
+        <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
+        <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
+        <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name="" value="">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+  <!-- Footer End-->
+</body>
+
+</html>
