@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuttaTex</title>
+  <!-- cdn link for tailwind css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+  <!-- cdn link for ionicons icon -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- Navigation Start-->
+  <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2">
+    <div class="flex justify-between items-center ">
+      <a href="#" class="md:pl-10 pl-0 z-[16] md:z-auto ">
+        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
+      </a>
+      <span class="text-3xl text-white cursor-pointer md:hidden block mx-2 z-[16] md:z-auto">
+        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+      </span>
+    </div>
+    <ul
+      class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
+      <li class="py-3 px-4">
+        <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="about.html" class="text-lg hover:text-cyan-200">About</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="product.html" class="text-lg hover:text-cyan-200">Products</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="services.html" class="text-lg hover:text-cyan-200">Services</a>
+      </li>
+      <li class="py-3 px-4">
+        <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Navigation End-->
+
+  <!-- Single Product Start-->
+  <div class="lg:flex lg:flex-row py-4">
+    <div class="lg:basis-1/2 md:p-8 p-4">
+        <img src="img/4.jpg" alt="" class="mx-auto w-96">
+    </div>
+    <div class="lg:basis-1/2 md:p-6 p-4 lg:order-last order-none">
+        <h1 class="text-3xl font-semibold">Plain polo</h1>
+        <pre class="text-md leading-7 text-gray-600 font-serif pt-5">
+<b>Material:</b> Cotton 200 GSM 
+<b>Color:</b> Black
+<b>Size:</b> Medium
+<b>Style:</b> Casual
+<b>Pattern:</b> Striped
+<b>Sleeve </b>Length: Short Sleeve
+<b>Neckline:</b> Round Neck
+<b>Fit:</b> Regular Fit
+<b>Care Instructions:</b> Machine washable</pre>
+        <button class="border border-slate-300 px-3 py-1.5 text-blue-500 font-semibold rounded-lg mt-5 hover:bg-sky-600 hover:text-white tracking-wider uppercase">quick inquiry</button>
+    </div>
+</div>
+  <!-- Single Product End-->
+
+  <!-- Footer Start-->
+  <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 py-2">
+    <div class="pb-5 md:pb-0">
+      <a href="#" class="">
+        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo"/>
+      </a>
+    </div>
+    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+      <ul>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Telephone : +8801329692671</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819 086</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715 819 086</li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
+      </ul>
+    </div>
+    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+      <ul>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Home</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">About</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Products</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Serices</a></li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ml-0">
+      <form class="">
+        <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
+        <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
+        <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name="" value="">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+  <!-- Footer End-->
+</body>
+
+</html>
