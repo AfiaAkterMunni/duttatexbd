@@ -14,6 +14,14 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- cdn link for font-awesome icon -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- cdn link for jquery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
   <style>
       
     /* Scrollbar-effect------- */
@@ -148,7 +156,11 @@
   </nav>
   <!-- Navigation End-->
 
-  <!-- Contact Start-->
+  <!-- scroll on top button Start-->
+  <a id="button" class="inline-block bg-blue-600 w-9 h-9 text-center rounded fixed bottom-5 right-5 opacity-0 invisible z-[1000] after:content-['\f077'] font-['FontAwesome'] text-2xl text-white hover:cursor-pointer hover:bg-gray-500 active:bg-sky-400"></a>
+  <!-- scroll on top button End--> 
+
+  <!-- Category sidebar Start-->
   <div class="flex flex-row">
     <div class="basis-1/5 m-8 p-2.5 h-screen overflow-x-hidden" id="accordian">
       <ul class="show-dropdown">
@@ -337,7 +349,7 @@
       </div>
     </div>
   </div>
-  <!-- Contact End-->
+  <!-- Category sidebar End-->
 
   <!-- Footer Start-->
   <div>
@@ -436,6 +448,9 @@
 // });
 
   </script>
+
+  <!-- link for externel js file -->
+  <script src="js/frontend.js" type="text/javascript"></script>
 </body>
 
 </html>
