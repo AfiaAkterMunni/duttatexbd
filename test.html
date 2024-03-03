@@ -14,325 +14,115 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <style>
-      * {
-      margin: 0;
-      padding: 0;
+      #button {
+      display: inline-block;
+      background-color: #FF9800;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border-radius: 4px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      transition: background-color .3s, 
+        opacity .5s, visibility .5s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
     }
-    /* Scrollbar-effect------- */
-    #accordian::-webkit-scrollbar {
-        width: 5px;
-        height: 8px;
+    #button::after {
+      content: "\f077";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 2em;
+      line-height: 50px;
+      color: #fff;
     }
-    #accordian::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: #e4e4e4;
+    #button:hover {
+      cursor: pointer;
+      background-color: #333;
     }
-    #accordian::-webkit-scrollbar-thumb {
-        background: #0089ff;
-        border-radius: 10px;
-        transition: 0.5s;
+    #button:active {
+      background-color: #555;
     }
-    #accordian::-webkit-scrollbar-thumb:hover {
-        background: #d5b14c;
-        transition: 0.5s;
-    }
-
-
-
-    /* --------- */
-    body {
-      background: #4EB889;
-      font-family: Nunito, arial, verdana;
-    }
-
-    #accordian {
-      background: #fff;
-      width: 250px;
-      padding: 10px;
-      float: left;
-      height: 100vh;
-      overflow-x: hidden;
+    #button.show {
+      opacity: 1;
+      visibility: visible;
     }
 
-
-    #accordian a {
-      
-      
-      
-    }
-
-
-    #accordian li {
-      list-style-type: none;
-    }
-
-    #accordian ul li a{
-      color: #9c9c9c;
-      text-decoration: none;
-      font-size: 15px;
-      display: block;
-    /* 	line-height: 34px; */
-      padding: 12px 15px;
-      transition: all 0.15s;
-      position: relative;
-      border-radius: 3px;
-    }
-
-    #accordian>ul.show-dropdown>li.active>a,
-    #accordian>ul>li>ul.show-dropdown>li.active>a,
-    #accordian>ul>li>ul>li>ul.show-dropdown>li.active>a,
-    #accordian>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a,
-    #accordian>ul>li>ul>li>ul>li>ul>li>ul.show-dropdown>li.active>a{
-      background-color: #a8d4fb;
-        color: #0089ff;
-        box-shadow: 0px 1px 2px rgba(0, 137, 255, 0.2);
-    }
-
-    #accordian>ul>li>ul,
-    #accordian>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul>li>ul {
-      display: none;
-    }
-
-
-    #accordian>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li>ul>li>ul>li.active>ul.show-dropdown {
-      display: block;
-    }
-
-    #accordian>ul>li>ul,
-    #accordian>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul>li>ul {
-      padding-left: 20px;
-    }
-
-    #accordian a:not(:only-child):after {
-      content: "\f105";
-        position: absolute;
-        right: 20px;
-        top: 14px;
-        font-size: 15px;
-        font-family: "Font Awesome 5 Free";
-        display: inline-block;
-        padding-right: 3px;
-        vertical-align: middle;
-        font-weight: 900;
-        transition: 0.5s;
-    }
-
-    #accordian .active>a:not(:only-child):after {
-        transform: rotate(90deg);
-    }
   </style>
 </head>
 
 <body>
-  <!-- Navigation Start-->
-  <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2 z-40">
-    <div class="flex justify-between items-center ">
-      <a href="#" class="md:pl-10 pl-0 z-[16] md:z-auto ">
-        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
-      </a>
-      <span class="text-3xl text-white cursor-pointer md:hidden block mx-2 z-[16] md:z-auto">
-        <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-      </span>
-    </div>
-    <ul
-      class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
-      <li class="py-3 px-4">
-        <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
-      </li>
-      <li class="py-3 px-4">
-        <a href="about.html" class="text-lg hover:text-cyan-200">About</a>
-      </li>
-      <li class="py-3 px-4">
-        <a href="product.html" class="text-lg hover:text-cyan-200">Products</a>
-      </li>
-      <li class="py-3 px-4">
-        <a href="services.html" class="text-lg hover:text-cyan-200">Services</a>
-      </li>
-      <li class="py-3 px-4">
-        <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- Navigation End-->
-
-  <!-- Contact Start-->
-  <div>
-    <div id="accordian">
-      <ul class="show-dropdown">
-          <li>
-              <a class="mx-[20px]">All Categories</a>
-          </li>
-          <li>
-              <a class="mx-[20px]" href="javascript:void(0);">Shirt</a>
-              <ul>
-                  <li><a href="javascript:void(0);">Men</a></li>
-                  <li><a href="javascript:void(0);">Women</a></li>
-                  <li><a href="javascript:void(0);">Kids</a></li>
-                  <li><a href="javascript:void(0);">Promotional</a></li>
-              </ul>
-          </li>
-          <li>
-            <a class="mx-[20px]" href="javascript:void(0);">T-Shirt</a>
-            <ul>
-                <li><a href="javascript:void(0);">Men</a></li>
-                <li><a href="javascript:void(0);">Women</a></li>
-                <li><a href="javascript:void(0);">Kids</a></li>
-                <li><a href="javascript:void(0);">Promotional</a></li>
-            </ul>
-        </li>
-        <li>
-          <a class="mx-[20px]" href="javascript:void(0);">Polo</a>
-          <ul>
-              <li><a href="javascript:void(0);">Men</a></li>
-              <li><a href="javascript:void(0);">Women</a></li>
-              <li><a href="javascript:void(0);">Kids</a></li>
-              <li><a href="javascript:void(0);">Promotional</a></li>
-          </ul>
-      </li>
-      <li>
-        <a class="mx-[20px]" href="javascript:void(0);">Hoodies</a>
-        <ul>
-            <li><a href="javascript:void(0);">Men</a></li>
-            <li><a href="javascript:void(0);">Women</a></li>
-            <li><a href="javascript:void(0);">Kids</a></li>
-            <li><a href="javascript:void(0);">Promotional</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="mx-[20px]" href="javascript:void(0);">Pant</a>
-        <ul>
-            <li><a href="javascript:void(0);">Men</a></li>
-            <li><a href="javascript:void(0);">Women</a></li>
-            <li><a href="javascript:void(0);">Kids</a></li>
-            <li><a href="javascript:void(0);">Promotional</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="mx-[20px]" href="javascript:void(0);">Sweat Shirt</a>
-        <ul>
-            <li><a href="javascript:void(0);">Men</a></li>
-            <li><a href="javascript:void(0);">Women</a></li>
-            <li><a href="javascript:void(0);">Kids</a></li>
-            <li><a href="javascript:void(0);">Promotional</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="mx-[20px]" href="javascript:void(0);">Sweat Pant</a>
-        <ul>
-            <li><a href="javascript:void(0);">Men</a></li>
-            <li><a href="javascript:void(0);">Women</a></li>
-            <li><a href="javascript:void(0);">Kids</a></li>
-            <li><a href="javascript:void(0);">Promotional</a></li>
-        </ul>
-      </li>
-    
-    </ul>
-    </div>
-    <div>
-      
-    </div>
-  </div>
-  <!-- Contact End-->
-
-  <!-- Footer Start-->
-  <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 py-2 z-30">
-    <div class="pb-5 md:pb-0">
-      <a href="#" class="">
-        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo" />
-      </a>
-    </div>
-    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
-      <ul>
-        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Telephone :
-          +8801329692671</li>
-        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819
-          086</li>
-        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715
-          819 086</li>
-        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
-      </ul>
-    </div>
-    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
-      <ul>
-        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
-            class="hover:underline">Home</a></li>
-        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
-            class="hover:underline">About</a></li>
-        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
-            class="hover:underline">Products</a></li>
-        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
-            class="hover:underline">Serices</a></li>
-        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href=""
-            class="hover:underline">Contact</a></li>
-      </ul>
-    </div>
-    <div class="ml-0">
-      <form class="">
-        <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
-        <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
-        <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name=""
-          value="">Subscribe</button>
-      </form>
-    </div>
-  </footer>
-  <!-- Footer End-->
-
-  <script>
-    // -------multilevel-accordian-menu---------
-    $(document).ready(function() {
-        $("#accordian a").click(function() {
-            var link = $(this);
-            var closest_ul = link.closest("ul");
-            var parallel_active_links = closest_ul.find(".active")
-            var closest_li = link.closest("li");
-            var link_status = closest_li.hasClass("active");
-            var count = 0;
-
-            closest_ul.find("ul").slideUp(function() {
-                if (++count == closest_ul.find("ul").length){
-                    parallel_active_links.removeClass("active");
-                    parallel_active_links.children("ul").removeClass("show-dropdown");
-                }
-            });
-
-            if (!link_status) {
-                closest_li.children("ul").slideDown().addClass("show-dropdown");
-                closest_li.parent().parent("li.active").find('ul').find("li.active").removeClass("active");
-                link.parent().addClass("active");
-            }
-        })
-    });
+ <!-- Back to top button -->
 
 
+<!-- Some content to fill up the page -->
+<div class="">
+  <h1>Back to Top Button</h1>
+  <h3>Scroll down the page</h3>
+  <p>"He says, Monsieur, that his principles won't admit of his drinking; but that if Monsieur wants to live another day to drink, then Monsieur had best drop all four boats, and pull the ship away from these whales, for it's so calm they won't drift."</p>
 
+  <p>By this time Stubb was over the side, and getting into his boat, hailed the Guernsey-man to this effect,&mdash;that having a long tow-line in his boat, he would do what he could to help them, by pulling out the lighter whale of the two from the ship's side. While the Frenchman's boats, then, were engaged in towing the ship one way, Stubb benevolently towed away at his whale the other way, ostentatiously slacking out a most unusually long tow-line.</p>
 
+  <p>Presently a breeze sprang up; Stubb feigned to cast off from the whale; hoisting his boats, the Frenchman soon increased his distance, while the Pequod slid in between him and Stubb's whale. Whereupon Stubb quickly pulled to the floating body, and hailing the Pequod to give notice of his intentions, at once proceeded to reap the fruit of his unrighteous cunning. Seizing his sharp boat-spade, he commenced an excavation in the body, a little behind the side fin. You would almost have thought he was digging a cellar there in the sea; and when at length his spade struck against the gaunt ribs, it was like turning up old Roman tiles and pottery buried in fat English loam. His boat's crew were all in high excitement, eagerly helping their chief, and looking as anxious as gold-hunters.</p>
+ 
+  <p>And all the time numberless fowls were diving, and ducking, and screaming, and yelling, and fighting around them. Stubb was beginning to look disappointed, especially as the horrible nosegay increased, when suddenly from out the very heart of this plague, there stole a faint stream of perfume, which flowed through the tide of bad smells without being absorbed by it, as one river will flow into and then along with another, without at all blending with it for a time.</p>
 
+  <p>"I have it, I have it," cried Stubb, with delight, striking something in the subterranean regions, "a purse! a purse!"</p>
 
-// // --------for-active-class-on-other-page-----------
-// jQuery(document).ready(function($){
-//   	// Get current path and find target link
-//   	var path = window.location.pathname.split("/").pop();
-  
-//   	// Account for home page with empty path
-//   	if ( path == '' ) {
-//     	path = 'index.html';
-//   	}
-     
-//   	var target = $('#accordian li a[href="'+path+'"]');
-//   	// Add active class to target link
-//   	target.parents("li").addClass('active');
-//   	target.parents("ul").addClass("show-dropdown");
-// });
+  <p>Dropping his spade, he thrust both hands in, and drew out handfuls of something that looked like ripe Windsor soap, or rich mottled old cheese; very unctuous and savory withal. You might easily dent it with your thumb; it is of a hue between yellow and ash colour. And this, good friends, is ambergris, worth a gold guinea an ounce to any druggist. Some six handfuls were obtained; but more was unavoidably lost in the sea, and still more, perhaps, might have been secured were it not for impatient Ahab's loud command to Stubb to desist, and come on board, else the ship would bid them good bye.</p>
 
-  </script>
+  <p>Now this ambergris is a very curious substance, and so important as an article of commerce, that in 1791 a certain Nantucket-born Captain Coffin was examined at the bar of the English House of Commons on that subject. For at that time, and indeed until a comparatively late day, the precise origin of ambergris remained, like amber itself, a problem to the learned. Though the word ambergris is but the French compound for grey amber, yet the two substances are quite distinct. For amber, though at times found on the sea-coast, is also dug up in some far inland soils, whereas ambergris is never found except upon the sea. Besides, amber is a hard, transparent, brittle, odorless substance, used for mouth-pieces to pipes, for beads and ornaments; but ambergris is soft, waxy, and so highly fragrant and spicy, that it is largely used in perfumery, in pastiles, precious candles, hair-powders, and pomatum. The Turks use it in cooking, and also carry it to Mecca, for the same purpose that frankincense is carried to St. Peter's in Rome. Some wine merchants drop a few grains into claret, to flavor it.</p>
+
+  <p>Who would think, then, that such fine ladies and gentlemen should regale themselves with an essence found in the inglorious bowels of a sick whale! Yet so it is. By some, ambergris is supposed to be the cause, and by others the effect, of the dyspepsia in the whale. How to cure such a dyspepsia it were hard to say, unless by administering three or four boat loads of Brandreth's pills, and then running out of harm's way, as laborers do in blasting rocks.</p>
+
+  <p>I have forgotten to say that there were found in this ambergris, certain hard, round, bony plates, which at first Stubb thought might be sailors' trowsers buttons; but it afterwards turned out that they were nothing more than pieces of small squid bones embalmed in that manner.</p>
+
+  <p>Now that the incorruption of this most fragrant ambergris should be found in the heart of such decay; is this nothing? Bethink thee of that saying of St. Paul in Corinthians, about corruption and incorruption; how that we are sown in dishonour, but raised in glory. And likewise call to mind that saying of Paracelsus about what it is that maketh the best musk. Also forget not the strange fact that of all things of ill-savor, Cologne-water, in its rudimental manufacturing stages, is the worst.</p>
+  <p>"He says, Monsieur, that his principles won't admit of his drinking; but that if Monsieur wants to live another day to drink, then Monsieur had best drop all four boats, and pull the ship away from these whales, for it's so calm they won't drift."</p>
+
+  <p>By this time Stubb was over the side, and getting into his boat, hailed the Guernsey-man to this effect,&mdash;that having a long tow-line in his boat, he would do what he could to help them, by pulling out the lighter whale of the two from the ship's side. While the Frenchman's boats, then, were engaged in towing the ship one way, Stubb benevolently towed away at his whale the other way, ostentatiously slacking out a most unusually long tow-line.</p>
+
+  <p>Presently a breeze sprang up; Stubb feigned to cast off from the whale; hoisting his boats, the Frenchman soon increased his distance, while the Pequod slid in between him and Stubb's whale. Whereupon Stubb quickly pulled to the floating body, and hailing the Pequod to give notice of his intentions, at once proceeded to reap the fruit of his unrighteous cunning. Seizing his sharp boat-spade, he commenced an excavation in the body, a little behind the side fin. You would almost have thought he was digging a cellar there in the sea; and when at length his spade struck against the gaunt ribs, it was like turning up old Roman tiles and pottery buried in fat English loam. His boat's crew were all in high excitement, eagerly helping their chief, and looking as anxious as gold-hunters.</p>
+
+  <p>And all the time numberless fowls were diving, and ducking, and screaming, and yelling, and fighting around them. Stubb was beginning to look disappointed, especially as the horrible nosegay increased, when suddenly from out the very heart of this plague, there stole a faint stream of perfume, which flowed through the tide of bad smells without being absorbed by it, as one river will flow into and then along with another, without at all blending with it for a time.</p>
+
+  <p>"I have it, I have it," cried Stubb, with delight, striking something in the subterranean regions, "a purse! a purse!"</p>
+  <a id="button"></a>
+  <p>Dropping his spade, he thrust both hands in, and drew out handfuls of something that looked like ripe Windsor soap, or rich mottled old cheese; very unctuous and savory withal. You might easily dent it with your thumb; it is of a hue between yellow and ash colour. And this, good friends, is ambergris, worth a gold guinea an ounce to any druggist. Some six handfuls were obtained; but more was unavoidably lost in the sea, and still more, perhaps, might have been secured were it not for impatient Ahab's loud command to Stubb to desist, and come on board, else the ship would bid them good bye.</p>
+
+  <p>Now this ambergris is a very curious substance, and so important as an article of commerce, that in 1791 a certain Nantucket-born Captain Coffin was examined at the bar of the English House of Commons on that subject. For at that time, and indeed until a comparatively late day, the precise origin of ambergris remained, like amber itself, a problem to the learned. Though the word ambergris is but the French compound for grey amber, yet the two substances are quite distinct. For amber, though at times found on the sea-coast, is also dug up in some far inland soils, whereas ambergris is never found except upon the sea. Besides, amber is a hard, transparent, brittle, odorless substance, used for mouth-pieces to pipes, for beads and ornaments; but ambergris is soft, waxy, and so highly fragrant and spicy, that it is largely used in perfumery, in pastiles, precious candles, hair-powders, and pomatum. The Turks use it in cooking, and also carry it to Mecca, for the same purpose that frankincense is carried to St. Peter's in Rome. Some wine merchants drop a few grains into claret, to flavor it.</p>
+
+  <p>Who would think, then, that such fine ladies and gentlemen should regale themselves with an essence found in the inglorious bowels of a sick whale! Yet so it is. By some, ambergris is supposed to be the cause, and by others the effect, of the dyspepsia in the whale. How to cure such a dyspepsia it were hard to say, unless by administering three or four boat loads of Brandreth's pills, and then running out of harm's way, as laborers do in blasting rocks.</p>
+
+  <p>I have forgotten to say that there were found in this ambergris, certain hard, round, bony plates, which at first Stubb thought might be sailors' trowsers buttons; but it afterwards turned out that they were nothing more than pieces of small squid bones embalmed in that manner.</p>
+
+  <p>Now that the incorruption of this most fragrant ambergris should be found in the heart of such decay; is this nothing? Bethink thee of that saying of St. Paul in Corinthians, about corruption and incorruption; how that we are sown in dishonour, but raised in glory. And likewise call to mind that saying of Paracelsus about what it is that maketh the best musk. Also forget not the strange fact that of all things of ill-savor, Cologne-water, in its rudimental manufacturing stages, is the worst.</p>
+
+</div>
+
+<script>
+  var btn = $('#button');
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
+
+</script>
 </body>
 
 </html>
