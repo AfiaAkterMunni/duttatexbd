@@ -344,18 +344,22 @@
               </label>
             <label class="block mb-6 text-md">
                 <span class="text-gray-700 dark:text-gray-400">Product Description</span>
-                <textarea class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" rows="3" placeholder="Enter some long form content."></textarea>
+                <textarea name="editor1" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" rows="3" placeholder="Enter some long form content."></textarea>
             </label>
             <div>
                 <button class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     Edit Product
                 </button>
-              </div>
+            </div>
           </div>
         </div>
       </main>
     </div>
   </div>
+  <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace('editor1');
+  </script>
 </body>
 
 </html>
