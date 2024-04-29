@@ -21,76 +21,24 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <style>
-    .wrapper {
-      /* max-width: 1100px; */
-      width: 100%;
-      position: relative;
-    }
- 
     .wrapper .carousel {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: calc((100% / 4));
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 0px;
-      border-radius: 8px;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
+      /* display: grid; */
+      /* grid-auto-flow: column; */
+      /* grid-auto-columns: calc((100% / 4)); */
+      /* overflow-x: auto; */
+      /* scroll-snap-type: x mandatory; */
+      /* gap: 0px; */
+      /* border-radius: 8px; */
+      /* scrollbar-width: none; */
     }
- 
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
- 
-    .carousel.no-transition {
-      scroll-behavior: auto;
-    }
- 
-    .carousel.dragging {
-      scroll-snap-type: none;
-      scroll-behavior: auto;
-    }
- 
-    .carousel.dragging .card {
-      cursor: grab;
-      user-select: none;
-    }
- 
-    .carousel :where(.card, .img) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
- 
-    .carousel .card {
-      scroll-snap-align: start;
-      height: 260px;
-      list-style: none;
-      background: #fff;
-      cursor: pointer;
-      padding-bottom: 15px;
-      flex-direction: column;
-      border-radius: 8px;
-    }
- 
-    .carousel .card .img {
-      background: #8B53FF;
-      width: 253px;
-    }
- 
-    .card .img img {
-      width: 253px;
-      object-fit: cover;
-      border: 2px solid #F1EEEE;
-    }
- 
+
+    
     @media screen and (max-width: 900px) {
       .wrapper .carousel {
         grid-auto-columns: calc((100% / 2) - 9px);
       }
     }
- 
+
     @media screen and (max-width: 600px) {
       .wrapper .carousel {
         grid-auto-columns: 100%;
@@ -104,14 +52,13 @@
   <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2">
     <div class="flex justify-between items-center ">
       <a href="#" class="md:pl-10 pl-0 z-[16] md:z-auto ">
-        <img src="img/duttatex-Logo.png" class="h-14 sm:h-20" alt="Duttatex Logo" />
+        <img src="{{asset('images/duttatex-Logo.png')}}" class="h-14 sm:h-20" alt="Duttatex Logo" />
       </a>
       <span class="text-3xl text-white cursor-pointer md:hidden block mx-2 z-[16] md:z-auto">
         <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
       </span>
     </div>
-    <ul
-      class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
+    <ul class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
       <li class="py-3 px-4">
         <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
       </li>
@@ -137,10 +84,10 @@
 
   <!-- slider Start-->
   <div class="w-full">
-    <img class="mySlides w-full min-h-40" src="img/banner_1.jpg">
-    <img class="mySlides w-full min-h-40" src="img/banner_3.jpg">
-    <img class="mySlides w-full min-h-40" src="img/banner_4.jpg">
-    <img class="mySlides w-full min-h-40" src="img/banner_5.jpg">
+    <img class="mySlides w-full min-h-40" src="{{asset('images/banner_1.jpg')}}">
+    <img class="mySlides w-full min-h-40" src="{{asset('images/banner_3.jpg')}}">
+    <img class="mySlides w-full min-h-40" src="{{asset('images/banner_4.jpg')}}">
+    <img class="mySlides w-full min-h-40" src="{{asset('images/banner_5.jpg')}}">
   </div>
   <!-- slider End-->
 
@@ -180,49 +127,49 @@
   <div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-10 lg:px-24 md:px-20 px-16 text-center uppercase text-lg">
     <div>
       <a href="subcategory.html">
-        <img src="img/4.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/1.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/1.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/3.jpg" class="h-auto max-w-full rounded-lg rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/3.jpg')}}" class="h-auto max-w-full rounded-lg rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/5.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/5.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/6.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/6.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/7.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/7.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/8.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/8.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
     <div>
       <a href="subcategory.html">
-        <img src="img/4.jpg" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
         <h3 class="pt-3">Shirt</h3>
       </a>
     </div>
@@ -232,19 +179,19 @@
   <!-- Services Start-->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-12 lg:mx-36 md:mx-30 sm:mx-24 mx-10 py-16">
     <div class="sm:pb-10">
-      <img src="img/dev1.png" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
+      <img src="{{asset('images/dev1.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
       <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Development</h1>
     </div>
     <div class="sm:pb-10">
-      <img src="img/glo.png" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
+      <img src="{{asset('images/glo.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
       <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Global Sourcing</h1>
     </div>
     <div class="sm:pb-10">
-      <img src="img/2402475.png" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
+      <img src="{{asset('images/2402475.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
       <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Merchandising</h1>
     </div>
     <div class="sm:pb-10">
-      <img src="img/ship1.png" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
+      <img src="{{asset('images/ship1.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
       <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">shipping</h1>
     </div>
   </div>
@@ -256,27 +203,22 @@
       <h1 class="md:text-3xl text-lg font-semibold text-center">COMPLIANCE CERTIFICATE</h1>
       <hr class="md:w-96 w-16 h-0.5 mx-auto my-4 bg-gray-500 border-0 md:my-1">
     </div>
-    <div class="wrapper">
-      <ul class="carousel mx-24">
-        <li class="card">
-          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/BSCI-1.jpg" alt="img"
-              draggable="false"></div>
+    <div class="wrapper w-full relative">
+      <ul class="carousel grid grid-flow-col overflow-x-auto snap-x gap-0 scroll-smooth mx-24" style="grid-auto-columns: calc((100% / 4)); scrollbar-width: none;">
+        <li class="card pb-4 h-64 flex-col">
+          <div class="img"><img class="w-64 border-2 border-[f1eeee] object-cover" src="{{asset('images/BSCI-1.jpg')}}" alt="img" draggable="false"></div>
         </li>
-        <li class="card">
-          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/GOTS1.jpg" alt="img"
-              draggable="false"></div>
+        <li class="card pb-4 h-64 flex-col">
+          <div class="img"><img class="w-64 border-2 border-[f1eeee] object-cover" src="{{asset('images/GOTS1.jpg')}}" alt="img" draggable="false"></div>
         </li>
-        <li class="card">
-          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/OEKO-TEX1.jpg" alt="img"
-              draggable="false"></div>
+        <li class="card pb-4 h-64 flex-col">
+          <div class="img"><img class="w-64 border-2 border-[f1eeee] object-cover" src="{{asset('images/OEKO-TEX1.jpg')}}" alt="img" draggable="false"></div>
         </li>
-        <li class="card">
-          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/ACCORD-1.jpg" alt="img"
-              draggable="false"></div>
+        <li class="card pb-4 h-64 flex-col">
+          <div class="img"><img class="w-64 border-2 border-[f1eeee] object-cover" src="{{asset('images/ACCORD-1.jpg')}}" alt="img" draggable="false"></div>
         </li>
-        <li class="card">
-          <div class="img"><img src="https://duttatexbd.com/wp-content/uploads/2023/11/ALLIANCE-1.jpg" alt="img"
-              draggable="false"></div>
+        <li class="card pb-4 h-64 flex-col">
+          <div class="img"><img class="w-64 border-2 border-[f1eeee] object-cover" src="{{asset('images/ALLIANCE-1.jpg')}}" alt="img" draggable="false"></div>
         </li>
       </ul>
     </div>
@@ -288,7 +230,7 @@
     <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 md:py-2 py-5">
       <div class="pb-5 md:pb-0">
         <a href="#" class="">
-          <img src="img/duttatex-Logo.png" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo"/>
+          <img src="{{asset('images/duttatex-Logo.png')}}" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo" />
         </a>
       </div>
       <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
@@ -326,21 +268,21 @@
         <a href="" class="mr-4"><ion-icon name="logo-skype" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
         <a href="" class="mr-4"><ion-icon name="logo-whatsapp" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
         <a href="" class="mr-4"><ion-icon name="videocam-outline" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-        <a href="" ><ion-icon name="mail-outline" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href=""><ion-icon name="mail-outline" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
       </div>
     </div>
   </div>
   <!-- Footer End-->
-  
-<!-- Social icon bar Start-->
-<div class="fixed right-0 top-2/4 translate-y-[-50%]">
-  <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="text-white bg-[#0076B3] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-linkedin"></i></a>
-  <a href="https://twitter.com/NrBfashion" class="text-white bg-[#50A4D5] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-twitter"></i></a> 
-  <a href="#" class="text-white bg-[#D74B40] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-envelope"></i></a> 
-  <a href="#" class="text-white bg-[#36A4DC] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-skype"></i></a> 
-  <a href="#" class="text-white bg-[#299580] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-whatsapp"></i></a> 
-</div>
-<!-- Social icon bar End-->
+
+  <!-- Social icon bar Start-->
+  <div class="fixed right-0 top-2/4 translate-y-[-50%]">
+    <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="text-white bg-[#0076B3] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-linkedin"></i></a>
+    <a href="https://twitter.com/NrBfashion" class="text-white bg-[#50A4D5] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="text-white bg-[#D74B40] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-envelope"></i></a>
+    <a href="#" class="text-white bg-[#36A4DC] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-skype"></i></a>
+    <a href="#" class="text-white bg-[#299580] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-whatsapp"></i></a>
+  </div>
+  <!-- Social icon bar End-->
 
   <script>
     function Menu(e) {
@@ -366,7 +308,9 @@
         x[i].style.display = "none";
       }
       myIndex++;
-      if (myIndex > x.length) { myIndex = 1 }
+      if (myIndex > x.length) {
+        myIndex = 1
+      }
       x[myIndex - 1].style.display = "block";
       setTimeout(carousel, 2000); // Change image every 2 seconds
     }
@@ -379,7 +323,9 @@
     const arrowBtns = document.querySelectorAll(".wrapper i");
     const carouselChildrens = [...carousel2.children];
 
-    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+    let isDragging = false,
+      isAutoPlay = true,
+      startX, startScrollLeft, timeoutId;
 
     // Get the number of cards that can fit in the carousel at once
     let cardPerView = Math.round(carousel2.offsetWidth / firstCardWidth);
@@ -459,10 +405,9 @@
     wrapper.addEventListener("mouseleave", autoPlay);
 
     //certificate slider end
-
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-  
+
   <!-- link for externel js file -->
   <script src="js/frontend.js" type="text/javascript"></script>
 </body>
