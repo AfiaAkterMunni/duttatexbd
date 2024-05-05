@@ -6,7 +6,7 @@
 
 </head>
 
-<body id="top">
+<body>
 
     @include('includes.navbar')
 
