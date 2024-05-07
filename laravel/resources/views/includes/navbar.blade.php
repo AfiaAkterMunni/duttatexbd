@@ -19,7 +19,7 @@
         <a href="category.html" class="text-lg hover:text-cyan-200">Products</a>
       </li>
       <li class="py-3 px-4">
-        <a href="services.html" class="text-lg hover:text-cyan-200">Services</a>
+        <a href="{{route('service')}}" class="text-lg hover:text-cyan-200">Services</a>
       </li>
       <li class="py-3 px-4">
         <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>

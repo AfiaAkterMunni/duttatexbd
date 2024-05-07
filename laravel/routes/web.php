@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// frontend home route
+// frontend home page route
 Route::get('/', [HomeController::class, 'show'])->name('home');
 
-// frontend about route
+// frontend about page route
 Route::get('/about', [AboutController::class, 'show'])->name('about');
+
+// frontend service page route
+Route::get('/service', [ServiceController::class, 'show'])->name('service');
