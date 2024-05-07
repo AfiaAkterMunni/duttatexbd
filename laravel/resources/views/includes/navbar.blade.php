@@ -10,10 +10,10 @@
     </div>
     <ul class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
       <li class="py-3 px-4">
-        <a href="index.html" class="text-lg hover:text-cyan-200">Home</a>
+        <a href="{{route('home')}}" class="text-lg hover:text-cyan-200">Home</a>
       </li>
       <li class="py-3 px-4">
-        <a href="about.html" class="text-lg hover:text-cyan-200">About</a>
+        <a href="{{route('about')}}" class="text-lg hover:text-cyan-200">About</a>
       </li>
       <li class="py-3 px-4">
         <a href="category.html" class="text-lg hover:text-cyan-200">Products</a>
@@ -27,3 +27,7 @@
     </ul>
   </nav>
   <!-- Navigation End-->
+
+  <!-- scroll on top button Start-->
+  <a id="button" class="inline-block bg-blue-600 w-9 h-9 text-center rounded fixed bottom-5 right-5 opacity-0 invisible z-[1000] after:content-['\f077'] font-['FontAwesome'] text-2xl text-white hover:cursor-pointer hover:bg-gray-500 active:bg-sky-400"></a>
+  <!-- scroll on top button End-->

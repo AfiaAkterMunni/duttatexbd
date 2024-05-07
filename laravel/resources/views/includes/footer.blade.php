@@ -178,8 +178,26 @@
     wrapper.addEventListener("mouseleave", autoPlay);
 
     //certificate slider end
+
+    // scroll on top button Start
+
+var btn = $('#button');
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+        btn.removeClass('opacity-0 . invisible');
+        btn.addClass('opacity-100 . visible');
+    } else {
+        btn.removeClass('opacity-10 . visible');
+        btn.addClass('opacity-0 . invisible');
+
+    }
+});
+
+btn.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+});
+
+// scroll on top button End
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-
-  <!-- link for externel js file -->
-  <script src="js/frontend.js" type="text/javascript"></script>
