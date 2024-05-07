@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +26,12 @@ Route::get('/about', [AboutController::class, 'show'])->name('about');
 
 // frontend service page route
 Route::get('/service', [ServiceController::class, 'show'])->name('service');
+
+// frontend contact page route
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+
+// frontend category page route
+Route::get('/category', [CategoryController::class, 'show'])->name('category');
+
+// frontend category page route
+Route::get('/subcategory', [SubcategoryController::class, 'show'])->name('subcategory');

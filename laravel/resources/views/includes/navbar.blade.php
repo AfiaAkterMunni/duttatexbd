@@ -16,13 +16,13 @@
         <a href="{{route('about')}}" class="text-lg hover:text-cyan-200">About</a>
       </li>
       <li class="py-3 px-4">
-        <a href="category.html" class="text-lg hover:text-cyan-200">Products</a>
+        <a href="{{route('category')}}" class="text-lg hover:text-cyan-200">Products</a>
       </li>
       <li class="py-3 px-4">
         <a href="{{route('service')}}" class="text-lg hover:text-cyan-200">Services</a>
       </li>
       <li class="py-3 px-4">
-        <a href="contact.html" class="text-lg hover:text-cyan-200">Contact</a>
+        <a href="{{route('contact')}}" class="text-lg hover:text-cyan-200">Contact</a>
       </li>
     </ul>
   </nav>
