@@ -23,54 +23,6 @@
 
 
   <style>
-      
-    /* Scrollbar-effect------- */
-    #accordian::-webkit-scrollbar {
-        width: 5px;
-        height: 8px;
-    }
-    #accordian::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: #f2f2f2;
-    }
-    #accordian::-webkit-scrollbar-thumb {
-        background: #d9d9d9;
-        border-radius: 10px;
-        transition: 0.5s;
-    }
-    #accordian::-webkit-scrollbar-thumb:hover {
-        background: #d4e1f0;
-        transition: 0.5s;
-    }
-
-
-
-    /* --------- */
-   
-
-    /* #accordian { */
-      /* width: 250px; */
-      /* padding: 10px; */
-      /* float: left; */
-      /* height: 100vh; */
-      /* overflow-x: hidden; */
-    /* } */
-
-    /* #accordian li { */
-      /* list-style-type: none; */
-    /* } */
-
-    #accordian ul li a{
-      /* color: #9c9c9c; */
-      /* text-decoration: none; */
-      /* font-size: 15px; */
-      /* display: block; */
-    /* 	line-height: 34px; */
-      /* padding: 12px 15px; */
-      /* transition: all 0.15s;
-      position: relative;
-      border-radius: 3px; */
-    }
 
     #accordian>ul.show-dropdown>li.active>a,
     #accordian>ul>li>ul.show-dropdown>li.active>a,
@@ -82,29 +34,7 @@
         box-shadow: 0px 1px 2px rgba(0, 137, 255, 0.2);
     }
 
-    #accordian>ul>li>ul,
-    #accordian>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul>li>ul {
-      display: none;
-    }
-
-
-    #accordian>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li>ul>li.active>ul.show-dropdown,
-    #accordian>ul>li>ul>li>ul>li>ul>li.active>ul.show-dropdown {
-      /* display: block; */
-    }
-
-    #accordian>ul>li>ul,
-    #accordian>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul,
-    #accordian>ul>li>ul>li>ul>li>ul>li>ul {
-      /* padding-left: 20px; */
-    }
-
-    #accordian a:not(:only-child):after {
+    /* #accordian a:not(:only-child):after {
       content: "\f105";
         position: absolute;
         right: 10px;
@@ -116,7 +46,7 @@
         vertical-align: middle;
         font-weight: 900;
         transition: 0.5s;
-    }
+    } */
 
     #accordian .active>a:not(:only-child):after {
         transform: rotate(90deg);
@@ -162,12 +92,12 @@
 
   <!-- Category sidebar Start-->
   <div class="flex flex-row">
-    <div class="lg:basis-1/5 basis-2/6 lg:m-6 m-3 lg:p-2.5 p-1 h-screen overflow-x-hidden" id="accordian">
-      <ul class="show-dropdown">
+    <div class="lg:basis-1/5 basis-2/6 lg:m-6 m-3 lg:p-2.5 p-1 h-screen overflow-x-hidden" id="accordian" style="scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgb(211, 222, 245) rgb(245, 241, 241);">
+      <ul class="show-dropdown *:after:[&>*:not(:only-child)]:content-['*']">
         <li class="mx-[20px] border-b text-[#9c9c9c] text-md py-2 px-4">All Categories</li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Shirt</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -176,7 +106,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">T-Shirt</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -185,7 +115,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Polo</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -194,7 +124,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Hoodies</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -203,7 +133,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -212,7 +142,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Shirt</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -221,7 +151,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -230,7 +160,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -239,7 +169,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -248,7 +178,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -257,7 +187,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -266,7 +196,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -275,7 +205,7 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
@@ -284,12 +214,15 @@
         </li>
         <li>
           <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all" href="javascript:void(0);">Sweat Pant</a>
-          <ul class="pl-5">
+          <ul class="pl-5 hidden">
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Men</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Women</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Kids</a></li>
               <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all">Promotional</a></li>
           </ul>
+        </li>
+        <li>
+          <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all " href="javascript:void(0);">fhfy</a>
         </li>
       </ul>
     </div>
