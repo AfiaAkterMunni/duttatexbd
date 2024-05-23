@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-
+  <title>DuttaTex - @yield('title')</title>
     @include('includes.head')
 
 </head>
@@ -16,6 +16,7 @@
 
     @include('includes.footer')
 
+    <script type="text/javascript" src="{{asset('js/myscript.js')}}"></script>
 
 </body>
 

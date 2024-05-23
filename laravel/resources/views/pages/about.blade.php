@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home')
+@section('title', 'About')
 @section('content')
     <!-- About Start-->
     <div class="lg:flex lg:flex-row py-20 font-[Roboto] px-12">

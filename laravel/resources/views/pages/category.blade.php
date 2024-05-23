@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home')
+@section('title', 'Category')
 @section('content')
   <!-- Breadcrumb Start-->
   <div class="px-24 w-1/4">
