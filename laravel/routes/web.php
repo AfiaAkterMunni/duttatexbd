@@ -3,10 +3,13 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//*********** Frontend Start *************/
+
 // frontend home page route
 Route::get('/', [HomeController::class, 'show'])->name('home');
 
@@ -35,3 +40,11 @@ Route::get('/category', [CategoryController::class, 'show'])->name('category');
 
 // frontend category page route
 Route::get('/subcategory', [SubcategoryController::class, 'show'])->name('subcategory');
+
+// frontend product page route
+Route::get('/product', [ProductController::class, 'show'])->name('product');
+
+//*********** Frontend End *************/
+
+//*********** Dashboard Start *************/
+Route::get('/dashboard/home', [DashboardHomeController::class, 'show'])->name('dashboard');
