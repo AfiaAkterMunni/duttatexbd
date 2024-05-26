@@ -47,4 +47,9 @@ Route::get('/product', [ProductController::class, 'show'])->name('product');
 //*********** Frontend End *************/
 
 //*********** Dashboard Start *************/
-Route::get('/dashboard/home', [DashboardHomeController::class, 'show'])->name('dashboard');
+
+Route::prefix('dashboard')->group(function(){
+    
+    Route::get('/', [DashboardHomeController::class, 'show'])->name('dashboard');
+
+});
