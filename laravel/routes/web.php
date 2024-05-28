@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\CategoryController as DashboardCategoryController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
+use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -55,5 +56,9 @@ Route::prefix('dashboard')->group(function(){
     Route::get('/category', [DashboardCategoryController::class, 'show'])->name('category.index');
     Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
     Route::get('/category/edit', [DashboardCategoryController::class, 'edit'])->name('category.edit');
+
+    Route::get('/subcategory', [DashboardSubCategoryController::class, 'show'])->name('subcategory.index');
+    Route::get('/subcategory/create', [DashboardSubCategoryController::class, 'create'])->name('subcategory.create');
+    Route::get('/subcategory/edit', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
 
 });
