@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Dashboard\CategoryController as DashboardCategoryController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -51,5 +52,8 @@ Route::get('/product', [ProductController::class, 'show'])->name('product');
 Route::prefix('dashboard')->group(function(){
     
     Route::get('/', [DashboardHomeController::class, 'show'])->name('dashboard');
+    Route::get('/category', [DashboardCategoryController::class, 'show'])->name('category.index');
+    Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
+    Route::get('/category/edit', [DashboardCategoryController::class, 'edit'])->name('category.edit');
 
 });
