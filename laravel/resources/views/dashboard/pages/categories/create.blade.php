@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.master')
-@section('title', 'Categories')
+@section('title', 'Create Categories')
 @section('content')
 <main class="h-full pb-16 overflow-y-auto">
         <div class="container grid px-6 mx-auto">
