@@ -5,7 +5,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\CategoryController as DashboardCategoryController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
+use App\Http\Controllers\Dashboard\ProductController as DashboardProductController;
+use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
+use App\Http\Controllers\Dashboard\SubscriberController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -51,14 +54,30 @@ Route::get('/product', [ProductController::class, 'show'])->name('product');
 //*********** Dashboard Start *************/
 
 Route::prefix('dashboard')->group(function(){
-    
+    // Dashboard home 
     Route::get('/', [DashboardHomeController::class, 'show'])->name('dashboard');
+
+    // Dashboard category 
     Route::get('/category', [DashboardCategoryController::class, 'show'])->name('category.index');
     Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
     Route::get('/category/edit', [DashboardCategoryController::class, 'edit'])->name('category.edit');
 
+    // Dashboard subcategory 
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'show'])->name('subcategory.index');
     Route::get('/subcategory/create', [DashboardSubCategoryController::class, 'create'])->name('subcategory.create');
     Route::get('/subcategory/edit', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
 
+    // Dashboard product 
+    Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');
+    Route::get('/product/create', [DashboardProductController::class, 'create'])->name('product.create');
+    Route::get('/product/edit', [DashboardProductController::class, 'edit'])->name('product.edit');
+
+    // Dashboard Quick Inquiry
+    Route::get('/quickinquiry', [QuickInquiryController::class, 'show'])->name('quickinquiry');
+
+    // Dashboard subscriber
+    Route::get('/subscriber', [SubscriberController::class, 'show'])->name('subscriber');
+
+    
+ 
 });
