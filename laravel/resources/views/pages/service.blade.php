@@ -19,7 +19,7 @@
                     impressive 99% precision right from the initial sample development stage. With a collective experience
                     of over two decades, their expertise shines through in every stitch, ensuring top-notch craftsmanship
                     and delivering exceptional quality garments.<br><br></span></p>
-                    <button onclick="myFunction()" id="myBtn"
+                    <button onclick="serviceButton()" id="myBtn"
                 class="bg-cyan-600 px-3 py-1 text-white rounded-lg mt-3 hover:bg-sky-600">Read more</button>
             </div>
         </div>
@@ -70,5 +70,9 @@
         </div>
     </div>
     <!-- Services End-->
+
+    <script type="text/javascript" src="{{asset('js/frontend/service.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/frontend/scrollbutton.js')}}"></script>
+
 
 @endsection

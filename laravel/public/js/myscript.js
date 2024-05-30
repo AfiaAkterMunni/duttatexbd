@@ -37,25 +37,7 @@ function Menu(e) {
 
 // header carousel js end
 
- // scroll on top button Start
- var btn = $('#button');
- $(window).scroll(function () {
-     if ($(window).scrollTop() > 300) {
-         btn.removeClass('opacity-0 . invisible');
-         btn.addClass('opacity-100 . visible');
-     } else {
-         btn.removeClass('opacity-10 . visible');
-         btn.addClass('opacity-0 . invisible');
  
-     }
- });
- 
- btn.on('click', function (e) {
-     e.preventDefault();
-     $('html, body').animate({ scrollTop: 0 }, '300');
- });
- // scroll on top button End
-
 
  //certificate slider start
  const wrapper = document.querySelector(".wrapper");
@@ -172,66 +154,3 @@ function Menu(e) {
   })
 });
 
-//about button
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-  } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-  }
-}
-function myFunction2() {
-  var dots = document.getElementById("dots2");
-  var moreText = document.getElementById("more2");
-  var btnText = document.getElementById("myBtn2");
-
-  if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-  } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-  }
-}
-function myFunction3() {
-  var dots = document.getElementById("dots3");
-  var moreText = document.getElementById("more3");
-  var btnText = document.getElementById("myBtn3");
-
-  if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-  } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-  }
-}
-
-//service page
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-  } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-  }
-}
