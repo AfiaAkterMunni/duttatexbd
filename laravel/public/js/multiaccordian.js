@@ -1,6 +1,3 @@
-
-
-
  // -------multilevel-accordian-menu---------
  $(document).ready(function() {
   $("#accordian a").click(function() {
@@ -25,4 +22,3 @@
       }
   })
 });
-
