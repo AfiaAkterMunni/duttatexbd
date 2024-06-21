@@ -20,7 +20,7 @@
         upheld since 1995. Our expertise spans Fashion-Casual, Sports, Work, and Promotional Wear, offering a
         comprehensive Total Look solution. Our operations are 100% based in Bangladesh. Our product range caters to
         diverse…</p>
-      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="about.html#about">Read more</a>
+      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
     </div>
     <div class="md:pr-10 md:my-2 my-10">
       <h4 class="pb-5 text-2xl font-bold text-center">What We Provide</h4>
@@ -29,7 +29,7 @@
         upheld since 1995. Our expertise spans Fashion-Casual, Sports, Work, and Promotional Wear, offering a
         comprehensive Total Look solution. Our operations are 100% based in Bangladesh. Our product range caters to
         diverse…</p>
-      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="about.html#about">Read more</a>
+      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
     </div>
     <div class="md:my-2 my-10">
       <h4 class="pb-5 text-2xl font-bold text-center">Our Mission</h4>
@@ -38,7 +38,7 @@
         upheld since 1995. Our expertise spans Fashion-Casual, Sports, Work, and Promotional Wear, offering a
         comprehensive Total Look solution. Our operations are 100% based in Bangladesh. Our product range caters to
         diverse…</p>
-      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="about.html#about">Read more</a>
+      <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
     </div>
   </div>
   <!-- About End-->
