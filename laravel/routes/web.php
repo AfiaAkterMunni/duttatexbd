@@ -54,20 +54,20 @@ Route::get('/product', [ProductController::class, 'show'])->name('product');
 //*********** Dashboard Start *************/
 
 Route::prefix('dashboard')->group(function(){
-    // Dashboard home 
+    // Dashboard home
     Route::get('/', [DashboardHomeController::class, 'show'])->name('dashboard');
 
-    // Dashboard category 
-    Route::get('/category', [DashboardCategoryController::class, 'show'])->name('category.index');
+    // Dashboard category
+    Route::get('/category', [DashboardCategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
     Route::get('/category/edit', [DashboardCategoryController::class, 'edit'])->name('category.edit');
 
-    // Dashboard subcategory 
+    // Dashboard subcategory
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'show'])->name('subcategory.index');
     Route::get('/subcategory/create', [DashboardSubCategoryController::class, 'create'])->name('subcategory.create');
     Route::get('/subcategory/edit', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
 
-    // Dashboard product 
+    // Dashboard product
     Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');
     Route::get('/product/create', [DashboardProductController::class, 'create'])->name('product.create');
     Route::get('/product/edit', [DashboardProductController::class, 'edit'])->name('product.edit');
@@ -78,6 +78,6 @@ Route::prefix('dashboard')->group(function(){
     // Dashboard subscriber
     Route::get('/subscriber', [SubscriberController::class, 'show'])->name('subscriber');
 
-    
- 
+
+
 });
