@@ -8,7 +8,7 @@ class StoreCategoryRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return url('/dashboard/category');
+        return route('category.create');
     }
     /**
      * Determine if the user is authorized to make this request.

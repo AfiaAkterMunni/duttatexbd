@@ -22,20 +22,17 @@ class CategoryController extends Controller
     }
 
     public function store(StoreCategoryRequest $request) {
+        $image = $request->file('image');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('/uploads/categories');
+        $image->move($destinationPath, $name);
         $data = [
-            'name' => $request->input('name')
+            'name' => $request->input('name'),
+            'image' => $name
         ];
         dd($data);
-        // if($request->hasFile('image'))
-        // {
-        //     $image = $request->file('image');
-        //     $name = time().'.'.$image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/uploads/menus');
-        //     $image->move($destinationPath, $name);
-        //     $data['image'] = $name;
-        // }
         Category::create($data);
-        return redirect(url('/category'))->with('addcategory', 'Category Created Successfully!!!');
+        return redirect(route('category.create'))->with('addcategory', 'Category Created Successfully!!!');
     }
 
 
