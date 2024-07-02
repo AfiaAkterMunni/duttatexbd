@@ -20,6 +20,11 @@ class CategoryController extends Controller
     {
         return view('dashboard.pages.categories.create');
     }
+    
+    public function edit()
+    {
+        return view('dashboard.pages.categories.edit');
+    }
 
     public function store(StoreCategoryRequest $request) {
         $image = $request->file('image');
@@ -30,14 +35,8 @@ class CategoryController extends Controller
             'name' => $request->input('name'),
             'image' => $name
         ];
-        dd($data);
         Category::create($data);
-        return redirect(route('category.create'))->with('addcategory', 'Category Created Successfully!!!');
+        return redirect(route('category.index'))->with('addcategory', 'Category Created Successfully!!!');
     }
 
-
-    public function edit()
-    {
-        return view('dashboard.pages.categories.edit');
-    }
 }
