@@ -9,7 +9,8 @@
             </h2>
         </div>
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <form action="">
+            <form action="{{route('category.update', ['id' => $category->name])}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <label class="block text-md mb-6">
                     <span class="text-gray-700 dark:text-gray-400">Edit Category Name</span>
                     <input name="name" value="{{$category->name}}" class="block w-full mt-2 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Write Category Name" />

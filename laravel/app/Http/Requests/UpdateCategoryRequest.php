@@ -8,7 +8,7 @@ class UpdateCategoryRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return route('category.create');
+        return route('category.edit');
     }
     /**
      * Determine if the user is authorized to make this request.

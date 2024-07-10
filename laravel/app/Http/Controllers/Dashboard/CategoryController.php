@@ -44,6 +44,7 @@ class CategoryController extends Controller
 
     public function update(UpdateCategoryRequest $request, $id)
     {
+        dd($request);
 
         $data = [
             'name' => $request->input('name1'),
