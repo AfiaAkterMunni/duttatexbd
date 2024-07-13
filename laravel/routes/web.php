@@ -63,6 +63,7 @@ Route::prefix('dashboard')->group(function(){
     Route::post('/category/store', [DashboardCategoryController::class, 'store'])->name('category.store');
     Route::get('/category/edit/{id}', [DashboardCategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
+    Route::get('/category/delete/{id}', [DashboardCategoryController::class, 'delete'])->name('category.delete');
 
 
     // Dashboard subcategory
