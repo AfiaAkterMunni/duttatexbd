@@ -8,7 +8,7 @@ class UpdateCategoryRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return route('category.edit');
+        return route('category.edit', ['id' => $this->id]);
     }
     /**
      * Determine if the user is authorized to make this request.
@@ -28,8 +28,8 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'image' => 'required|mimes:png,jpg'
+            'name' => 'required_without_all:image|string',
+            'image' => 'required_without_all:name|mimes:png,jpg'
         ];
     }
 }

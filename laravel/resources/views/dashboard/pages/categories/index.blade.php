@@ -14,10 +14,10 @@
             </div>
         </div>
         <!-- table -->
-        @if (session('addcategory'))
+        @if (session('success'))
         <div class="flex items-center justify-between py-2 px-4 mb-8 text-md text-white bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple" id="toaster">
             <div class="flex items-center">
-                <span>iiytiyi</span>
+                <span>{{session('success')}}</span>
             </div>
             <button class="inline-flex items-center justify-center w-6 h-6 text-white transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700" aria-label="close" @click="closeToaster()">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
@@ -38,9 +38,9 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                        @foreach ($categories as $category)
+                        @foreach ($categories as $key => $category)
                         <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3 text-sm">{{$category->id}}</td>
+                            <td class="px-4 py-3 text-sm">{{$key+1}}</td>
                             <td class="px-4 py-3 text-sm">{{$category->name}}</td>
                             <td class="px-4 py-3">
                                 <img class="w-12" src="{{asset('uploads/categories/'.$category->image)}}" alt="" loading="lazy">

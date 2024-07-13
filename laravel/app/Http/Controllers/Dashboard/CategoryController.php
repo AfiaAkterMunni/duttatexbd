@@ -13,7 +13,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        // dd($categories);
         return view('dashboard.pages.categories.index', ['categories' => $categories]);
     }
 
@@ -21,11 +20,10 @@ class CategoryController extends Controller
     {
         return view('dashboard.pages.categories.create');
     }
-    
+
     public function edit($id)
     {
         $category = Category::find($id);
-        // dd($category);
         return view('dashboard.pages.categories.edit',['category' => $category]);
     }
 
@@ -39,37 +37,32 @@ class CategoryController extends Controller
             'image' => $name
         ];
         Category::create($data);
-        return redirect(route('category.index'))->with('addcategory', 'Category Created Successfully!!!');
+        return redirect(route('category.index'))->with('success', 'Category Created Successfully!!!');
     }
 
     public function update(UpdateCategoryRequest $request, $id)
     {
-        dd($request);
-
+        $category = Category::find($id);
         $data = [
-            'name' => $request->input('name1'),
-            'details' => $request->input('details1'),
-            'price' => $request->input('price1'),
-            'category_id' => $request->input('category1')
+            'name' => $request->input('name')
         ];
 
-        if($request->hasFile('image1'))
+        if($request->hasFile('image'))
         {
-            $oldImage = Menu::find($id)->image;
+            $oldImage = $category->image;
             if($oldImage)
             {
-                unlink('uploads/menus/'.$oldImage);
+                unlink('uploads/categories/'.$oldImage);
             }
-            // dd($oldImage);
-            $image = $request->file('image1');
+            $image = $request->file('image');
             $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/menus');
+            $destinationPath = public_path('/uploads/categories');
             $image->move($destinationPath, $name);
             $data['image'] = $name;
         }
 
-        Menu::where('id', $id)->update($data);
-        return redirect(url('/menus'))->with('updatemenu', 'Menu Updated Successfully!!!');
+        $category->update($data);
+        return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
     }
 
 }
