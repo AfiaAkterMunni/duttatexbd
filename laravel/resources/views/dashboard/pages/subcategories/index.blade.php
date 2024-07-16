@@ -37,7 +37,7 @@
                       <!-- <img class="w-12" src="../img/4.jpg" alt="" loading="lazy"> -->
                       {{$subcategory->image}}
                     </td>
-                    <td class="px-4 py-3 text-sm">555</td>
+                    <td class="px-4 py-3 text-sm"></td>
                     <td class="px-4 py-3">
                       <div class="flex items-center space-x-4 text-sm">
                         <a href="{{route('subcategory.edit')}}"

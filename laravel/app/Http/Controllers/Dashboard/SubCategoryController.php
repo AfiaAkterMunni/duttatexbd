@@ -11,6 +11,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subcategories = Subcategory::all();
+        
         return view('dashboard.pages.subcategories.index', ['subcategories' => $subcategories]);
     }
 
