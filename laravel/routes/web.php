@@ -69,6 +69,7 @@ Route::prefix('dashboard')->group(function(){
     // Dashboard subcategory
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'index'])->name('subcategory.index');
     Route::get('/subcategory/create', [DashboardSubCategoryController::class, 'create'])->name('subcategory.create');
+    Route::post('/subcategory/store', [DashboardSubCategoryController::class, 'store'])->name('subcategory.store');
     Route::get('/subcategory/edit', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
 
     // Dashboard product

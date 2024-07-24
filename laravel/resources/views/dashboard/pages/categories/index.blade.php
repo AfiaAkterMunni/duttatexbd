@@ -169,7 +169,7 @@
         let toaster = document.getElementById('toaster');
         toaster.style.display = 'none';
     }
-//delete modal
+    //delete modal
     let modal = document.querySelector('#modal');
     let openModalButton = document.querySelectorAll('.openModalButton');
     let closeModalButton1 = document.querySelector('#closeModalButton1');
