@@ -11,7 +11,7 @@
           <div
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{route('subcategory.update', ['id'=>$subcategory->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                 <label class="block text-md mb-6">
                     <span class="text-gray-700 dark:text-gray-400">Edit SubCategory Name</span>
@@ -19,6 +19,9 @@
                     class="block w-full mt-2 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                     placeholder="Write SubCategory Name"
                     />
+                    @error('name')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
                 </label>
                 <label class="block text-md mb-6">
                     <span class="text-gray-700 dark:text-gray-400">Edit SubCategory Image</span>
@@ -26,6 +29,9 @@
                 class="relative m-0 mt-2 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white"
                 type="file"
                 id="formFile" />
+                @error('image')
+                    <p class="text-red-500">{{$message}}</p>
+                @enderror
                 </label>
                 <label class="block mb-6 text-md">
                 <span class="text-gray-700 dark:text-gray-400">
@@ -37,9 +43,12 @@
                         <option @if($category->id === $subcategory->category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
+                @error('category')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
                 </label>
                 <div>
-                <button class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     Edit SubCategory
                 </button>
                 </div>
