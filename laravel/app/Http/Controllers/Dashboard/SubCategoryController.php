@@ -23,9 +23,11 @@ class SubCategoryController extends Controller
         return view('dashboard.pages.subcategories.create', ['categories' => $categories]);
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('dashboard.pages.subcategories.edit');
+        $subcategory = Subcategory::find($id);
+        $categories = Category::all();
+        return view('dashboard.pages.subcategories.edit', ['subcategory' => $subcategory, 'categories' => $categories]);
     }
 
     public function store(StoreSubcategoryRequest $request) {
