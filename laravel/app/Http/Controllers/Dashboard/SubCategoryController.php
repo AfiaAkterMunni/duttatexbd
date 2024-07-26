@@ -70,4 +70,15 @@ class SubCategoryController extends Controller
         $subcategory->update($data);
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Updated Successfully!!!');
     }
+
+    public function delete(Request $request, $id)
+    {
+        $subcategory = Subcategory::find($id);
+        if($subcategory->image)
+        {
+            unlink('uploads/subcategories/'.$subcategory->image);
+        }
+        $subcategory->delete();
+        return redirect(route('subcategory.index'))->with('success', 'Subcategory Deleted Successfully!!!');
+    }
 }
