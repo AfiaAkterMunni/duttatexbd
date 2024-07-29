@@ -52,7 +52,7 @@ Route::get('/product', [ProductController::class, 'show'])->name('product');
 
 //*********** Dashboard Start *************/
 
-Route::prefix('dashboard')->group(function(){
+Route::prefix('dashboard')->middleware('auth')->group(function(){
     // Dashboard home
     Route::get('/', [DashboardHomeController::class, 'show'])->name('dashboard');
 
