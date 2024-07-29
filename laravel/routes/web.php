@@ -9,12 +9,11 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProductControll
 use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +28,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //*********** Frontend Start *************/
 
 // frontend home page route
-Route::get('/', [HomeController::class, 'show'])->name('home');
+Route::get('/', [HomeController2::class, 'show'])->name('home');
 
 // frontend about page route
 Route::get('/about', [AboutController::class, 'show'])->name('about');
@@ -90,3 +89,7 @@ Route::prefix('dashboard')->group(function(){
 
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
