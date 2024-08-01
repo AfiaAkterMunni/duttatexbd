@@ -20,44 +20,44 @@
     </div>
     <div>
       <a href="{{route('subcategory')}}">
-        <img src="{{asset('images/1.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
-      </a>
-    </div>
-    <div>
-      <a href="{{route('subcategory')}}">
-        <img src="{{asset('images/3.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
-      </a>
-    </div>
-    <div>
-      <a href="{{route('subcategory')}}">
         <img src="{{asset('images/5.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
-      </a>
-    </div>
-    <div>
-      <a href="{{route('subcategory')}}">
-        <img src="{{asset('images/6.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
+        <h3 class="pt-3">T-Shirt</h3>
       </a>
     </div>
     <div>
       <a href="{{route('subcategory')}}">
         <img src="{{asset('images/7.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
+        <h3 class="pt-3">Polo</h3>
       </a>
     </div>
     <div>
       <a href="{{route('subcategory')}}">
-        <img src="{{asset('images/8.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
+        <img src="{{asset('images/6.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <h3 class="pt-3">Sweat-Shirt</h3>
       </a>
     </div>
     <div>
       <a href="{{route('subcategory')}}">
-        <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-        <h3 class="pt-3">Shirt</h3>
+        <img src="{{asset('images/3.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <h3 class="pt-3">Floral Shirt</h3>
+      </a>
+    </div>
+    <div>
+      <a href="{{route('subcategory')}}">
+        <img src="{{asset('images/1.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <h3 class="pt-3">Plain Shirt</h3>
+      </a>
+    </div>
+    <div>
+      <a href="{{route('subcategory')}}">
+        <img src="{{asset('images/11.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <h3 class="pt-3">Pants</h3>
+      </a>
+    </div>
+    <div>
+      <a href="{{route('subcategory')}}">
+        <img src="{{asset('images/13.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <h3 class="pt-3">Hoodies</h3>
       </a>
     </div>
   </div>

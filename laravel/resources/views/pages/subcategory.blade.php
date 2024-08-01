@@ -142,25 +142,25 @@
       <div>
         <a href="{{route('product')}}">
           <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
+          <h3 class="pt-3">Men</h3>
         </a>
       </div>
       <div>
         <a href="{{route('product')}}">
           <img src="{{asset('images/1.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
+          <h3 class="pt-3">Women</h3>
         </a>
       </div>
       <div>
         <a href="{{route('product')}}">
           <img src="{{asset('images/3.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
+          <h3 class="pt-3">Kids</h3>
         </a>
       </div>
       <div>
         <a href="{{route('product')}}">
           <img src="{{asset('images/5.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
+          <h3 class="pt-3">Promotional</h3>
         </a>
       </div>
       <div>
