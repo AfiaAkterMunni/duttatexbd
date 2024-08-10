@@ -53,6 +53,7 @@
                                     <td class="px-4 py-3">
                                         <img class="w-12" src="{{asset('uploads/subcategories/'.$subcategory->image)}}" alt="{{$subcategory->image}}" loading="lazy">
                                     </td>
+                                    {{-- check if $subcategory->category exist --}}
                                     <td class="px-4 py-3 text-sm">{{ $subcategory->category->name }}</td>
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">

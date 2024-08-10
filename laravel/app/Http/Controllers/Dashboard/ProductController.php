@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         return view('dashboard.pages.products.create');
     }
-    
+
     public function edit()
     {
         return view('dashboard.pages.products.edit');

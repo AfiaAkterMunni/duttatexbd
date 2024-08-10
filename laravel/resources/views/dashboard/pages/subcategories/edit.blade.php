@@ -40,6 +40,7 @@
                 <select name="category" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                     <option disabled >-- Select a Category --</option>
                     @foreach ($categories as $category)
+                        {{-- check if $subcategory->category exist --}}
                         <option @if($category->id === $subcategory->category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
