@@ -24,10 +24,11 @@
         </ul>
       </div>
       <div class="ml-0">
-        <form class="">
+        <form action="{{route('subscribe.store')}}" class="" method="POST">
+          @csrf
           <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
-          <input class="p-2 mr-1 rounded" type="email" name="" placeholder="Enter Email">
-          <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" name="" value="">Subscribe</button>
+          <input class="p-2 mr-1 rounded" type="email" name="email" placeholder="Enter Email">
+          <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" value="">Subscribe</button>
         </form>
       </div>
     </footer>

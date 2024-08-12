@@ -9,6 +9,8 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProductControll
 use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
+use App\Http\Controllers\frontend\SubscribeController;
+use App\Http\Controllers\frontend\SubscriberController as FrontendSubscriberController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -47,6 +49,9 @@ Route::get('/subcategory', [SubcategoryController::class, 'show'])->name('subcat
 
 // frontend product page route
 Route::get('/product', [ProductController::class, 'show'])->name('product');
+
+// frontend subscriber functionality
+Route::post('/subscribe', [FrontendSubscriberController::class, 'store'])->name('subscribe.store');
 
 //*********** Frontend End *************/
 
