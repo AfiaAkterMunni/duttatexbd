@@ -24,11 +24,31 @@
         </ul>
       </div>
       <div class="ml-0">
-        <form action="{{route('subscribe.store')}}" class="" method="POST">
+      @if (session('success'))
+                <div class="flex items-center justify-between py-2 px-4 mb-8 text-md text-white bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+                    id="toaster">
+                    <div class="flex items-center">
+                        <span>{{ session('success') }}</span>
+                    </div>
+                    <button
+                        class="inline-flex items-center justify-center w-6 h-6 text-white transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
+                        aria-label="close" @click="closeToaster()">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
+                            <path
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd" fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            @endif
+        <form action="{{route('subscribe.store')}}" class="" method="POST" id="footerSub">
           @csrf
           <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
           <input class="p-2 mr-1 rounded" type="email" name="email" placeholder="Enter Email">
           <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" value="">Subscribe</button>
+          @error('email')
+            <p class="text-red-500">{{$message}}</p>
+          @enderror
         </form>
       </div>
     </footer>
@@ -58,7 +78,12 @@
   </div>
   <!-- Social icon bar End-->
 
-
+<script>
+  function closeToaster() {
+            let toaster = document.getElementById('toaster');
+            toaster.style.display = 'none';
+        }
+</script>
   
 
   <!-- <script src="{{asset('js/app.js')}}"></script> -->

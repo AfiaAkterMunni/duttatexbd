@@ -8,7 +8,7 @@ class StoreSubscribeRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return route('/');
+        return route('homepage').'#footerSub';
     }
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class StoreSubscribeRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email|',
+            'email' => 'required|email|unique:subscribers,email,$this->id'
         ];
     }
 }

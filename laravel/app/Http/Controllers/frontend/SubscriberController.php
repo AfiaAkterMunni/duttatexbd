@@ -14,7 +14,7 @@ class SubscriberController extends Controller
             'email' => $request->input('email')
         ];
         Subscriber::create($data);
-        return redirect(route('/'))->with('success', 'Subscribed Successfully!!!');
+        return redirect(route('homepage').'#footerSub')->with('success', 'Subscribed Successfully!!!');
     }
 
 }

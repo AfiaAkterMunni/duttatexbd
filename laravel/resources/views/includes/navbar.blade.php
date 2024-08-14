@@ -10,7 +10,7 @@
     </div>
     <ul class="md:flex pr-4 md:text-white text-black w-full md:w-auto md:static absolute top-[-400px] left-0 transition-all ease-in duration-500 z-[5] md:z-auto md:py-0 py-4 bg-[#027DAE]">
       <li class="py-3 px-4">
-        <a href="{{route('home')}}" class="text-lg hover:text-cyan-200">Home</a>
+        <a href="{{route('homepage')}}" class="text-lg hover:text-cyan-200">Home</a>
       </li>
       <li class="py-3 px-4">
         <a href="{{route('about')}}" class="text-lg hover:text-cyan-200">About</a>

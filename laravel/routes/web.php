@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 //*********** Frontend Start *************/
 
 // frontend home page route
-Route::get('/', [HomeController2::class, 'show'])->name('home');
+Route::get('/', [HomeController2::class, 'show'])->name('homepage');
 
 // frontend about page route
 Route::get('/about', [AboutController::class, 'show'])->name('about');
@@ -69,7 +69,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
     Route::get('/category/delete/{id}', [DashboardCategoryController::class, 'delete'])->name('category.delete');
 
-
     // Dashboard subcategory
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'index'])->name('subcategory.index');
     Route::get('/subcategory/create', [DashboardSubCategoryController::class, 'create'])->name('subcategory.create');
@@ -77,8 +76,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/subcategory/edit/{id}', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
     Route::post('/subcategory/update/{id}', [DashboardSubCategoryController::class, 'update'])->name('subcategory.update');
     Route::get('/subcategory/delete/{id}', [DashboardSubCategoryController::class, 'delete'])->name('subcategory.delete');
-
-
 
     // Dashboard product
     Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');
@@ -90,9 +87,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard subscriber
     Route::get('/subscriber', [SubscriberController::class, 'show'])->name('subscriber');
-
-
-
 });
 
 Auth::routes();
