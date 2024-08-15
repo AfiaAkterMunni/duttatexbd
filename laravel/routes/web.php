@@ -86,7 +86,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/quickinquiry', [QuickInquiryController::class, 'show'])->name('quickinquiry');
 
     // Dashboard subscriber
-    Route::get('/subscriber', [SubscriberController::class, 'show'])->name('subscriber');
+    Route::get('/subscriber', [SubscriberController::class, 'index'])->name('subscriber');
+    Route::get('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 });
 
 Auth::routes();
