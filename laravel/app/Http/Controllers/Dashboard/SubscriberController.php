@@ -11,14 +11,13 @@ class SubscriberController extends Controller
     public function index()
     {
         $subscribers = Subscriber::all();
-        // dd($subscribers);
         return view('dashboard.pages.subscriber', ['subscribers' => $subscribers]);
     }
     public function delete($id)
     {
         $subscriber = Subscriber::find($id);
         $subscriber->delete();
-        return redirect(route('dashboard.pages.subscriber'))->with('success', 'Deleted Successfully!!!');
+        return redirect(route('subscriber'))->with('success', 'Deleted Successfully!!!');
     }
 
 }

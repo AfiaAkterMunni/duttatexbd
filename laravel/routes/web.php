@@ -16,6 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
