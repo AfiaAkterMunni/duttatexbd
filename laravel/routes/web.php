@@ -52,6 +52,9 @@ Route::get('/subcategory', [SubcategoryController::class, 'show'])->name('subcat
 // frontend product page route
 Route::get('/product', [ProductController::class, 'show'])->name('product');
 
+// frontend subscriber
+Route::post('/subscribe/store', [SubscriberController::class, 'store'])->name('subscribe.store');
+
 
 //*********** Frontend End *************/
 
@@ -87,7 +90,6 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard subscriber
     Route::get('/subscriber', [SubscriberController::class, 'index'])->name('subscriber');
-    Route::post('/subscribe/store', [SubscriberController::class, 'store'])->name('subscribe.store');
     Route::get('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 
     // Dashboard Contact
