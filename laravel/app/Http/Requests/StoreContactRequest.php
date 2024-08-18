@@ -30,7 +30,7 @@ class StoreContactRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|email',
-            'phone' => 'required|number',
+            'phone' => 'required|string',
             'message' => 'required|string',
             'image' => 'required|mimes:png,jpg',
 
