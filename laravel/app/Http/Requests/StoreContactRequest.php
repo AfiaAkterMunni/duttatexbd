@@ -4,11 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCategoryRequest extends FormRequest
+class StoreContactRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return route('contact');
+        return route('category.create');
     }
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,11 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'image' => 'required|mimes:png,jpg'
+            'email' => 'required|email',
+            'phone' => 'required|number',
+            'message' => 'required|string',
+            'image' => 'required|mimes:png,jpg',
+
         ];
     }
 }

@@ -48,35 +48,51 @@
         <h1 class="text-3xl lg:text-2xl font-semibold tracking-wider">Send Us Your Requirement</h1>
         <div class="bg-white rounded-lg">
             <div class="py-6">
+                <form action="{{route('contact.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-1">
+                        <input name="name" type="text" placeholder="Name" class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                        @error('name')
+                            <p class="text-red-500">{{$message}}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-1">
-                    <input type="text" placeholder="Name"
-                        class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
-                </div>
+                    <div class="mb-1">
+                        <input name="email" type="email" placeholder="Email"
+                            class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                        @error('email')
+                            <p class="text-red-500">{{$message}}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-1">
-                    <input type="text" placeholder="Phone Number"
-                        class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
-                </div>
+                    <div class="mb-1">
+                        <input name="phone" type="text" placeholder="Phone Number" class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
+                        @error('phone')
+                            <p class="text-red-500">{{$message}}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-1">
-                    <input type="email" placeholder="Email"
-                        class="h-12 px-3 mb-4 bg-gray-50 w-full border-gray-300 border rounded focus:outline-none focus:border-cyan-50">
-                </div>
-                
-                <div class="mb-1">
-                    <textarea type="text" placeholder="Message"
-                    class="h-24 py-1 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50"></textarea>
-                </div>
-                
-                <div class="mb-1">
-                    <input type="file"
-                        class="h-10 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50">
-                </div>
 
-                <div class="mt-3">
-                    <button class="h-12 w-28 bg-sky-600 rounded text-white hover:bg-sky-700">Submit</button>
-                </div>
+                    <div class="mb-1">
+                        <textarea name="message" type="text" placeholder="Message"
+                        class="h-24 py-1 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50"></textarea>
+                        @error('message')
+                            <p class="text-red-500">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mb-1">
+                        <input type="file"
+                            class="h-10 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50">
+                        @error('file')
+                            <p class="text-red-500">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="h-12 w-28 bg-sky-600 rounded text-white hover:bg-sky-700">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -10,8 +10,6 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProductControll
 use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
-use App\Http\Controllers\frontend\SubscribeController;
-use App\Http\Controllers\frontend\SubscriberController as FrontendSubscriberController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -42,6 +40,7 @@ Route::get('/service', [ServiceController::class, 'show'])->name('service');
 
 // frontend contact page route
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 // frontend category page route
 Route::get('/category', [CategoryController::class, 'show'])->name('category');
@@ -93,9 +92,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 
     // Dashboard Contact
-    Route::get('/contact', [DashboardContactController::class, 'index'])->name('contact');
-    Route::post('/contact/store', [DashboardContactController::class, 'store'])->name('contact.store');
-    Route::get('/contact/delete/{id}', [DashboardContactController::class, 'delete'])->name('contact.delete');
+    Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 
 });
 
