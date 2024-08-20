@@ -14,6 +14,7 @@ class ContactController extends Controller
 
     public function store(StoreContactRequest $request)
     {
+        dd('fhfh');
         dd($request);
         return view('pages.contact');
     }
