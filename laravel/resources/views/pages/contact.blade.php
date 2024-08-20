@@ -82,9 +82,9 @@
                     </div>
 
                     <div class="mb-1">
-                        <input type="file"
+                        <input type="file" name="image"
                             class="h-10 px-3 mb-4 bg-gray-50 w-full border border-gray-300 rounded focus:outline-none focus:border-cyan-50">
-                        @error('file')
+                        @error('image')
                             <p class="text-red-500">{{$message}}</p>
                         @enderror
                     </div>
