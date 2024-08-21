@@ -16,7 +16,6 @@ class SubscriberController extends Controller
     }
     public function store(StoreSubscribeRequest $request)
     {
-        dd($request);
         $data = [
             'email' => $request->input('email')
         ];

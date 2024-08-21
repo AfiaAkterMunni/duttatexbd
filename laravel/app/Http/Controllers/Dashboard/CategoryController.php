@@ -67,12 +67,6 @@ class CategoryController extends Controller
 
     public function delete(Request $request, $id)
     {
-        /**
-         * TODO: This function algorithm
-         * 1. Set null to all subcategory.category_id where deleted category match
-         * 2. Set null to all product.category_id where deleted category match
-         * 3. Finally Delete category and category image
-         */
         $category = Category::find($id);
         if($category->image)
         {

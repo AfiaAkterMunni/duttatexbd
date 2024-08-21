@@ -35,5 +35,15 @@ class ContactController extends Controller
         $contacts = Contact::all();
         return view('dashboard.pages.contact', ['contacts' => $contacts]);
     }
+    public function delete($id)
+    {
+        $contact = Contact::find($id);
+        if($contact->image)
+        {
+            unlink('uploads/contacts/'.$contact->image);
+        }
+        $contact->delete();
+        return redirect(route('contact.index'))->with('success', 'Deleted Successfully!!!');
+    }
 
 }
