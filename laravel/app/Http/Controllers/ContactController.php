@@ -30,6 +30,10 @@ class ContactController extends Controller
         return redirect(route('contact'))->with('success', 'Your Message Sent Successfully!!!');
         
     }
-
+    public function index()
+    {
+        $contacts = Contact::all();
+        return view('dashboard.pages.contact', ['contacts' => $contacts]);
+    }
 
 }

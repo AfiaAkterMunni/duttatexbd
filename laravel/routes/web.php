@@ -92,6 +92,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/subscriber/delete/{id}', [SubscriberController::class, 'delete'])->name('subscriber.delete');
 
     // Dashboard Contact
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 
 });
