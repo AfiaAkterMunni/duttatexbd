@@ -82,6 +82,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     // Dashboard product
     Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');
     Route::get('/product/create', [DashboardProductController::class, 'create'])->name('product.create');
+    Route::post('/product/store', [DashboardProductController::class, 'store'])->name('product.store');
     Route::get('/product/edit', [DashboardProductController::class, 'edit'])->name('product.edit');
 
     // Dashboard Quick Inquiry
