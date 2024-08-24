@@ -57,7 +57,7 @@
         <span class="text-gray-700 dark:text-gray-400">Product Description</span>
         <textarea name="description" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" rows="3" placeholder="Enter some long form content."></textarea>
         @error('description')
-        <p class="text-red-500">{{ $description }}</p>
+        <p class="text-red-500">{{ $message }}</p>
         @enderror
       </label>
       <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">

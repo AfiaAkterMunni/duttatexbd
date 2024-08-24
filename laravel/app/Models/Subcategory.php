@@ -11,11 +11,19 @@ class Subcategory extends Model
     protected $fillable = ['name', 'image','category_id'];
 
      /**
-     * Get the comment data for the Blog.
+     * Get the category data for the Subcategory.
      */
-    
+
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+    /**
+     * Get the product data for the subcategory.
+     */
+
+     public function product()
+     {
+         return $this->hasMany(Product::class);
+     }
 }

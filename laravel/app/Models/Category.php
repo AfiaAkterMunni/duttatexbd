@@ -12,10 +12,19 @@ class Category extends Model
     protected $fillable = ['name', 'image'];
 
     /**
-     * Get the comment data for the Blog.
+     * Get the subcategory data for the category.
      */
     public function subcategories()
     {
         return $this->hasMany(Subcategory::class);
     }
+
+    /**
+     * Get the product data for the Category.
+     */
+
+     public function product()
+     {
+         return $this->hasMany(Product::class);
+     }
 }

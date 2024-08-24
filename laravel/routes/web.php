@@ -83,7 +83,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');
     Route::get('/product/create', [DashboardProductController::class, 'create'])->name('product.create');
     Route::post('/product/store', [DashboardProductController::class, 'store'])->name('product.store');
-    Route::get('/product/edit', [DashboardProductController::class, 'edit'])->name('product.edit');
+    Route::get('/product/edit/{id}', [DashboardProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/{id}', [DashboardProductController::class, 'update'])->name('product.update');
+    Route::get('/product/delete/{id}', [DashboardProductController::class, 'delete'])->name('product.delete');
+
 
     // Dashboard Quick Inquiry
     Route::get('/quickinquiry', [QuickInquiryController::class, 'show'])->name('quickinquiry');
