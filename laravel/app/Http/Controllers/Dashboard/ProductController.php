@@ -49,28 +49,30 @@ class ProductController extends Controller
     }
     public function update(Request $request, $id)
     {
-        dd($request);
         $product = Product::find($id);
-        // $data = [
-        //     'name' => $request->input('name')
-        // ];
+        $data = [
+            'name' => $request->input('name'),
+            'category_id' => $request->input('category'),
+            'subcategory_id' => $request->input('subcategory'),
+            'description' => $request->input('description')
+        ];
 
-        // if($request->hasFile('image'))
-        // {
-        //     $oldImage = $category->image;
-        //     if($oldImage)
-        //     {
-        //         unlink('uploads/categories/'.$oldImage);
-        //     }
-        //     $image = $request->file('image');
-        //     $name = time().'.'.$image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/uploads/categories');
-        //     $image->move($destinationPath, $name);
-        //     $data['image'] = $name;
-        // }
+        if($request->hasFile('image'))
+        {
+            $oldImage = $product->image;
+            if($oldImage)
+            {
+                unlink('uploads/products/'.$oldImage);
+            }
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/products');
+            $image->move($destinationPath, $name);
+            $data['image'] = $name;
+        }
 
-        // $category->update($data);
-        // return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
+        $product->update($data);
+        return redirect(route('product.index'))->with('success', 'Product Updated Successfully!!!');
     }
     public function delete(Request $request, $id)
     {
