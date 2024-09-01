@@ -68,7 +68,7 @@
                                                     </path>
                                                 </svg>
                                             </a>
-                                            <a href="#" name="{{ $subcategory->id }}"
+                                            <!-- <a href="#" name="{{ $subcategory->id }}"
                                                 class="openModalButton flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -77,7 +77,7 @@
                                                         d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                                         clip-rule="evenodd"></path>
                                                 </svg>
-                                            </a>
+                                            </a> -->
                                         </div>
                                     </td>
                                 </tr>
@@ -159,9 +159,8 @@
         </div>
     </main>
     <!-- Modal blur box  -->
-    <div class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center hidden"
+    <!-- <div class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center hidden"
         id="modal">
-        <!-- Modal Box -->
         <div class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
             role="dialog">
             <header class="flex justify-end">
@@ -175,13 +174,10 @@
                     </svg>
                 </button>
             </header>
-            <!-- Modal body -->
             <div class="mt-4 mb-6">
-                <!-- Modal title -->
                 <p class="mb-2 text-lg font-semibold text-gray-700 dark:text-gray-300">
                     Confirm Delete
                 </p>
-                <!-- Modal description -->
                 <p class="text-sm text-gray-700 dark:text-gray-400">
                     Are you sure you want delete this item?
                 </p>
@@ -198,7 +194,7 @@
                 </a>
             </footer>
         </div>
-    </div>
+    </div> -->
 @endsection
 
 @section('js')
@@ -207,33 +203,5 @@
             let toaster = document.getElementById('toaster');
             toaster.style.display = 'none';
         }
-        //delete modal
-        let modal = document.querySelector('#modal');
-        let openModalButton = document.querySelectorAll('.openModalButton');
-        let closeModalButton1 = document.querySelector('#closeModalButton1');
-        let closeModalButton2 = document.querySelector('#closeModalButton2');
-        let confirmDeleteButton = document.querySelector('#confirmDeleteButton');
-        openModalButton.forEach(button => {
-            button.addEventListener('click', function() {
-                const id = button.getAttribute('name');
-                console.log(id);
-                confirmDeleteButton.setAttribute('href',
-                    "{{ route('subcategory.delete', ['id' => ':id']) }}".replace(":id", id));
-                if (modal.classList.contains('hidden')) {
-                    modal.classList.remove('hidden');
-                }
-            })
-        });
-
-        closeModalButton1.addEventListener('click', function() {
-            if (!modal.classList.contains('hidden')) {
-                modal.classList.add('hidden');
-            }
-        })
-        closeModalButton2.addEventListener('click', function() {
-            if (!modal.classList.contains('hidden')) {
-                modal.classList.add('hidden');
-            }
-        })
     </script>
 @endsection

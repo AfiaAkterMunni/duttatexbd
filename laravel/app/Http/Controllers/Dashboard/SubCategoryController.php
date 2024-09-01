@@ -71,19 +71,14 @@ class SubCategoryController extends Controller
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Updated Successfully!!!');
     }
 
-    public function delete(Request $request, $id)
-    {
-        /**
-         * TODO: This function algorithm
-         * 1. Set null to all product.subcategory_id where deleted subcategory match
-         * 2. Finally Delete subcategory and subcategory image
-         */
-        $subcategory = Subcategory::find($id);
-        if($subcategory->image)
-        {
-            unlink('uploads/subcategories/'.$subcategory->image);
-        }
-        $subcategory->delete();
-        return redirect(route('subcategory.index'))->with('success', 'Subcategory Deleted Successfully!!!');
-    }
+    // public function delete(Request $request, $id)
+    // {
+    //     $subcategory = Subcategory::find($id);
+    //     if($subcategory->image)
+    //     {
+    //         unlink('uploads/subcategories/'.$subcategory->image);
+    //     }
+    //     $subcategory->delete();
+    //     return redirect(route('subcategory.index'))->with('success', 'Subcategory Deleted Successfully!!!');
+    // }
 }

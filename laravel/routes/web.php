@@ -69,7 +69,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::post('/category/store', [DashboardCategoryController::class, 'store'])->name('category.store');
     Route::get('/category/edit/{id}', [DashboardCategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
-    Route::get('/category/delete/{id}', [DashboardCategoryController::class, 'delete'])->name('category.delete');
+    // Route::get('/category/delete/{id}', [DashboardCategoryController::class, 'delete'])->name('category.delete');
 
     // Dashboard subcategory
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'index'])->name('subcategory.index');
@@ -77,7 +77,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::post('/subcategory/store', [DashboardSubCategoryController::class, 'store'])->name('subcategory.store');
     Route::get('/subcategory/edit/{id}', [DashboardSubCategoryController::class, 'edit'])->name('subcategory.edit');
     Route::post('/subcategory/update/{id}', [DashboardSubCategoryController::class, 'update'])->name('subcategory.update');
-    Route::get('/subcategory/delete/{id}', [DashboardSubCategoryController::class, 'delete'])->name('subcategory.delete');
+    // Route::get('/subcategory/delete/{id}', [DashboardSubCategoryController::class, 'delete'])->name('subcategory.delete');
 
     // Dashboard product
     Route::get('/product', [DashboardProductController::class, 'show'])->name('product.index');

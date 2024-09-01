@@ -65,15 +65,15 @@ class CategoryController extends Controller
         return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
     }
 
-    public function delete(Request $request, $id)
-    {
-        $category = Category::find($id);
-        if($category->image)
-        {
-            unlink('uploads/categories/'.$category->image);
-        }
-        $category->delete();
-        return redirect(route('category.index'))->with('success', 'Category Deleted Successfully!!!');
-    }
+    // public function delete(Request $request, $id)
+    // {
+    //     $category = Category::find($id);
+    //     if($category->image)
+    //     {
+    //         unlink('uploads/categories/'.$category->image);
+    //     }
+    //     $category->delete();
+    //     return redirect(route('category.index'))->with('success', 'Category Deleted Successfully!!!');
+    // }
 
 }
