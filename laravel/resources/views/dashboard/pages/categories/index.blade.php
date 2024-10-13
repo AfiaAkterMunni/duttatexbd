@@ -82,12 +82,22 @@
                         </tbody>
                     </table>
                 </div>
-                <div
+                {{-- <div
                     class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                     <span class="flex items-center col-span-3">
                         Showing 21-30 of 100
                     </span>
                     <span class="col-span-2"></span>
+                    <!-- Pagination -->
+                    <div>
+                        {{ $categories->links('dashboard.includes.paginator') }}
+                    </div>
+                </div> --}}
+                <div class="flex justify-between py-3 px-4 text-xs tracking-wide border-t text-gray-500 dark:text-gray-400 font-semibold dark:border-gray-700 ">
+                    <div class="flex items-center col-span-3">
+                        Showing 21-30 of 100
+                    </div>
+
                     <!-- Pagination -->
                     <div>
                         {{ $categories->links('dashboard.includes.paginator') }}
