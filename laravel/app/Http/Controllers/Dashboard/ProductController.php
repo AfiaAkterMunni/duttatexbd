@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function show()
     {
-        $products = Product::all();
+        $products = Product::paginate(5);
         return view('dashboard.pages.products.index', ['products' => $products]);
     }
 
