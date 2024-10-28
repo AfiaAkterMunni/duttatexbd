@@ -89,7 +89,7 @@
 
                     <!-- Pagination -->
                     <div>
-                        {{ $categories->links('dashboard.includes.paginator') }}
+                        {{ $categories->links('includes.paginator') }}
                     </div>
                 </div>
             </div>

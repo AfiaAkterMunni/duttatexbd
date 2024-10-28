@@ -139,79 +139,14 @@
   </div>
   <div class="lg:basis-4/5 basis-4/6">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 py-10 lg:px-16 md:px-16 pr-14 pl-8 text-center uppercase text-lg">
-      <div>
+    @foreach($subcategories as $subcategory)
+    <div>
         <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Men</h3>
+          <img src="{{asset('uploads/subcategories/' . $subcategory->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+          <h3 class="pt-3">{{$subcategory->name}}</h3>
         </a>
       </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/1.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Women</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/3.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Kids</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/5.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Promotional</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/6.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/7.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/8.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-      <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('images/4.jpg')}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">Shirt</h3>
-        </a>
-      </div>
-
+      @endforeach
     </div>
   </div>
 </div>

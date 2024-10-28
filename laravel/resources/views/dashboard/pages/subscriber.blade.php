@@ -77,7 +77,7 @@
 
         <!-- Pagination -->
         <div>
-          {{ $subscribers->links('dashboard.includes.paginator') }}
+          {{ $subscribers->links('includes.paginator') }}
         </div>
       </div>
     </div>

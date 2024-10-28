@@ -80,7 +80,7 @@
 
                 <!-- Pagination -->
                 <div>
-                    {{ $contacts->links('dashboard.includes.paginator') }}
+                    {{ $contacts->links('includes.paginator') }}
                 </div>
             </div>
         </div>

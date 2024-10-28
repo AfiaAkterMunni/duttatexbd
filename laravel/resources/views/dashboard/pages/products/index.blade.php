@@ -93,7 +93,7 @@
 
                     <!-- Pagination -->
                     <div>
-                        {{ $products->links('dashboard.includes.paginator') }}
+                        {{ $products->links('includes.paginator') }}
                     </div>
                 </div>
             </div>
