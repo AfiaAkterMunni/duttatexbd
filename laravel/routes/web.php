@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategory
 use App\Http\Controllers\Dashboard\SubscriberController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsByCategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Auth;
@@ -46,8 +47,11 @@ Route::post('/contact/store', [ContactController::class, 'store'])->name('contac
 // frontend category page route
 Route::get('/category', [CategoryController::class, 'show'])->name('category');
 
-// frontend category page route
-Route::get('/subcategory', [SubcategoryController::class, 'show'])->name('subcategory');
+// frontend subcategory page route
+Route::get('/subcategory/{id}', [SubcategoryController::class, 'show'])->name('subcategory');
+
+// frontend Products by Category page route
+Route::get('/productsByCategory', [ProductsByCategoryController::class, 'show'])->name('productsByCategory');
 
 // frontend product page route
 Route::get('/product', [ProductController::class, 'show'])->name('product');

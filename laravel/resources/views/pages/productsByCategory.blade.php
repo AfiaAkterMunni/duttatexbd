@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'SubCategory')
+@section('title', 'Products')
 @section('content')
 <!-- Category sidebar Start-->
 <div class="flex flex-row">
@@ -19,27 +19,21 @@
     </ul>
   </div>
   <div class="lg:basis-4/5 basis-4/6">
-  @if(count($subcategories)>0)
     <!-- Product Categories title Start-->
     <div class="px-16 pt-8 pb-2">
-      <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400">Product Subcategories</h4>
+      <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400"><a href="{{route('subcategory')}}">Products By Category</a></h4>
     </div>
     <!-- Product Categories title End-->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 py-10 lg:px-16 md:px-16 pr-14 pl-8 text-center uppercase text-lg">
       @foreach($subcategories as $subcategory)
       <div>
-        <a href="{{route('productsByCategory')}}">
+        <a href="{{route('product')}}">
           <img src="{{asset('uploads/subcategories/' . $subcategory->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
           <h3 class="pt-3">{{$subcategory->name}}</h3>
         </a>
       </div>
       @endforeach
     </div>
-    @else
-    <div class="pt-12">
-      <h6 class="text-3xl text-center text-gray-500">There is no product available in this category!!!</h6>
-    </div>
-    @endif
   </div>
 </div>
 <!-- Category sidebar End-->
