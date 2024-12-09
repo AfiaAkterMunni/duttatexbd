@@ -37,7 +37,7 @@
                         Total Product
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        46
+                        {{count($products)}}
                     </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                         Total Categories
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        376
+                    {{count($categories)}}
                     </p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                         Total Subcategories
                     </p>
                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                        35
+                    {{count($subcategories)}}
                     </p>
                 </div>
             </div>
