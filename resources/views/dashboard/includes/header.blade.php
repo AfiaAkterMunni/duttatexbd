@@ -25,7 +25,7 @@
                     </div>
                     <input
                         class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
-                        type="text" placeholder="Search for Category" aria-label="Search" />
+                        type="text" placeholder="@if(strcmp(Route::currentRouteName(), 'category.index') == 0) Search for Category @elseif(strcmp(Route::currentRouteName(), 'subcategory.index') == 0) Search for Subcategory @elseif(strcmp(Route::currentRouteName(), 'product.index') == 0) Search for Product @elseif(strcmp(Route::currentRouteName(), 'contact.index') == 0) Search for Contact @elseif(strcmp(Route::currentRouteName(), 'subscriber') == 0) Search for Subscriber @elseif(strcmp(Route::currentRouteName(), 'quickinquiry') == 0) Search for Quick Inquiry @endif" aria-label="Search" />
                 </div>
             </div>
         @endif
