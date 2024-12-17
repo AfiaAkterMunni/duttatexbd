@@ -56,7 +56,7 @@
                                             alt="" loading="lazy">
                                     </td>
                                     <td class="px-4 py-3 text-sm">{{ $product->category->name }}</td>
-                                    <td class="px-4 py-3 text-sm">{{ $product->subcategory->name }}</td>
+                                    <td class="px-4 py-3 text-sm">@if($product->subcategory ){{ $product->subcategory->name }} @endif</td>
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <a href="{{ route('product.edit', ['id' => $product->id]) }}"

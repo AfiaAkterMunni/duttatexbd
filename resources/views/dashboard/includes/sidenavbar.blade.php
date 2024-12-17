@@ -4,10 +4,10 @@
         <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="{{route('dashboard')}}">
             DuttaTexBD
         </a>
-    
+
         <ul class="mt-6 sidebar">
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'dashboard') == 0) ? 'active:bg-red-500' : '' }}">
-                <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100" href="{{route('dashboard')}}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'dashboard') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
+                <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('dashboard')}}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                         </path>
@@ -15,7 +15,7 @@
                     <span class="ml-4">Dashboard</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'category.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'category.index') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('category.index')}}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -24,7 +24,7 @@
                     <span class="ml-4">Categories</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'subcategory.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'subcategory.index') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('subcategory.index')}}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
@@ -33,7 +33,7 @@
                     <span class="ml-4">SubCategories</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'product.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'product.index') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('product.index')}}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
@@ -42,7 +42,7 @@
                     <span class="ml-4">Products</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'contact.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'contact.index') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('contact.index')}}">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
@@ -50,7 +50,7 @@
                     <span class="ml-4">Contacts</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'category.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'subscriber') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('subscriber')}}">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                         <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -58,7 +58,7 @@
                     <span class="ml-4">Subscribers</span>
                 </a>
             </li>
-            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'category.index') == 0) ? 'active:bg-red-500' : '' }}">
+            <li class="relative px-6 py-3 {{ (strcmp(Route::currentRouteName(), 'quickinquiry') == 0) ? 'text-gray-900 dark:text-gray-100' : '' }}">
                 <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('quickinquiry')}}">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
