@@ -28,7 +28,7 @@ class ContactController extends Controller
         ];
         Contact::create($data);
         return redirect(route('contact'))->with('success', 'Your Message Sent Successfully!!!');
-        
+
     }
     public function index()
     {
@@ -46,4 +46,8 @@ class ContactController extends Controller
         return redirect(route('contact.index'))->with('success', 'Deleted Successfully!!!');
     }
 
+    public function search(Request $request)
+    {
+        dd($request);
+    }
 }

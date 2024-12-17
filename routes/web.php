@@ -103,6 +103,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     // Dashboard Contact
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
+    Route::get('/contact/search', [ContactController::class, 'search'])->name('contact.search');
 
 });
 
