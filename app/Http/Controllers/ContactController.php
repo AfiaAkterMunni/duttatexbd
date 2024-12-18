@@ -48,6 +48,13 @@ class ContactController extends Controller
 
     public function search(Request $request)
     {
-        dd($request);
+        $contacts = Contact::where('name', 'LIKE', "$request->search")
+            ->orWhere('email', 'LIKE', "%$request->search%")
+            ->orWhere('phone', 'LIKE', "$request->search")
+            ->paginate(15);
+
+        return view('dashboard.pages.contact', ['contacts' => $contacts]);
     }
+
+
 }
