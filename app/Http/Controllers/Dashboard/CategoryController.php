@@ -65,6 +65,11 @@ class CategoryController extends Controller
         return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
     }
 
+    public function search(Request $request)
+    {
+        $categories = Category::where('name', 'LIKE', "$request->search")->paginate(15);
+        return view('dashboard.pages.categories.index', ['categories' => $categories]);
+    }
     // public function delete(Request $request, $id)
     // {
     //     $category = Category::find($id);

@@ -75,6 +75,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/category/edit/{id}', [DashboardCategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
     // Route::get('/category/delete/{id}', [DashboardCategoryController::class, 'delete'])->name('category.delete');
+    Route::get('/category/search', [DashboardCategoryController::class, 'search'])->name('category.search');
+
 
     // Dashboard subcategory
     Route::get('/subcategory', [DashboardSubCategoryController::class, 'index'])->name('subcategory.index');
