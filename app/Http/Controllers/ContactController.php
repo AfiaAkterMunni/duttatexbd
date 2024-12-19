@@ -32,7 +32,7 @@ class ContactController extends Controller
     }
     public function index()
     {
-        $contacts = Contact::latest()->paginate(5);
+        $contacts = Contact::latest()->paginate(15);
         return view('dashboard.pages.contact', ['contacts' => $contacts]);
     }
     public function delete($id)

@@ -11,7 +11,7 @@ class SubscriberController extends Controller
 {
     public function index()
     {
-        $subscribers = Subscriber::latest()->paginate(5);
+        $subscribers = Subscriber::latest()->paginate(15);
         return view('dashboard.pages.subscriber', ['subscribers' => $subscribers]);
     }
     public function store(StoreSubscribeRequest $request)
