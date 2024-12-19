@@ -94,6 +94,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/product/edit/{id}', [DashboardProductController::class, 'edit'])->name('product.edit');
     Route::post('/product/update/{id}', [DashboardProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id}', [DashboardProductController::class, 'delete'])->name('product.delete');
+    Route::get('/product/search', [DashboardProductController::class, 'search'])->name('product.search');
 
 
     // Dashboard Quick Inquiry
