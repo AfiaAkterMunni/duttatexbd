@@ -70,7 +70,11 @@ class SubCategoryController extends Controller
         $subcategory->update($data);
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Updated Successfully!!!');
     }
-
+    public function search(Request $request)
+    {
+        $subcategories = Subcategory::where('name', 'LIKE', "$request->search")->paginate(15);
+        return view('dashboard.pages.subcategories.index', ['subcategories' => $subcategories]);
+    }
     // public function delete(Request $request, $id)
     // {
     //     $subcategory = Subcategory::find($id);

@@ -1,7 +1,7 @@
 <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
     {{-- <form action="@if(strcmp(Route::currentRouteName(), 'category.index') == 0) {{route(category.search)}} @elseif(strcmp(Route::currentRouteName(), 'subcategory.index') == 0) {{route(subcategory.search)}} @elseif(strcmp(Route::currentRouteName(), 'product.index') == 0) {{route(product.search)}} @elseif(strcmp(Route::currentRouteName(), 'contact.index') == 0) {{route(contact.search)}} @elseif(strcmp(Route::currentRouteName(), 'subscriber') == 0) {{route(subscriber.search)}} @elseif(strcmp(Route::currentRouteName(), 'quickinquiry') == 0) {{route(quickinquiry.search)}} @endif" method="get"> --}}
 
-        <form action="@if(strcmp(Route::currentRouteName(), 'category.index') == 0) {{route('category.search')}} @elseif(strcmp(Route::currentRouteName(), 'contact.index') == 0) {{route('contact.search')}} @endif" method="get">
+        <form action="@if(strcmp(Route::currentRouteName(), 'category.index') == 0) {{route('category.search')}} @elseif(strcmp(Route::currentRouteName(), 'contact.index') == 0) {{route('contact.search')}} @elseif(strcmp(Route::currentRouteName(), 'subcategory.index') == 0) {{route('subcategory.search')}} @endif" method="get">
         <div class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
             <!-- Mobile hamburger -->
             <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
