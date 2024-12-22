@@ -82,18 +82,15 @@
         CKEDITOR.replace('description');
 
         function showSubcategory(str) {
-            console.log(str);
-
             if (str == "") {
                 document.getElementById("txtHint").innerHTML = "";
                 return;
             }
-
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
                 document.getElementById("txtHint").innerHTML = this.va;
             }
-            xhttp.open("GET", "getcustomer.php?q=" + str);
+            xhttp.open("GET", "{route('categoryBySubcategory')}" + str);
             xhttp.send();
         }
     </script>
