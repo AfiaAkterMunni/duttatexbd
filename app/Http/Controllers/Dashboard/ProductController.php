@@ -96,5 +96,5 @@ class ProductController extends Controller
         // $products = Product::where('name', 'LIKE', "$request->search")->paginate(15);
         // return view('dashboard.pages.products.index', ['products' => $products]);
     }
-    
+
 }

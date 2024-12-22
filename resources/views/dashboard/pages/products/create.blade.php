@@ -90,7 +90,11 @@
             xhttp.onload = function() {
                 document.getElementById("txtHint").innerHTML = this.va;
             }
-            xhttp.open("GET", "{route('categoryBySubcategory')}" + str);
+            let url = "{{route('categoryBySubcategory',['id'=> ':id'])}}";
+            url = url.replace(':id', str);
+            console.log(url);
+            // const url = <?php echo route('categoryBySubcategory',['id' => 'str']);?>;
+            xhttp.open("GET", url);
             xhttp.send();
         }
     </script>
