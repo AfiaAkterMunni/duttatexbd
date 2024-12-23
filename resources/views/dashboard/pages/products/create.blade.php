@@ -88,11 +88,13 @@
             }
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function() {
-                document.getElementById("txtHint").innerHTML = this.va;
+                document.getElementById("txtHint").innerHTML = this.$subcategories;
+                console.log(this.$subcategories);
             }
-            let url = "{{route('categoryBySubcategory',['id'=> ':id'])}}";
-            url = url.replace(':id', str);
-            console.log(url);
+            let url = "{{ url('dashboard/categoryBySubcategory/') }}/"+str;
+
+            // let url = "{{route('categoryBySubcategory',['id'=> ':id'])}}";
+            // url = url.replace(':id', str);
             // const url = <?php echo route('categoryBySubcategory',['id' => 'str']);?>;
             xhttp.open("GET", url);
             xhttp.send();
