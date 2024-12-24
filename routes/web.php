@@ -10,6 +10,7 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProductControll
 use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsByCategoryController;
@@ -109,6 +110,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
     Route::get('/contact/search', [ContactController::class, 'search'])->name('contact.search');
+
+    // Dashboard Gallery
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+
 
 });
 
