@@ -10,7 +10,7 @@ use App\Http\Controllers\Dashboard\ProductController as DashboardProductControll
 use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
-use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsByCategoryController;

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGalleryRequest;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $galleries = Gallery::paginate(18);
+        $galleries = Gallery::paginate(12);
         return view('dashboard.pages.galleries.index', ['galleries' => $galleries]);
     }
 
