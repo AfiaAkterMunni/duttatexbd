@@ -32,4 +32,9 @@ class GalleryController extends Controller
         Gallery::create($data);
         return redirect(route('gallery.index'))->with('success', 'Image Added Successfully!!!');
     }
+    public function search(Request $request)
+    {
+        $galleries = Gallery::where('name', 'LIKE', "%$request->search%")->paginate(12);
+        return view('dashboard.pages.galleries.index', ['galleries' => $galleries]);
+    }
 }
