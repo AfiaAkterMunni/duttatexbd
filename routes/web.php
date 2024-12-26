@@ -113,6 +113,10 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard Gallery
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+
+
 
 
 });
