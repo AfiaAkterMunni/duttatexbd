@@ -20,8 +20,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $subcategories = Subcategory::all();
-        return view('dashboard.pages.products.create', ['categories' => $categories, 'subcategories' => $subcategories]);
+        return view('dashboard.pages.products.create', ['categories' => $categories]);
     }
 
     public function edit($id)
@@ -92,8 +91,10 @@ class ProductController extends Controller
 
     public function categoryBySubcategory($id)
     {
-        $subcategories = Subcategory::where('category_id', $id);
-        return $subcategories;
+        $subcategories = Subcategory::where('category_id', $id)->get(['id', 'name']);
+        // dd($subcategories);
+        // return $subcategories;
+        return response()->json($subcategories);
     }
 
 }

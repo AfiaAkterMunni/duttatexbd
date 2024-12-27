@@ -48,12 +48,8 @@
                         <span class="text-gray-700 dark:text-gray-400">
                             Select SubCategory
                         </span>
-                        <select name="subcategory"
+                        <select name="subcategory" id="txtHint"
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                            <option disabled selected>-- Select a Subcategory --</option>
-                            @foreach ($subcategories as $subcategory)
-                                <option id="txtHint" value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
-                            @endforeach
                         </select>
                         @error('subcategory')
                             <p class="text-red-500">{{ $message }}</p>
@@ -87,17 +83,29 @@
                 return;
             }
             const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                document.getElementById("txtHint").innerHTML = this.$subcategories;
-                console.log(this.$subcategories);
-            }
-            let url = "{{ url('dashboard/categoryBySubcategory/') }}/"+str;
 
-            // let url = "{{route('categoryBySubcategory',['id'=> ':id'])}}";
-            // url = url.replace(':id', str);
-            // const url = <?php echo route('categoryBySubcategory',['id' => 'str']);?>;
+            let url = "{{ url('dashboard/categoryBySubcategory/') }}/"+str;
             xhttp.open("GET", url);
             xhttp.send();
+            xhttp.onload = function() {
+                let subcategories = JSON.parse(this.responseText);
+                document.getElementById("txtHint").innerHTML= "<option disabled selected>-- Select a Subcategory --</option>";
+                console.log(subcategories.length);
+                for(let i =0; i< subcategories.length; i++) {
+                    console.log(subcategories[i]);
+                    let option = document.createElement('option');
+                    option.value = subcategories[i].id;
+                    option.textContent = subcategories[i].name;
+                    console.log(option);
+                    document.getElementById("txtHint").appendChild(option);
+                }
+                // console.log(this.responseText);
+                // console.log(JSON.parse(this.responseText));
+                // for(let i =0; i< this.responseText.length; i++) {
+                //     console.log(this.responseText[i]);
+                // }
+                // console.log(this.$subcategories);
+            }
         }
     </script>
 @endsection
