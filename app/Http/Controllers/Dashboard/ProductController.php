@@ -27,7 +27,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $categories = Category::all();
-        $subcategories = Subcategory::all();
+        $subcategories = Subcategory::where('category_id', $product->category_id)->get();
         return view('dashboard.pages.products.edit', ['product' => $product, 'categories' => $categories, 'subcategories' => $subcategories]);
     }
 
