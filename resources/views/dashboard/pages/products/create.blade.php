@@ -48,8 +48,9 @@
                         <span class="text-gray-700 dark:text-gray-400">
                             Select SubCategory
                         </span>
-                        <select name="subcategory" id="txtHint"
+                        <select name="subcategory" id="subcategorySelect"
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                            <option disabled selected>-- Select a Subcategory --</option>
                         </select>
                         @error('subcategory')
                             <p class="text-red-500">{{ $message }}</p>
@@ -73,38 +74,35 @@
         </div>
     </main>
 
-    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('description');
 
-        function showSubcategory(str) {
-            if (str == "") {
-                document.getElementById("txtHint").innerHTML = "";
+        function showSubcategory(categoryId) {
+            if (categoryId == "") {
                 return;
             }
+
             const xhttp = new XMLHttpRequest();
 
-            let url = "{{ url('dashboard/categoryBySubcategory/') }}/"+str;
+            let url = "{{ url('dashboard/categoryBySubcategory') }}/" + categoryId;
             xhttp.open("GET", url);
             xhttp.send();
             xhttp.onload = function() {
-                let subcategories = JSON.parse(this.responseText);
-                document.getElementById("txtHint").innerHTML= "<option disabled selected>-- Select a Subcategory --</option>";
-                console.log(subcategories.length);
-                for(let i =0; i< subcategories.length; i++) {
-                    console.log(subcategories[i]);
+                // console.log(this.responseText);
+                let subcategories = JSON.parse(this.responseText); //string to object
+                // console.log(subcategories);
+                document.getElementById("subcategorySelect").innerHTML= "<option disabled selected>-- Select a Subcategory --</option>";
+                // console.log(subcategories.length);
+                for(let i = 0; i < subcategories.length; i++) {
+                    // console.log(subcategories[i]);
                     let option = document.createElement('option');
+                    // console.log(option);
                     option.value = subcategories[i].id;
                     option.textContent = subcategories[i].name;
-                    console.log(option);
-                    document.getElementById("txtHint").appendChild(option);
+                    // console.log(option);
+                    document.getElementById("subcategorySelect").appendChild(option);
                 }
-                // console.log(this.responseText);
-                // console.log(JSON.parse(this.responseText));
-                // for(let i =0; i< this.responseText.length; i++) {
-                //     console.log(this.responseText[i]);
-                // }
-                // console.log(this.$subcategories);
             }
         }
     </script>

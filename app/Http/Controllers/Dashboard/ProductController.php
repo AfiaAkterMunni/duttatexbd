@@ -92,8 +92,6 @@ class ProductController extends Controller
     public function categoryBySubcategory($id)
     {
         $subcategories = Subcategory::where('category_id', $id)->get(['id', 'name']);
-        // dd($subcategories);
-        // return $subcategories;
         return response()->json($subcategories);
     }
 
