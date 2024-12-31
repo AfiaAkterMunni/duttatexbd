@@ -83,19 +83,26 @@
         if (categoryId == "") {
             return;
         }
+        // console.log(categoryId);
         const xhttp = new XMLHttpRequest();
+
         let url = "{{url('dashboard/categoryBySubcategory')}}/" + categoryId;
         xhttp.open("GET", url);
         xhttp.send();
         xhttp.onload = function() {
+            console.log(this.responseText);
+
             let subcategories = JSON.parse(this.responseText);
+            console.log(subcategories);
+
+            document.getElementById("subcategorySelect").innerHTML= "<option disabled selected>-- Select a Subcategory --</option>";
             for (let i = 0; i < subcategories.length; i++) {
                 let option = document.createElement('option')
                 option.value = subcategories[i].id;
-                option.name = subcategories[i].name;
-                // console.log(option);
+                option.textContent = subcategories[i].name;
+                console.log(option);
             }
-            // document.getElementById("subcategorySelect").innerHTML = this.responseText;
+            document.getElementById("subcategorySelect").appendChild(option);
         }
 
     }
