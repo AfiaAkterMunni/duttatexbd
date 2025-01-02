@@ -36,7 +36,7 @@
                     </span>
                     <select name="category" onchange="showSubcategory(this.value)"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                        <option disabled>-- Select a Category --</option>
+                        <option disabled selected>-- Select a Category --</option>
                         @foreach ($categories as $category)
                         <option @if ($category->id === $product->category_id) selected @endif value="{{ $category->id }}">
                             {{ $category->name }}
@@ -53,7 +53,7 @@
                     </span>
                     <select name="subcategory" id="subcategorySelect"
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
-                        <option disabled>-- Select a Subcategory --</option>
+                        <option disabled selected>-- Select a Subcategory --</option>
                         @foreach ($subcategories as $subcategory)
                         <option @if ($subcategory->id === $product->subcategory_id) selected @endif value="{{ $subcategory->id }}">
                             {{ $subcategory->name }}
@@ -89,26 +89,21 @@
         if (categoryId == "") {
             return;
         }
-        // console.log(categoryId);
+
         const xhttp = new XMLHttpRequest();
 
         let url = "{{url('dashboard/categoryBySubcategory')}}/" + categoryId;
         xhttp.open("GET", url);
         xhttp.send();
         xhttp.onload = function() {
-            console.log(this.responseText);
-
             let subcategories = JSON.parse(this.responseText);
-            console.log(subcategories);
-
             document.getElementById("subcategorySelect").innerHTML= "<option disabled selected>-- Select a Subcategory --</option>";
             for (let i = 0; i < subcategories.length; i++) {
-                let option = document.createElement('option')
+                let option = document.createElement('option');
                 option.value = subcategories[i].id;
                 option.textContent = subcategories[i].name;
-                console.log(option);
+                document.getElementById("subcategorySelect").appendChild(option);
             }
-            document.getElementById("subcategorySelect").appendChild(option);
         }
 
     }
