@@ -116,7 +116,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
     Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery/search', [GalleryController::class, 'search'])->name('gallery.search');
-
+    Route::get('/gallery/paginate', [GalleryController::class, 'paginate'])->name('gallery.paginate');
 
 
 

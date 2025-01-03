@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -18,7 +19,8 @@ class CategoryController extends Controller
 
     public function create()
     {
-        return view('dashboard.pages.categories.create');
+        $galleries = Gallery::latest()->paginate(6);
+        return view('dashboard.pages.categories.create', ['galleries' => $galleries]);
     }
 
     public function edit($id)
@@ -28,6 +30,7 @@ class CategoryController extends Controller
     }
 
     public function store(StoreCategoryRequest $request) {
+        dd($request->all());
         $image = $request->file('image');
         $name = time().'.'.$image->getClientOriginalExtension();
         $destinationPath = public_path('/uploads/categories');

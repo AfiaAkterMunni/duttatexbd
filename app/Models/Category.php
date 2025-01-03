@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name', 'gallery_id'];
 
     /**
      * Get the subcategory data for the category.
@@ -23,8 +23,16 @@ class Category extends Model
      * Get the product data for the Category.
      */
 
-     public function product()
-     {
-         return $this->hasMany(Product::class);
-     }
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    /**
+     * Get the gallery data for the Category.
+     */
+    public function gallery()
+    {
+        return $this->hasOne(Gallery::class);
+    }
 }

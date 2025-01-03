@@ -29,7 +29,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|unique:categories,name',
-            'image' => 'required|mimes:png,jpg'
+            'gallery_id' => 'required|integer'
         ];
     }
 }
