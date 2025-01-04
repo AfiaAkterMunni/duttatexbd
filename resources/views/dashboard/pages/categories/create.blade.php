@@ -89,8 +89,10 @@
             </div>
             <footer
                 class="flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800">
-                <button onclick="nextPage()"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 bg-gray-500 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray">
+                <button id="prevPage" style="display: none;" class="w-full px-5 py-3 text-sm font-medium leading-5 bg-gray-500 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray">
+                    Previous
+                </button>
+                <button id="nextPage" class="w-full px-5 py-3 text-sm font-medium leading-5 bg-gray-500 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray">
                     Next
                 </button>
             </footer>
@@ -127,28 +129,70 @@
         });
 
         //pagination
-        let pageNumber = 2;
+        let nextPage = 2;
+        let prevPage = null;
+        let lastPage = null;
+        let nextPageButton = document.getElementById('nextPage');
+        let prevPageButton = document.getElementById('prevPage');
 
-        function nextPage() {
+        nextPageButton.addEventListener('click', function() {
             const xhttp = new XMLHttpRequest();
-            let url = "{{ url('dashboard/gallery/paginate') }}" + "?page=" + pageNumber;
-            console.log(url);
-
+            let url = "{{ url('dashboard/gallery/paginate') }}" + "?page=" + nextPage;
             xhttp.open('GET', url);
             xhttp.send();
             xhttp.onload = function() {
                 let response = JSON.parse(this.responseText);
                 let galleryCard = document.getElementById('galleryCard');
                 let cardData = "";
-                console.log(response.data)
                 response.data.forEach(element => {
-                    console.log(element);
                     let card = `<div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                     cardData += card;
                 });
                 galleryCard.innerHTML = cardData;
-
+                lastPage = response.last_page;
+                prevPage = response.current_page - 1;
+                nextPage = response.current_page + 1;
+                if (prevPage < 0) {
+                    prevPageButton.style.display = 'none';
+                } else {
+                    prevPageButton.style.display = 'block';
+                }
+                if (nextPage > lastPage) {
+                    nextPageButton.style.display = 'none';
+                } else {
+                    nextPageButton.style.display = 'block';
+                }
             };
-        }
+        });
+
+        prevPageButton.addEventListener('click', function() {
+            const xhttp = new XMLHttpRequest();
+            let url = "{{ url('dashboard/gallery/paginate') }}" + "?page=" + prevPage;
+            xhttp.open('GET', url);
+            xhttp.send();
+            xhttp.onload = function() {
+                let response = JSON.parse(this.responseText);
+                let galleryCard = document.getElementById('galleryCard');
+                let cardData = "";
+                response.data.forEach(element => {
+                    let card = `<div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                    cardData += card;
+                });
+                galleryCard.innerHTML = cardData;
+                lastPage = response.last_page;
+                prevPage = response.current_page - 1;
+                nextPage = response.current_page + 1;
+                if (prevPage < 1) {
+                    prevPageButton.style.display = 'none';
+                } else {
+                    prevPageButton.style.display = 'block';
+                }
+                if (nextPage > lastPage) {
+                    nextPageButton.style.display = 'none';
+                } else {
+                    nextPageButton.style.display = 'block';
+                }
+            };
+        });
     </script>
 @endsection

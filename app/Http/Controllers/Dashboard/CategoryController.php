@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $galleries = Gallery::latest()->paginate(6);
+        $galleries = Gallery::latest()->paginate(2);
         return view('dashboard.pages.categories.create', ['galleries' => $galleries]);
     }
 
