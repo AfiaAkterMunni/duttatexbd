@@ -71,7 +71,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard category
     Route::get('/category', [DashboardCategoryController::class, 'index'])->name('category.index');
-    Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
+    Route::get('/category/create/{galleryId?}', [DashboardCategoryController::class, 'create'])->name('category.create');
     Route::post('/category/store', [DashboardCategoryController::class, 'store'])->name('category.store');
     Route::get('/category/edit/{id}', [DashboardCategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
@@ -117,6 +117,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery/search', [GalleryController::class, 'search'])->name('gallery.search');
     Route::get('/gallery/paginate', [GalleryController::class, 'paginate'])->name('gallery.paginate');
+    Route::get('/gallery/ajaxSearch', [GalleryController::class, 'ajaxSearch'])->name('gallery.search.ajax');
 
 
 

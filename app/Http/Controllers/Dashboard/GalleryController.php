@@ -11,7 +11,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $galleries = Gallery::latest()->paginate(2);
+        $galleries = Gallery::latest()->paginate(12);
         return view('dashboard.pages.galleries.index', ['galleries' => $galleries]);
     }
 
@@ -41,7 +41,13 @@ class GalleryController extends Controller
 
     public function paginate()
     {
-        $galleries = Gallery::latest()->paginate(2);
+        $galleries = Gallery::latest()->paginate(12);
+        return response()->json($galleries);
+    }
+
+    public function ajaxSearch(Request $request)
+    {
+        $galleries = Gallery::where('name', 'LIKE', "%$request->search%")->take(12)->get();
         return response()->json($galleries);
     }
 }

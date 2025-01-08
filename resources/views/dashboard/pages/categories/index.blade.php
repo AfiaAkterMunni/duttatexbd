@@ -50,7 +50,7 @@
                                     <td class="px-4 py-3 text-sm">{{ $key + $categories->firstItem() }}</td>
                                     <td class="px-4 py-3 text-sm">{{ $category->name }}</td>
                                     <td class="px-4 py-3">
-                                        <img class="w-12" src="{{ asset('uploads/categories/' . $category->image) }}"
+                                        <img class="w-12" src="{{ asset('uploads/galleries/' . $category->gallery->image) }}"
                                             alt="" loading="lazy">
                                     </td>
                                     <td class="px-4 py-3">

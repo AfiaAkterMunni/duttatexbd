@@ -13,14 +13,22 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::latest()->paginate(15);
+        $categories = Category::with('gallery')->latest()->paginate(15);
+        // dd($categories);
         return view('dashboard.pages.categories.index', ['categories' => $categories]);
     }
 
-    public function create()
+    public function create($galleryId = null)
     {
-        $galleries = Gallery::latest()->paginate(2);
-        return view('dashboard.pages.categories.create', ['galleries' => $galleries]);
+        $gallery = null;
+        if($galleryId) {
+            $gallery = Gallery::find($galleryId);
+        }
+        $galleries = Gallery::latest()->paginate(12);
+        return view('dashboard.pages.categories.create', [
+            'galleries' => $galleries,
+            'gallery' => $gallery,
+        ]);
     }
 
     public function edit($id)
@@ -30,14 +38,9 @@ class CategoryController extends Controller
     }
 
     public function store(StoreCategoryRequest $request) {
-        dd($request->all());
-        $image = $request->file('image');
-        $name = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/uploads/categories');
-        $image->move($destinationPath, $name);
         $data = [
             'name' => $request->input('name'),
-            'image' => $name
+            'gallery_id' => $request->input('gallery_id'),
         ];
         Category::create($data);
         return redirect(route('category.index'))->with('success', 'Category Created Successfully!!!');

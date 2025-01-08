@@ -34,11 +34,11 @@
                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-gray-400 border border-transparent rounded-lg active:bg-purple-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-purple">
                                 Choose Image From Gallery
                             </a>
-                            {{-- @if ($gallery)
+                            @if ($gallery)
                                 <input type="hidden" name="gallery_id" value="{{ $gallery->id }}">
                                 <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt=""
                                     class="w-24 border-2 mt-5 p-1">
-                            @endif --}}
+                            @endif
                         </div>
                     </label>
                     <button
@@ -57,7 +57,20 @@
         <!-- Modal Box -->
         <div class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-5xl"
             role="dialog">
-            <header class="flex justify-end">
+            <header class="flex justify-between">
+                <div class="flex justify-center flex-1 lg:mr-32">
+                    <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
+                        <div class="absolute inset-y-0 flex items-center pl-2">
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <input id="searchTxt" class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" type="text" placeholder="Search using image name..." aria-label="Search" />
+                    </div>
+                    <div>
+                        <button id="searchButton" class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </div>
                 <button
                     class="inline-flex items-center justify-center w-6 h-6 text-gray-400 transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
                     aria-label="close" id="closeModalButton1">
@@ -74,16 +87,18 @@
                 <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-6" id="galleryCard">
                     @foreach ($galleries as $key => $gallery)
                         <!-- Card -->
-                        <div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                            <div>
-                                <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt="">
+                        <a href="{{route('category.create', ['galleryId' => $gallery->id])}}">
+                            <div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                                <div>
+                                    <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt="">
+                                </div>
+                                <div>
+                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">
+                                        {{ $gallery->name }}
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">
-                                    {{ $gallery->name }}
-                                </p>
-                            </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -145,7 +160,7 @@
                 let galleryCard = document.getElementById('galleryCard');
                 let cardData = "";
                 response.data.forEach(element => {
-                    let card = `<div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                    let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
                     cardData += card;
                 });
                 galleryCard.innerHTML = cardData;
@@ -175,7 +190,7 @@
                 let galleryCard = document.getElementById('galleryCard');
                 let cardData = "";
                 response.data.forEach(element => {
-                    let card = `<div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                    let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
                     cardData += card;
                 });
                 galleryCard.innerHTML = cardData;
@@ -192,6 +207,34 @@
                 } else {
                     nextPageButton.style.display = 'block';
                 }
+            };
+        });
+
+        // search functionality
+        const searchButton = document.getElementById('searchButton');
+        searchButton.addEventListener('click', function() {
+            const searchTxt = document.getElementById('searchTxt').value;
+
+            const xhttp = new XMLHttpRequest();
+            let url = "{{ url('dashboard/gallery/ajaxSearch') }}" + "?search=" + searchTxt;
+            xhttp.open('GET', url);
+            xhttp.send();
+            xhttp.onload = function() {
+                let response = JSON.parse(this.responseText);
+                let galleryCard = document.getElementById('galleryCard');
+                let cardData = "";
+                if(response.length) {
+                    // <a href="{ {route($routeName, ['galleryId' => $gallery->id])} }">
+                    response.forEach(element => {
+                        let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
+                        cardData += card;
+                    });
+                } else {
+                    cardData += `<span class="text-gray-600">No Image Found!</span>`;
+                }
+                galleryCard.innerHTML = cardData;
+                prevPageButton.style.display = 'none';
+                nextPageButton.style.display = 'none';
             };
         });
     </script>

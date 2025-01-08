@@ -33,6 +33,6 @@ class Category extends Model
      */
     public function gallery()
     {
-        return $this->hasOne(Gallery::class);
+        return $this->belongsTo(Gallery::class);
     }
 }
