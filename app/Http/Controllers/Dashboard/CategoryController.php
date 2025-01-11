@@ -30,9 +30,11 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $category = Category::find($id);
+        $galleries = Gallery::latest()->paginate(12);
+        $category = Category::with('gallery')->find($id);
         return view('dashboard.pages.categories.edit',[
-            'category' => $category
+            'category' => $category,
+            'galleries' => $galleries,
         ]);
     }
 
@@ -48,25 +50,10 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, $id)
     {
         $category = Category::find($id);
-        $data = [
-            'name' => $request->input('name')
-        ];
-
-        if($request->hasFile('image'))
-        {
-            $oldImage = $category->image;
-            if($oldImage)
-            {
-                unlink('uploads/categories/'.$oldImage);
-            }
-            $image = $request->file('image');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/categories');
-            $image->move($destinationPath, $name);
-            $data['image'] = $name;
-        }
-
-        $category->update($data);
+        $category->update([
+            'name' => $request->input('name'),
+            'gallery_id' => $request->input('gallery_id'),
+        ]);
         return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
     }
 

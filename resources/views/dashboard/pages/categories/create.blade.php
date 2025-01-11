@@ -20,13 +20,6 @@
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </label>
-                    {{-- <label class="block text-md mb-6">
-          <span class="text-gray-700 dark:text-gray-400">Category Image</span>
-          <input class="relative m-0 mt-2 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-surface transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:me-3 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-e file:border-solid file:border-inherit file:bg-transparent file:px-3  file:py-[0.32rem] file:text-surface focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none dark:border-white/70 dark:text-white  file:dark:text-white" type="file" id="formFile" name="image"/>
-          @error('image')
-            <p class="text-red-500">{{$message}}</p>
-          @enderror
-        </label> --}}
                     <label class="block text-md mb-6">
                         <span class="text-gray-700 dark:text-gray-400">Category Image</span>
                         <div class="pt-3">
@@ -108,17 +101,6 @@
                     Next
                 </button>
             </footer>
-            {{-- <footer
-                class="flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 dark:bg-gray-800">
-                <button id="closeModalButton2"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 bg-gray-500 text-white text-gray-700 transition-colors duration-150 border border-gray-300 rounded-lg dark:text-gray-400 sm:px-4 sm:py-2 sm:w-auto active:bg-transparent hover:border-gray-500 focus:border-gray-500 active:text-gray-500 focus:outline-none focus:shadow-outline-gray">
-                    Cancel
-                </button>
-                <a id="confirmDeleteButton"
-                    class="w-full px-5 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-red-600 hover:bg-red-700 focus:outline-none focus:shadow-outline-red">
-                    Delete
-                </a>
-            </footer> --}}
         </div>
     </div>
 
