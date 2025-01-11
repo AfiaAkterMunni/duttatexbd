@@ -34,6 +34,9 @@
                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-gray-400 border border-transparent rounded-lg active:bg-purple-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-purple">
                                 Choose Image From Gallery
                             </a>
+                            @error('gallery_id')
+                                <p class="text-red-500 mt-4">{{$message}}</p>
+                            @enderror
                             <div id="selectedImage"></div>
                         </div>
                     </label>
