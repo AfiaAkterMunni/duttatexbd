@@ -34,11 +34,7 @@
                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-gray-400 border border-transparent rounded-lg active:bg-purple-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-purple">
                                 Choose Image From Gallery
                             </a>
-                            @if ($gallery)
-                                <input type="hidden" name="gallery_id" value="{{ $gallery->id }}">
-                                <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt=""
-                                    class="w-24 border-2 mt-5 p-1">
-                            @endif
+                            <div id="selectedImage"></div>
                         </div>
                     </label>
                     <button
@@ -87,18 +83,16 @@
                 <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-6" id="galleryCard">
                     @foreach ($galleries as $key => $gallery)
                         <!-- Card -->
-                        <a href="{{route('category.create', ['galleryId' => $gallery->id])}}">
-                            <div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
-                                <div>
-                                    <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt="">
-                                </div>
-                                <div>
-                                    <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">
-                                        {{ $gallery->name }}
-                                    </p>
-                                </div>
+                        <div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="{{ $gallery->image }}" xGalleryId="{{ $gallery->id }}" xGalleryName="{{ $gallery->name }}" onclick="selectImage(this)" style="cursor:pointer">
+                            <div>
+                                <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt="">
                             </div>
-                        </a>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">
+                                    {{ $gallery->name }}
+                                </p>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -131,19 +125,20 @@
         let modal = document.querySelector('#modal');
         let openModalButton = document.querySelector('#openModalButton');
         let closeModalButton1 = document.querySelector('#closeModalButton1');
+
         openModalButton.addEventListener('click', function() {
             if (modal.classList.contains('hidden')) {
                 modal.classList.remove('hidden');
             }
         });
-        //modal close
+
         closeModalButton1.addEventListener('click', function() {
             if (!modal.classList.contains('hidden')) {
                 modal.classList.add('hidden');
             }
         });
 
-        //pagination
+        // Pagination Handler (both prev and next)
         let nextPage = 2;
         let prevPage = null;
         let lastPage = null;
@@ -160,7 +155,7 @@
                 let galleryCard = document.getElementById('galleryCard');
                 let cardData = "";
                 response.data.forEach(element => {
-                    let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
+                    let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                     cardData += card;
                 });
                 galleryCard.innerHTML = cardData;
@@ -190,7 +185,7 @@
                 let galleryCard = document.getElementById('galleryCard');
                 let cardData = "";
                 response.data.forEach(element => {
-                    let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
+                    let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                     cardData += card;
                 });
                 galleryCard.innerHTML = cardData;
@@ -214,28 +209,67 @@
         const searchButton = document.getElementById('searchButton');
         searchButton.addEventListener('click', function() {
             const searchTxt = document.getElementById('searchTxt').value;
+            if (searchTxt == "") {
+                document.getElementById('galleryCard').innerHTML = `
+                    @foreach ($galleries as $key => $gallery)
+                        <div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="{{ $gallery->image }}" xGalleryId="{{ $gallery->id }}" xGalleryName="{{ $gallery->name }}" onclick="selectImage(this)" style="cursor:pointer">
+                            <div>
+                                <img src="{{ asset('uploads/galleries/' . $gallery->image) }}" alt="">
+                            </div>
+                            <div>
+                                <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">
+                                    {{ $gallery->name }}
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                    `;
+                    nextPageButton.style.display = 'block';
+            } else {
+                const xhttp = new XMLHttpRequest();
+                let url = "{{ url('dashboard/gallery/ajaxSearch') }}" + "?search=" + searchTxt;
+                xhttp.open('GET', url);
+                xhttp.send();
+                xhttp.onload = function() {
+                    let response = JSON.parse(this.responseText);
+                    let galleryCard = document.getElementById('galleryCard');
+                    let cardData = "";
+                    if(response.length) {
+                        response.forEach(element => {
+                            let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                            cardData += card;
+                        });
+                    } else {
+                        cardData += `<span class="text-gray-600">No Image Found!</span>`;
+                    }
+                    galleryCard.innerHTML = cardData;
+                    prevPageButton.style.display = 'none';
+                    nextPageButton.style.display = 'none';
+                };
+            }
 
-            const xhttp = new XMLHttpRequest();
-            let url = "{{ url('dashboard/gallery/ajaxSearch') }}" + "?search=" + searchTxt;
-            xhttp.open('GET', url);
-            xhttp.send();
-            xhttp.onload = function() {
-                let response = JSON.parse(this.responseText);
-                let galleryCard = document.getElementById('galleryCard');
-                let cardData = "";
-                if(response.length) {
-                    // <a href="{ {route($routeName, ['galleryId' => $gallery->id])} }">
-                    response.forEach(element => {
-                        let card = `<a href="{{url('dashboard/category/create/')}}/` + element.id + `"><div class="items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"><div><img src="{{ asset('uploads/galleries/${element.image}') }}" alt=""></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div></a>`;
-                        cardData += card;
-                    });
-                } else {
-                    cardData += `<span class="text-gray-600">No Image Found!</span>`;
-                }
-                galleryCard.innerHTML = cardData;
-                prevPageButton.style.display = 'none';
-                nextPageButton.style.display = 'none';
-            };
         });
+
+        // select image from modal
+        function selectImage(galleryImage) {
+            const galleryImageAttr = galleryImage.getAttribute('xImage');
+            const galleryIdAttr = galleryImage.getAttribute('xGalleryId');
+            const galleryNameAttr = galleryImage.getAttribute('xGalleryName');
+            const selectedImage = document.getElementById('selectedImage');
+            if (!modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+            }
+            selectedImage.innerHTML = `
+                <div class="items-center p-1 w-32 mt-5 bg-white rounded-lg shadow-xs dark:bg-gray-800" id="selectedImage">
+                    <div>
+                        <img src="{{ asset('uploads/galleries/` + galleryImageAttr + `') }}" alt="">
+                    </div>
+                    <div>
+                        <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${galleryNameAttr}</p>
+                    </div>
+                    <input type="hidden" name="gallery_id" value="${galleryIdAttr}">
+                </div>
+            `;
+        }
     </script>
 @endsection

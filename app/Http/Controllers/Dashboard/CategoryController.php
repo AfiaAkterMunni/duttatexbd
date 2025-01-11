@@ -15,26 +15,25 @@ class CategoryController extends Controller
     {
         $categories = Category::with('gallery')->latest()->paginate(15);
         // dd($categories);
-        return view('dashboard.pages.categories.index', ['categories' => $categories]);
+        return view('dashboard.pages.categories.index', [
+            'categories' => $categories]
+        );
     }
 
-    public function create($galleryId = null)
+    public function create()
     {
-        $gallery = null;
-        if($galleryId) {
-            $gallery = Gallery::find($galleryId);
-        }
         $galleries = Gallery::latest()->paginate(12);
         return view('dashboard.pages.categories.create', [
             'galleries' => $galleries,
-            'gallery' => $gallery,
         ]);
     }
 
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('dashboard.pages.categories.edit',['category' => $category]);
+        return view('dashboard.pages.categories.edit',[
+            'category' => $category
+        ]);
     }
 
     public function store(StoreCategoryRequest $request) {
@@ -74,7 +73,9 @@ class CategoryController extends Controller
     public function search(Request $request)
     {
         $categories = Category::where('name', 'LIKE', "$request->search")->paginate(15);
-        return view('dashboard.pages.categories.index', ['categories' => $categories]);
+        return view('dashboard.pages.categories.index', [
+            'categories' => $categories
+        ]);
     }
     // public function delete(Request $request, $id)
     // {

@@ -71,7 +71,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard category
     Route::get('/category', [DashboardCategoryController::class, 'index'])->name('category.index');
-    Route::get('/category/create/{galleryId?}', [DashboardCategoryController::class, 'create'])->name('category.create');
+    Route::get('/category/create', [DashboardCategoryController::class, 'create'])->name('category.create');
     Route::post('/category/store', [DashboardCategoryController::class, 'store'])->name('category.store');
     Route::get('/category/edit/{id}', [DashboardCategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}', [DashboardCategoryController::class, 'update'])->name('category.update');
