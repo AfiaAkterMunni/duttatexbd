@@ -15,8 +15,11 @@ class CategoryController extends Controller
     {
         $categories = Category::with('gallery')->latest()->paginate(15);
         // dd($categories);
-        return view('dashboard.pages.categories.index', [
-            'categories' => $categories]
+        return view(
+            'dashboard.pages.categories.index',
+            [
+                'categories' => $categories
+            ]
         );
     }
 
@@ -32,13 +35,14 @@ class CategoryController extends Controller
     {
         $galleries = Gallery::latest()->paginate(12);
         $category = Category::with('gallery')->find($id);
-        return view('dashboard.pages.categories.edit',[
+        return view('dashboard.pages.categories.edit', [
             'category' => $category,
             'galleries' => $galleries,
         ]);
     }
 
-    public function store(StoreCategoryRequest $request) {
+    public function store(StoreCategoryRequest $request)
+    {
         $data = [
             'name' => $request->input('name'),
             'gallery_id' => $request->input('gallery_id'),

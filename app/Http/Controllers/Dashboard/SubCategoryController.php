@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
@@ -13,15 +14,16 @@ class SubCategoryController extends Controller
 {
     public function index()
     {
-        $subcategories = Subcategory::latest()->paginate(15);
-
+        $subcategories = Subcategory::with('gallery')->latest()->paginate(15);
+        // dd($subcategories);
         return view('dashboard.pages.subcategories.index', ['subcategories' => $subcategories]);
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.pages.subcategories.create', ['categories' => $categories]);
+        $galleries = Gallery::latest()->paginate(12);
+        return view('dashboard.pages.subcategories.create', ['categories' => $categories, 'galleries' => $galleries]);
     }
 
     public function edit($id)
@@ -31,9 +33,10 @@ class SubCategoryController extends Controller
         return view('dashboard.pages.subcategories.edit', ['subcategory' => $subcategory, 'categories' => $categories]);
     }
 
-    public function store(StoreSubcategoryRequest $request) {
+    public function store(StoreSubcategoryRequest $request)
+    {
         $image = $request->file('image');
-        $name = time().'.'.$image->getClientOriginalExtension();
+        $name = time() . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('/uploads/subcategories');
         $image->move($destinationPath, $name);
         $data = [
@@ -53,15 +56,13 @@ class SubCategoryController extends Controller
             'category_id' => $request->input('category')
         ];
 
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $oldImage = $subcategory->image;
-            if($oldImage)
-            {
-                unlink('uploads/subcategories/'.$oldImage);
+            if ($oldImage) {
+                unlink('uploads/subcategories/' . $oldImage);
             }
             $image = $request->file('image');
-            $name = time().'.'.$image->getClientOriginalExtension();
+            $name = time() . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/uploads/subcategories');
             $image->move($destinationPath, $name);
             $data['image'] = $name;

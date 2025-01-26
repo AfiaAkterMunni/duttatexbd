@@ -1,74 +1,75 @@
 @extends('dashboard.layouts.master')
 @section('title', 'SubCategories')
 @section('content')
-    <main class="h-full pb-16 overflow-y-auto">
-        <div class="container grid px-6 mx-auto">
-            <div class="flex justify-between my-6">
-                <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                    SubCategory List
-                </h2>
-                <div>
-                    <button
-                        class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-                        <a href="{{ route('subcategory.create') }}"><span>Add SubCategory</span></a>
-                    </button>
-                </div>
+<main class="h-full pb-16 overflow-y-auto">
+    <div class="container grid px-6 mx-auto">
+        <div class="flex justify-between my-6">
+            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                SubCategory List
+            </h2>
+            <div>
+                <button
+                    class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                    <a href="{{ route('subcategory.create') }}"><span>Add SubCategory</span></a>
+                </button>
             </div>
-            <!-- table -->
-            @if (session('success'))
-                <div class="flex items-center justify-between py-2 px-4 mb-8 text-md text-white bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
-                    id="toaster">
-                    <div class="flex items-center">
-                        <span>{{ session('success') }}</span>
-                    </div>
-                    <button
-                        class="inline-flex items-center justify-center w-6 h-6 text-white transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
-                        aria-label="close" @click="closeToaster()">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
-                            <path
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd" fill-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-            @endif
-            <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                <div class="w-full overflow-x-auto">
-                    <table class="w-full whitespace-no-wrap">
-                        <thead>
-                            <tr
-                                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                <th class="px-4 py-3">SL</th>
-                                <th class="px-4 py-3">SubCategory Name</th>
-                                <th class="px-4 py-3">SubCategory Image</th>
-                                <th class="px-4 py-3">Category Name</th>
-                                <th class="px-4 py-3">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                            @foreach ($subcategories as $key => $subcategory)
-                                <tr class="text-gray-700 dark:text-gray-400">
-                                    <td class="px-4 py-3 text-sm">{{ $key + 1 }}</td>
-                                    <td class="px-4 py-3 text-sm">{{ $subcategory->name }}</td>
-                                    <td class="px-4 py-3">
-                                        <img class="w-12" src="{{ asset('uploads/subcategories/' . $subcategory->image) }}"
-                                            alt="{{ $subcategory->image }}" loading="lazy">
-                                    </td>
-                                    {{-- check if $subcategory->category exist --}}
-                                    <td class="px-4 py-3 text-sm">{{ $subcategory->category->name }}</td>
-                                    <td class="px-4 py-3">
-                                        <div class="flex items-center space-x-4 text-sm">
-                                            <a href="{{ route('subcategory.edit', ['id' => $subcategory->id]) }}"
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
-                                                aria-label="Edit">
-                                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
-                                                    </path>
-                                                </svg>
-                                            </a>
-                                            <!-- <a href="#" name="{{ $subcategory->id }}"
+        </div>
+        <!-- table -->
+        @if (session('success'))
+        <div class="flex items-center justify-between py-2 px-4 mb-8 text-md text-white bg-green-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+            id="toaster">
+            <div class="flex items-center">
+                <span>{{ session('success') }}</span>
+            </div>
+            <button
+                class="inline-flex items-center justify-center w-6 h-6 text-white transition-colors duration-150 rounded dark:hover:text-gray-200 hover: hover:text-gray-700"
+                aria-label="close" @click="closeToaster()">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" role="img" aria-hidden="true">
+                    <path
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        @endif
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                    <thead>
+                        <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            <th class="px-4 py-3">SL</th>
+                            <th class="px-4 py-3">SubCategory Name</th>
+                            <th class="px-4 py-3">SubCategory Image</th>
+                            <th class="px-4 py-3">Category Name</th>
+                            <th class="px-4 py-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                        @foreach ($subcategories as $key => $subcategory)
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3 text-sm">{{ $key + 1 }}</td>
+                            <td class="px-4 py-3 text-sm">{{ $subcategory->name }}</td>
+                            <td class="px-4 py-3">
+                                jikhiui
+                                <!-- <img class="w-12" src="{{ asset('uploads/subcategories/' . $subcategory->image) }}"
+                                    alt="{{ $subcategory->image }}" loading="lazy"> -->
+                            </td>
+                            {{-- check if $subcategory->category exist --}}
+                            <td class="px-4 py-3 text-sm">gfh</td>
+                            <td class="px-4 py-3">
+                                <div class="flex items-center space-x-4 text-sm">
+                                    <a href="{{ route('subcategory.edit', ['id' => $subcategory->id]) }}"
+                                        class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                        aria-label="Edit">
+                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
+                                            viewBox="0 0 20 20">
+                                            <path
+                                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                    <!-- <a href="#" name="{{ $subcategory->id }}"
                                                 class="openModalButton flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                 aria-label="Delete">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -78,28 +79,28 @@
                                                         clip-rule="evenodd"></path>
                                                 </svg>
                                             </a> -->
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex justify-between py-3 px-4 text-xs tracking-wide border-t text-gray-500 dark:text-gray-400 font-semibold dark:border-gray-700 ">
+                <div class="flex items-center col-span-3">
+                    Showing {{ $subcategories->firstItem() }}-{{ $subcategories->lastItem() }} of {{ $subcategories->total() }}
                 </div>
-                <div class="flex justify-between py-3 px-4 text-xs tracking-wide border-t text-gray-500 dark:text-gray-400 font-semibold dark:border-gray-700 ">
-                    <div class="flex items-center col-span-3">
-                        Showing {{ $subcategories->firstItem() }}-{{ $subcategories->lastItem() }} of {{ $subcategories->total() }}
-                    </div>
 
-                    <!-- Pagination -->
-                    <div>
-                        {{ $subcategories->links('includes.paginator') }}
-                    </div>
+                <!-- Pagination -->
+                <div>
+                    {{ $subcategories->links('includes.paginator') }}
                 </div>
             </div>
         </div>
-    </main>
-    <!-- Modal blur box  -->
-    <!-- <div class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center hidden"
+    </div>
+</main>
+<!-- Modal blur box  -->
+<!-- <div class="fixed inset-0 z-30 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center hidden"
         id="modal">
         <div class="w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg dark:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl"
             role="dialog">
@@ -138,10 +139,10 @@
 @endsection
 
 @section('js')
-    <script>
-        function closeToaster() {
-            let toaster = document.getElementById('toaster');
-            toaster.style.display = 'none';
-        }
-    </script>
+<script>
+    function closeToaster() {
+        let toaster = document.getElementById('toaster');
+        toaster.style.display = 'none';
+    }
+</script>
 @endsection

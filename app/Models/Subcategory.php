@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Subcategory extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'image','category_id'];
+    protected $fillable = ['name', 'gallery_id', 'category_id'];
 
-     /**
+    /**
      * Get the category data for the Subcategory.
      */
 
@@ -22,8 +22,16 @@ class Subcategory extends Model
      * Get the product data for the subcategory.
      */
 
-     public function product()
-     {
-         return $this->hasMany(Product::class);
-     }
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    /**
+     * Get the gallery data for the subcategory.
+     */
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
+    }
 }
