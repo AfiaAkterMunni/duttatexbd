@@ -4,11 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategoryRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
     protected function getRedirectUrl()
     {
-        return route('category.edit', ['id' => $this->id]);
+        // dd('hello');
+        return route('product.edit', ['id' => $this->id]);
     }
 
     /**
@@ -31,6 +32,9 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'name' => 'required|string',
             'gallery_id' => 'required|integer',
+            'category' => 'required|numeric',
+            'subcategory' => 'required|numeric',
+            'description' => 'required|string',
         ];
     }
 

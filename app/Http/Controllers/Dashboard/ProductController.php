@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Gallery;
 use App\Models\Product;
@@ -28,14 +29,6 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit($id)
-    {
-        $product = Product::find($id);
-        $categories = Category::all();
-        $subcategories = Subcategory::where('category_id', $product->category_id)->get();
-        return view('dashboard.pages.products.edit', ['product' => $product, 'categories' => $categories, 'subcategories' => $subcategories]);
-    }
-
     public function store(StoreProductRequest $request) {
         Product::create([
             'name' => $request->input('name'),
@@ -46,31 +39,31 @@ class ProductController extends Controller
         ]);
         return redirect(route('product.index'))->with('success', 'Product Created Successfully!!!');
     }
-    public function update(Request $request, $id)
+
+    public function edit($id)
     {
         $product = Product::find($id);
-        $data = [
+        $categories = Category::all();
+        $galleries = Gallery::latest()->paginate(12);
+        $subcategories = Subcategory::where('category_id', $product->category_id)->get();
+        return view('dashboard.pages.products.edit', [
+            'product' => $product,
+            'categories' => $categories,
+            'subcategories' => $subcategories,
+            'galleries' => $galleries,
+        ]);
+    }
+
+    public function update(UpdateProductRequest $request, $id)
+    {
+        $product = Product::find($id);
+        $product->update([
             'name' => $request->input('name'),
+            'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category'),
             'subcategory_id' => $request->input('subcategory'),
             'description' => $request->input('description')
-        ];
-
-        if($request->hasFile('image'))
-        {
-            $oldImage = $product->image;
-            if($oldImage)
-            {
-                unlink('uploads/products/'.$oldImage);
-            }
-            $image = $request->file('image');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/products');
-            $image->move($destinationPath, $name);
-            $data['image'] = $name;
-        }
-
-        $product->update($data);
+        ]);
         return redirect(route('product.index'))->with('success', 'Product Updated Successfully!!!');
     }
     public function delete(Request $request, $id)

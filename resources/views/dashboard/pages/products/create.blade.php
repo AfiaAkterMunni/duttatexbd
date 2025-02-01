@@ -21,7 +21,7 @@
                         @enderror
                     </label>
                     <label class="block text-md mb-6">
-                        <span class="text-gray-700 dark:text-gray-400">Category Image</span>
+                        <span class="text-gray-700 dark:text-gray-400">Product Image</span>
                         <div class="pt-3">
                             <a href="#" id="openModalButton"
                                 class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-gray-400 border border-transparent rounded-lg active:bg-purple-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-purple">
