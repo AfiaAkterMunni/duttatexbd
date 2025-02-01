@@ -51,9 +51,7 @@
                             <td class="px-4 py-3 text-sm">{{ $key + 1 }}</td>
                             <td class="px-4 py-3 text-sm">{{ $subcategory->name }}</td>
                             <td class="px-4 py-3">
-                                jikhiui
-                                <!-- <img class="w-12" src="{{ asset('uploads/subcategories/' . $subcategory->image) }}"
-                                    alt="{{ $subcategory->image }}" loading="lazy"> -->
+                                <img class="w-12" src="{{ asset('uploads/galleries/' . $subcategory->gallery->image) }}" alt="" loading="lazy">
                             </td>
                             {{-- check if $subcategory->category exist --}}
                             <td class="px-4 py-3 text-sm">gfh</td>
