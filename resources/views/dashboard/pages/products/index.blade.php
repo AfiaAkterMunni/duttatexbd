@@ -55,8 +55,8 @@
                                         <img class="w-12" src="{{ asset('uploads/galleries/' . $product->gallery->image) }}"
                                             alt="" loading="lazy">
                                     </td>
-                                    <td class="px-4 py-3 text-sm">{{ $product->category->name }}</td>
-                                    <td class="px-4 py-3 text-sm">@if($product->subcategory ){{ $product->subcategory->name }} @endif</td>
+                                    <td class="px-4 py-3 text-sm">{{ optional($product->category)->name ?? '❌' }}</td>
+                                    <td class="px-4 py-3 text-sm">{{ optional($product->subcategory)->name ?? '❌' }}</td>
                                     <td class="px-4 py-3">
                                         <div class="flex items-center space-x-4 text-sm">
                                             <a href="{{ route('product.edit', ['id' => $product->id]) }}"

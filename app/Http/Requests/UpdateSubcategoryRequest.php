@@ -29,8 +29,20 @@ class UpdateSubcategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'image' => 'mimes:png,jpg',
+            'gallery_id' => 'required|numeric',
             'category' => 'required|numeric'
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'gallery_id.required' => 'Image is required. Please choose an image.',
         ];
     }
 }

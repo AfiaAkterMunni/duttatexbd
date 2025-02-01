@@ -28,9 +28,14 @@ class SubCategoryController extends Controller
 
     public function edit($id)
     {
+        $galleries = Gallery::latest()->paginate(12);
         $subcategory = Subcategory::find($id);
         $categories = Category::all();
-        return view('dashboard.pages.subcategories.edit', ['subcategory' => $subcategory, 'categories' => $categories]);
+        return view('dashboard.pages.subcategories.edit', [
+            'subcategory' => $subcategory,
+            'categories' => $categories,
+            'galleries' => $galleries,
+        ]);
     }
 
     public function store(StoreSubcategoryRequest $request)
@@ -49,21 +54,9 @@ class SubCategoryController extends Controller
         $subcategory = Subcategory::find($id);
         $data = [
             'name' => $request->input('name'),
-            'category_id' => $request->input('category')
+            'gallery_id' => $request->input('gallery_id'),
+            'category_id' => $request->input('category'),
         ];
-
-        if ($request->hasFile('image')) {
-            $oldImage = $subcategory->image;
-            if ($oldImage) {
-                unlink('uploads/subcategories/' . $oldImage);
-            }
-            $image = $request->file('image');
-            $name = time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/subcategories');
-            $image->move($destinationPath, $name);
-            $data['image'] = $name;
-        }
-
         $subcategory->update($data);
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Updated Successfully!!!');
     }

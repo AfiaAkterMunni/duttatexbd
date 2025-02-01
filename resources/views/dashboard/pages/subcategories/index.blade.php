@@ -53,8 +53,7 @@
                             <td class="px-4 py-3">
                                 <img class="w-12" src="{{ asset('uploads/galleries/' . $subcategory->gallery->image) }}" alt="" loading="lazy">
                             </td>
-                            {{-- check if $subcategory->category exist --}}
-                            <td class="px-4 py-3 text-sm">gfh</td>
+                            <td class="px-4 py-3 text-sm">{{ optional($subcategory->category)->name ?? '❌' }}</td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center space-x-4 text-sm">
                                     <a href="{{ route('subcategory.edit', ['id' => $subcategory->id]) }}"

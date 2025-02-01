@@ -9,7 +9,7 @@
             </h2>
         </div>
         <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <form action="{{ route('subcategory.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('subcategory.store') }}" method="post">
                 @csrf
                 <label class="block text-md mb-6">
                     <span class="text-gray-700 dark:text-gray-400">SubCategory Name</span>
