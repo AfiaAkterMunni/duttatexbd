@@ -137,7 +137,6 @@
 
 @section('js')
     <script>
-
         function closeToaster() {
             let toaster = document.getElementById('toaster');
             toaster.style.display = 'none';

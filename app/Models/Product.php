@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'image', 'category_id', 'subcategory_id', 'description'];
+    protected $fillable = [
+        'name',
+        'image',
+        'gallery_id',
+        'category_id',
+        'subcategory_id',
+        'description'
+    ];
 
     /**
      * Get the category data for the product.
@@ -24,5 +31,13 @@ class Product extends Model
     public function subcategory()
     {
         return $this->belongsTo(Subcategory::class);
+    }
+
+    /**
+     * Get the gallery data for the Category.
+     */
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
     }
 }
