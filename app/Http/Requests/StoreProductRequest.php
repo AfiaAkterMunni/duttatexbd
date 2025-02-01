@@ -29,10 +29,22 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'gallery_id' => 'required|integer',
             'category' => 'required|numeric',
             'subcategory' => 'required|numeric',
             'description' => 'required|string',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'gallery_id.required' => 'Image is required. Please choose an image.',
         ];
     }
 }

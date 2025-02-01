@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
@@ -20,7 +21,11 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.pages.products.create', ['categories' => $categories]);
+        $galleries = Gallery::latest()->paginate(12);
+        return view('dashboard.pages.products.create', [
+            'categories' => $categories,
+            'galleries' => $galleries,
+        ]);
     }
 
     public function edit($id)
@@ -32,18 +37,13 @@ class ProductController extends Controller
     }
 
     public function store(StoreProductRequest $request) {
-        $image = $request->file('image');
-        $name = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/uploads/products');
-        $image->move($destinationPath, $name);
-        $data = [
+        Product::create([
             'name' => $request->input('name'),
             'category_id' => $request->input('category'),
             'subcategory_id' => $request->input('subcategory'),
             'description' => $request->input('description'),
-            'image' => $name
-        ];
-        Product::create($data);
+            'gallery_id' => $request->input('gallery_id'),
+        ]);
         return redirect(route('product.index'))->with('success', 'Product Created Successfully!!!');
     }
     public function update(Request $request, $id)
