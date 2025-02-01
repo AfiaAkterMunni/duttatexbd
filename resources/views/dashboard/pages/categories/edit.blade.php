@@ -146,7 +146,7 @@
             let galleryCard = document.getElementById('galleryCard');
             let cardData = "";
             response.data.forEach(element => {
-                let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this)" style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                 cardData += card;
             });
             galleryCard.innerHTML = cardData;
@@ -176,7 +176,7 @@
             let galleryCard = document.getElementById('galleryCard');
             let cardData = "";
             response.data.forEach(element => {
-                let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this)" style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                 cardData += card;
             });
             galleryCard.innerHTML = cardData;
@@ -227,7 +227,7 @@
                 let cardData = "";
                 if(response.length) {
                     response.forEach(element => {
-                        let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this) style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
+                        let card = `<div class="galleryCard items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800" xImage="${element.image}" xGalleryId="${element.id}" xGalleryName="${element.name}" onclick="selectImage(this)" style="cursor:pointer"><div><img src="{{ asset('uploads/galleries/${element.image}') }}"></div><div><p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400 text-center">${element.name}</p></div></div>`;
                         cardData += card;
                     });
                 } else {
