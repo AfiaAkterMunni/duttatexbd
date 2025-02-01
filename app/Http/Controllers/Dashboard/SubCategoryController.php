@@ -35,13 +35,9 @@ class SubCategoryController extends Controller
 
     public function store(StoreSubcategoryRequest $request)
     {
-        $image = $request->file('image');
-        $name = time() . '.' . $image->getClientOriginalExtension();
-        $destinationPath = public_path('/uploads/subcategories');
-        $image->move($destinationPath, $name);
         $data = [
             'name' => $request->input('name'),
-            'image' => $name,
+            'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category')
         ];
         Subcategory::create($data);
