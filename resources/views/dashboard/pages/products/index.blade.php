@@ -52,7 +52,7 @@
                                     <td class="px-4 py-3 text-sm">{{ $key + 1 }}</td>
                                     <td class="px-4 py-3 text-sm">{{ $product->name }}</td>
                                     <td class="px-4 py-3">
-                                        <img class="w-12" src="{{ asset('uploads/products/' . $product->image) }}"
+                                        <img class="w-12" src="{{ asset('uploads/galleries/' . $product->gallery->image) }}"
                                             alt="" loading="lazy">
                                     </td>
                                     <td class="px-4 py-3 text-sm">{{ $product->category->name }}</td>
