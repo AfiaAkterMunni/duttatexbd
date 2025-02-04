@@ -9,7 +9,7 @@ class HomeController2 extends Controller
 {
     public function show()
     {
-        $categories = Category::paginate(8);
+        $categories = Category::with('gallery')->latest()->paginate(8);
         return view('pages.index', ['categories' => $categories]);
     }
 }

@@ -12,7 +12,7 @@
 
 <!-- Product Categories title Start-->
 <div class="px-24 pt-8 pb-4">
-    <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400"><a href="{{route('category')}}">Product Categories</a></h4>
+  <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400"><a href="{{route('category')}}">Product Categories</a></h4>
 </div>
 <!-- Product Categories title End-->
 
@@ -21,7 +21,7 @@
   @foreach($categories as $category)
   <div>
     <a href="{{route('subcategory', ['id' => $category->id])}}">
-      <img src="{{ asset('uploads/categories/' . $category->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+      <img src="{{ asset('uploads/galleries/' . $category->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
       <h3 class="pt-3">{{$category->name}}</h3>
     </a>
   </div>
