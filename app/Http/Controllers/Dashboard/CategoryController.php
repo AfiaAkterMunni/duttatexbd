@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -45,11 +46,17 @@ class CategoryController extends Controller
     {
         $data = [
             'name' => $request->input('name'),
+            'slug' => Str::slug($request->input('name')),
             'gallery_id' => $request->input('gallery_id'),
+            'meta_robots' => $request->input('meta_robots', null),
+            'h1_text' => $request->input('h1_text', null),
+            'meta_description' => $request->input('meta_description', null),
+            'meta_keywords' => $request->input('meta_keywords', null),
         ];
         Category::create($data);
         return redirect(route('category.index'))->with('success', 'Category Created Successfully!!!');
     }
+
 
     public function update(UpdateCategoryRequest $request, $id)
     {

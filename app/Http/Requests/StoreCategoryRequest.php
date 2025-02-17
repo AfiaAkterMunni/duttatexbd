@@ -30,6 +30,11 @@ class StoreCategoryRequest extends FormRequest
         return [
             'name' => 'required|string|unique:categories,name',
             'gallery_id' => 'required|integer',
+            'meta_robots' => 'nullable|string',
+            'seo_title' => 'nullable|string',
+            'h1_text' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
         ];
     }
 
