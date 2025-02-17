@@ -9,7 +9,16 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'gallery_id'];
+    protected $fillable = [
+        'name',
+        'slug',
+        'gallery_id',
+        'meta_robots',
+        'seo_title',
+        'h1_text',
+        'meta_description',
+        'meta_keywords',
+    ];
 
     /**
      * Get the subcategory data for the category.
