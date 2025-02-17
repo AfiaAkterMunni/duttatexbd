@@ -49,6 +49,7 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->input('name')),
             'gallery_id' => $request->input('gallery_id'),
             'meta_robots' => $request->input('meta_robots', null),
+            'seo_title' => $request->input('seo_title', null),
             'h1_text' => $request->input('h1_text', null),
             'meta_description' => $request->input('meta_description', null),
             'meta_keywords' => $request->input('meta_keywords', null),
