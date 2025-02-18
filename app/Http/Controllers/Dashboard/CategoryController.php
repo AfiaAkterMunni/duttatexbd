@@ -65,6 +65,11 @@ class CategoryController extends Controller
         $category->update([
             'name' => $request->input('name'),
             'gallery_id' => $request->input('gallery_id'),
+            'meta_robots' => $request->input('meta_robots', null),
+            'seo_title' => $request->input('seo_title', null),
+            'h1_text' => $request->input('h1_text', null),
+            'meta_description' => $request->input('meta_description', null),
+            'meta_keywords' => $request->input('meta_keywords', null),
         ]);
         return redirect(route('category.index'))->with('success', 'Category Updated Successfully!!!');
     }
