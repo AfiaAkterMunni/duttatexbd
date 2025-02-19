@@ -28,9 +28,14 @@ class StoreSubcategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'name' => 'required|string|unique:subcategories,name',
             'gallery_id' => 'required|integer',
-            'category' => 'required|numeric'
+            'category' => 'required|numeric',
+            'meta_robots' => 'nullable|string',
+            'seo_title' => 'nullable|string',
+            'h1_text' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
         ];
     }
 

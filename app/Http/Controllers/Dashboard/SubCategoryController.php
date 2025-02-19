@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Gallery;
+use App\Models\Category;
+use App\Models\Subcategory;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
-use App\Models\Category;
-use App\Models\Gallery;
-use App\Models\Subcategory;
-use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
 {
@@ -42,8 +43,14 @@ class SubCategoryController extends Controller
     {
         $data = [
             'name' => $request->input('name'),
+            'slug' => Str::slug($request->input('name')),
             'gallery_id' => $request->input('gallery_id'),
-            'category_id' => $request->input('category')
+            'category_id' => $request->input('category'),
+            'meta_robots' => $request->input('meta_robots', null),
+            'seo_title' => $request->input('seo_title', null),
+            'h1_text' => $request->input('h1_text', null),
+            'meta_description' => $request->input('meta_description', null),
+            'meta_keywords' => $request->input('meta_keywords', null),
         ];
         Subcategory::create($data);
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Created Successfully!!!');
