@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateSubcategoryRequest extends FormRequest
@@ -28,9 +29,18 @@ class UpdateSubcategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'name' => [
+                'required',
+                'string',
+                Rule::unique('subcategories')->ignore($this->id),
+            ],
             'gallery_id' => 'required|numeric',
-            'category' => 'required|numeric'
+            'category' => 'required|numeric',
+            'meta_robots' => 'nullable|string',
+            'seo_title' => 'nullable|string',
+            'h1_text' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
         ];
     }
 

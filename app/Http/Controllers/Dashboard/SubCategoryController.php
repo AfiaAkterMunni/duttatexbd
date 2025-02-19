@@ -59,19 +59,25 @@ class SubCategoryController extends Controller
     public function update(UpdateSubcategoryRequest $request, $id)
     {
         $subcategory = Subcategory::find($id);
-        $data = [
+        $subcategory->update([
             'name' => $request->input('name'),
             'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category'),
-        ];
-        $subcategory->update($data);
+            'meta_robots' => $request->input('meta_robots', null),
+            'seo_title' => $request->input('seo_title', null),
+            'h1_text' => $request->input('h1_text', null),
+            'meta_description' => $request->input('meta_description', null),
+            'meta_keywords' => $request->input('meta_keywords', null),
+        ]);
         return redirect(route('subcategory.index'))->with('success', 'Subcategory Updated Successfully!!!');
     }
+
     public function search(Request $request)
     {
         $subcategories = Subcategory::where('name', 'LIKE', "$request->search")->paginate(15);
         return view('dashboard.pages.subcategories.index', ['subcategories' => $subcategories]);
     }
+
     // public function delete(Request $request, $id)
     // {
     //     $subcategory = Subcategory::find($id);
