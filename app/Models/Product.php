@@ -2,19 +2,53 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'name',
         'gallery_id',
         'category_id',
         'subcategory_id',
-        'description'
+        'description',
+        'meta_robots',
+        'seo_title',
+        'h1_text',
+        'meta_description',
+        'meta_keywords',
     ];
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        // Model Event Hook
+        static::creating(function ($product) {
+            $slug = Str::slug($product->name);
+            $latest = static::whereRaw("slug REGEXP '^{$slug}(-[0-9]+)?$'")
+                ->latest('id')
+                ->value('slug');
+            if($latest){
+                $pieces = explode('-', $latest);
+                $number = intval(end($pieces));
+                $slug .= '-' . ($number + 1);
+            }
+            $product->slug = $slug;
+        });
+    }
 
     /**
      * Get the category data for the product.
