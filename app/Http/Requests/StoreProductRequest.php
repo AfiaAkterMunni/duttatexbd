@@ -33,6 +33,11 @@ class StoreProductRequest extends FormRequest
             'category' => 'required|numeric',
             'subcategory' => 'required|numeric',
             'description' => 'required|string',
+            'meta_robots' => 'nullable|string',
+            'seo_title' => 'nullable|string',
+            'h1_text' => 'nullable|string',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
         ];
     }
 
