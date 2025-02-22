@@ -29,11 +29,7 @@ class UpdateSubcategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required',
-                'string',
-                Rule::unique('subcategories')->ignore($this->id),
-            ],
+            'name' => 'required|string',
             'gallery_id' => 'required|numeric',
             'category' => 'required|numeric',
             'meta_robots' => 'nullable|string',

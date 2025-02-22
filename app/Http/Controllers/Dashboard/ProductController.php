@@ -67,7 +67,12 @@ class ProductController extends Controller
             'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category'),
             'subcategory_id' => $request->input('subcategory'),
-            'description' => $request->input('description')
+            'description' => $request->input('description'),
+            'meta_robots' => $request->input('meta_robots', null),
+            'seo_title' => $request->input('seo_title', null),
+            'h1_text' => $request->input('h1_text', null),
+            'meta_description' => $request->input('meta_description', null),
+            'meta_keywords' => $request->input('meta_keywords', null),
         ]);
         return redirect(route('product.index'))->with('success', 'Product Updated Successfully!!!');
     }
