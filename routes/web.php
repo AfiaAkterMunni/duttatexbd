@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\QuickInquiryController;
 use App\Http\Controllers\Dashboard\SubCategoryController as DashboardSubCategoryController;
 use App\Http\Controllers\Dashboard\SubscriberController;
 use App\Http\Controllers\Dashboard\GalleryController;
+use App\Http\Controllers\Dashboard\SeoController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsByCategoryController;
@@ -119,7 +120,8 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::get('/gallery/paginate', [GalleryController::class, 'paginate'])->name('gallery.paginate');
     Route::get('/gallery/ajaxSearch', [GalleryController::class, 'ajaxSearch'])->name('gallery.search.ajax');
 
-
+    // Dashboard Seo
+    Route::get('seo', [SeoController::class, 'index'])->name('seo.index');
 
 });
 
