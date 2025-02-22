@@ -43,7 +43,6 @@ class SubCategoryController extends Controller
     {
         $data = [
             'name' => $request->input('name'),
-            'slug' => Str::slug($request->input('name')),
             'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category'),
             'meta_robots' => $request->input('meta_robots', null),
