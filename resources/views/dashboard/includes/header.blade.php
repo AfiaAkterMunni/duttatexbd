@@ -13,7 +13,7 @@
                 </svg>
             </button>
             <!-- Search input -->
-            @if(strcmp(Route::currentRouteName(), 'quickinquiry') == 0 || strcmp(Route::currentRouteName(), 'dashboard') == 0 || strcmp(Route::currentRouteName(), 'subscriber') == 0 || strcmp(Route::currentRouteName(), 'category.create') == 0 || strcmp(Route::currentRouteName(), 'subcategory.create') == 0 || strcmp(Route::currentRouteName(), 'product.create') == 0)
+            @if(strcmp(Route::currentRouteName(), 'quickinquiry') == 0 || strcmp(Route::currentRouteName(), 'dashboard') == 0 || strcmp(Route::currentRouteName(), 'subscriber') == 0 || strcmp(Route::currentRouteName(), 'category.create') == 0 || strcmp(Route::currentRouteName(), 'subcategory.create') == 0 || strcmp(Route::currentRouteName(), 'product.create') == 0 || strcmp(Route::currentRouteName(), 'seo.index') == 0)
             <div class="flex justify-center flex-1 lg:mr-32">
             </div>
             @else
