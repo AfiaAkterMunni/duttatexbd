@@ -122,6 +122,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
 
     // Dashboard Seo
     Route::get('seo', [SeoController::class, 'index'])->name('seo.index');
+    Route::post('seo/update', [SeoController::class, 'update'])->name('seo.update');
 
 });
 
