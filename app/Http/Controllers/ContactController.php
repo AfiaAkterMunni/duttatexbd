@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContactRequest;
 use App\Models\Contact;
+use App\Models\SeoSetting;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function show()
     {
-        return view('pages.contact');
+        $seo = SeoSetting::where('page_name', 'contact')->first();
+        return view('pages.contact', [
+            'seo' => $seo
+        ]);
     }
 
     public function store(StoreContactRequest $request)

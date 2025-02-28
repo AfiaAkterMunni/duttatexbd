@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'About')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - About')
 @section('content')
 <!-- About Company Start-->
 <div class="lg:flex lg:flex-row py-20 font-[Roboto] px-12">

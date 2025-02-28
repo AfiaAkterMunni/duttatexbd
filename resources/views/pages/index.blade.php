@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - Home')
 @section('content')
 
 <!-- slider Start-->

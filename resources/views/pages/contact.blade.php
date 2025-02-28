@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Contact')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - Contact')
 @section('content')
 
 <!-- Contact Start-->

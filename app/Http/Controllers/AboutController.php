@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\SeoSetting;
 
 class AboutController extends Controller
 {
     public function show()
     {
-        return view('pages.about');
+        $seo = SeoSetting::where('page_name', 'about')->first();
+        return view('pages.about', [
+            'seo' => $seo,
+        ]);
     }
 }

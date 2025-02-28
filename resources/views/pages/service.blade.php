@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Services')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - Services')
 @section('content')
 
     <!-- Services Start-->
@@ -23,7 +23,7 @@
                 class="bg-cyan-600 px-3 py-1 text-white rounded-lg mt-3 hover:bg-sky-600">Read more</button>
             </div>
         </div>
-    
+
         <div class="lg:flex lg:flex-row py-4">
             <div class="lg:basis-1/2 md:p-8 p-4">
                 <img src="{{asset('images/img1.png')}}" alt="" class="mx-auto w-full">
@@ -38,7 +38,7 @@
                 <button class="bg-cyan-600 px-3 py-2 text-white rounded-lg mt-5 hover:bg-sky-600">Read more</button>
             </div>
         </div>
-    
+
         <div class="lg:flex lg:flex-row py-4">
             <div class="lg:basis-1/2 md:p-8 p-4 lg:order-last order-none">
                 <img src="{{asset('images/img2.png')}}" alt="" class="mx-auto w-full">
@@ -53,7 +53,7 @@
                 <button class="bg-cyan-600 px-3 py-2 text-white rounded-lg mt-5 hover:bg-sky-600">Read more</button>
             </div>
         </div>
-    
+
         <div class="lg:flex lg:flex-row py-4">
             <div class="lg:basis-1/2 md:p-8 p-4">
                 <img src="{{asset('images/img5.png')}}" alt="" class="mx-auto w-full">
@@ -74,7 +74,7 @@
     <!-- scroll on top button Start-->
     <a id="button" class="inline-block bg-blue-600 w-9 h-9 text-center rounded fixed bottom-5 right-5 opacity-0 invisible z-[1000] after:content-['\f077'] font-['FontAwesome'] text-2xl text-white hover:cursor-pointer hover:bg-gray-500 active:bg-sky-400"></a>
     <!-- scroll on top button End-->
-  
+
     <script type="text/javascript" src="{{asset('js/frontend/menu.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/frontend/scrollbutton.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/frontend/service.js')}}"></script>
