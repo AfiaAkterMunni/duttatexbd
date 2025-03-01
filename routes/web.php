@@ -4,7 +4,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Dashboard\CategoryController as DashboardCategoryController;
-use App\Http\Controllers\Dashboard\ContactController as DashboardContactController;
 use App\Http\Controllers\Dashboard\HomeController as DashboardHomeController;
 use App\Http\Controllers\Dashboard\ProductController as DashboardProductController;
 use App\Http\Controllers\Dashboard\QuickInquiryController;
@@ -14,24 +13,16 @@ use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\Dashboard\SeoController;
 use App\Http\Controllers\HomeController2;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductsByCategoryController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Frontend Start
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
-//*********** Frontend Start *************/
 
 // frontend home page route
 Route::get('/', [HomeController2::class, 'show'])->name('homepage');
@@ -59,10 +50,11 @@ Route::get('/products/{slug}', [ProductController::class, 'show'])->name('produc
 // frontend subscriber
 Route::post('/subscribe/store', [SubscriberController::class, 'store'])->name('subscribe.store');
 
-
-//*********** Frontend End *************/
-
-//*********** Dashboard Start *************/
+/*
+|--------------------------------------------------------------------------
+| Dashboard Start
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('dashboard')->middleware('auth')->group(function(){
     // Dashboard home
