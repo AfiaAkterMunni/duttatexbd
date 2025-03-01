@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Subcategory;
-use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
 {
-    public function show($id)
+    public function show($slug)
     {
         $categories = Category::get();
-        $subcategories = Subcategory::where('category_id', $id)->get();
-        return view('pages.subcategory', ['subcategories' => $subcategories, 'categories' => $categories]);
+        $subcategory = Subcategory::where('slug', $slug)->first();
+        $products = Product::where('subcategory_id', $subcategory->id)->paginate(12);
+        return view('pages.productsBySubCategory', [
+            'subcategory' => $subcategory,
+            'products' => $products,
+            'categories' => $categories,
+        ]);
     }
 }

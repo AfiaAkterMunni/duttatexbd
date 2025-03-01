@@ -15,8 +15,8 @@
       <li class="py-3 px-4 {{ (strcmp(Route::currentRouteName(), 'about') == 0) ? 'text-cyan-200' : '' }}">
         <a href="{{route('about')}}" class="text-lg hover:text-cyan-200">About</a>
       </li>
-      <li class="py-3 px-4 {{ (strcmp(Route::currentRouteName(), 'category') == 0) ? 'text-cyan-200' : '' }}">
-        <a href="{{route('category')}}" class="text-lg hover:text-cyan-200">Products</a>
+      <li class="py-3 px-4 {{ (strcmp(Route::currentRouteName(), 'categories') == 0) ? 'text-cyan-200' : '' }}">
+        <a href="{{route('categories')}}" class="text-lg hover:text-cyan-200">Products</a>
       </li>
       <li class="py-3 px-4 {{ (strcmp(Route::currentRouteName(), 'service') == 0) ? 'text-cyan-200' : '' }}">
         <a href="{{route('service')}}" class="text-lg hover:text-cyan-200">Services</a>

@@ -47,16 +47,14 @@ Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 // frontend category page route
-Route::get('/category', [CategoryController::class, 'show'])->name('category');
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
 
 // frontend subcategory page route
-Route::get('/subcategory/{id}', [SubcategoryController::class, 'show'])->name('subcategory');
-
-// frontend Products by Category page route
-Route::get('/productsByCategory', [ProductsByCategoryController::class, 'show'])->name('productsByCategory');
+Route::get('/subcategories/{slug}', [SubcategoryController::class, 'show'])->name('subcategories.show');
 
 // frontend product page route
-Route::get('/product', [ProductController::class, 'show'])->name('product');
+Route::get('/products/{slug}', [ProductController::class, 'show'])->name('product.show');
 
 // frontend subscriber
 Route::post('/subscribe/store', [SubscriberController::class, 'store'])->name('subscribe.store');

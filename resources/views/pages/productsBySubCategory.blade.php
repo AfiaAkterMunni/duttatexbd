@@ -21,15 +21,15 @@
   <div class="lg:basis-4/5 basis-4/6">
     <!-- Product Categories title Start-->
     <div class="px-16 pt-8 pb-2">
-      <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400"><a href="{{route('subcategory')}}">Products By Category</a></h4>
+      <h2 class="text-[22px] text-gray-500">Products By SubCategory</h2>
     </div>
     <!-- Product Categories title End-->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 py-10 lg:px-16 md:px-16 pr-14 pl-8 text-center uppercase text-lg">
-      @foreach($subcategories as $subcategory)
+      @foreach($products as $product)
       <div>
-        <a href="{{route('product')}}">
-          <img src="{{asset('uploads/subcategories/' . $subcategory->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-          <h3 class="pt-3">{{$subcategory->name}}</h3>
+        <a href="{{ route('product.show', ['slug' => $product->slug]) }}">
+          <img src="{{ asset('uploads/galleries/' . $product->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+          <p class="pt-3">{{ $product->name }}</p>
         </a>
       </div>
       @endforeach

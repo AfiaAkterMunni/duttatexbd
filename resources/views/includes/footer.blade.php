@@ -18,7 +18,7 @@
       <ul>
         <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('homepage')}}" class="hover:underline">Home</a></li>
         <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('about')}}" class="hover:underline">About</a></li>
-        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('category')}}" class="hover:underline">Products</a></li>
+        <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('categories')}}" class="hover:underline">Products</a></li>
         <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('service')}}" class="hover:underline">Services</a></li>
         <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('contact')}}" class="hover:underline">Contact</a></li>
       </ul>

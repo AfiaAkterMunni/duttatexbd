@@ -12,7 +12,7 @@
 
 <!-- Product Categories title Start-->
 <div class="px-24 pt-8 pb-4">
-  <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400"><a href="{{route('category')}}">Product Categories</a></h4>
+  <h2 class="text-[22px] text-gray-500 decoration-gray-400">Product Categories</h2>
 </div>
 <!-- Product Categories title End-->
 

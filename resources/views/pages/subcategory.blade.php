@@ -6,9 +6,9 @@
   <div class="lg:basis-1/5 basis-2/6 lg:m-6 m-3 lg:p-2.5 p-1 h-screen overflow-x-hidden" id="accordian" style="scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgb(211, 222, 245) rgb(245, 241, 241);">
     <ul class="show-dropdown">
       <li class="mx-[20px] border-b text-[#9c9c9c] text-md py-2 px-4">All Categories</li>
-      @foreach($categories as $category)
+      @foreach($categories as $cat)
       <li>
-        <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-sky-100 hover:text-gray-600" href="javascript:void(0);">{{$category->name}}</a>
+        <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-sky-100 hover:text-gray-600 @if ($category->id == $cat->id) bg-sky-100 text-gray-600 @endif" href="javascript:void(0);">{{$cat->name}}</a>
         <ul class="pl-10 hidden">
           @foreach($category->subcategories as $subcategory)
           <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-blue-50">{{$subcategory->name}}</a></li>
@@ -22,14 +22,14 @@
   @if(count($subcategories)>0)
     <!-- Product Categories title Start-->
     <div class="px-16 pt-8 pb-2">
-      <h4 class="text-[22px] text-gray-500 underline underline-offset-4 decoration-gray-400">Product Subcategories</h4>
+      <h2 class="text-[22px] text-gray-500">Product Subcategories</h2>
     </div>
     <!-- Product Categories title End-->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 py-10 lg:px-16 md:px-16 pr-14 pl-8 text-center uppercase text-lg">
       @foreach($subcategories as $subcategory)
       <div>
-        <a href="{{route('productsByCategory')}}">
-          <img src="{{asset('uploads/subcategories/' . $subcategory->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+        <a href="{{route('subcategories.show', ['slug' => $subcategory->slug])}}">
+          <img src="{{asset('uploads/galleries/' . $subcategory->gallery->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
           <h3 class="pt-3">{{$subcategory->name}}</h3>
         </a>
       </div>
