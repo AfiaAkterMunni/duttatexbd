@@ -8,12 +8,12 @@
       <li class="mx-[20px] border-b text-[#9c9c9c] text-md py-2 px-4">All Categories</li>
       @foreach($categories as $cat)
       <li>
-        <a class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-sky-100 hover:text-gray-600 @if ($category->id == $cat->id) bg-sky-100 text-gray-600 @endif" href="javascript:void(0);">{{$cat->name}}</a>
-        <ul class="pl-10 hidden">
-          @foreach($category->subcategories as $subcategory)
+        <a href="{{ route('categories.show', ['slug' => $cat->slug]) }}" class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-sky-100 hover:text-gray-600 @if ($category->id == $cat->id) bg-sky-100 text-gray-600 @endif" href="javascript:void(0);">{{ $cat->name }}</a>
+        {{-- <ul class="pl-10 hidden">
+          @foreach($cat->subcategories as $subcategory)
           <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-blue-50">{{$subcategory->name}}</a></li>
           @endforeach
-        </ul>
+        </ul> --}}
       </li>
       @endforeach
     </ul>
