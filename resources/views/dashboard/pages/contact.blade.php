@@ -58,7 +58,7 @@
                                         <div class="flex items-center space-x-4 text-sm">
                                             <a href="#" name="{{ $contact->name }}" email="{{ $contact->email }}"
                                                 phone="{{ $contact->phone }}" message="{{ $contact->message }}"
-                                                image="{{ $contact->image }}"
+                                                image="{{ $contact->attachment }}"
                                                 class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray openModalButtonForView"
                                                 aria-label="View">
                                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
@@ -146,9 +146,9 @@
                             <p id="modalMessage" class="text-sm text-gray-500 dark:text-gray-400"></p>
                         </div>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center" id="modalImage">
                         <p class="text-sm font-medium text-gray-700 dark:text-gray-300 w-24">Image:</p>
-                        <img id="modalImage" alt="Image" class="w-32 h-32 object-cover rounded-lg">
+                        <img alt="Image" class="w-32 h-32 object-cover rounded-lg">
                     </div>
                 </div>
             </div>
@@ -226,7 +226,12 @@
                 document.getElementById('modalEmail').innerText = button.getAttribute('email');
                 document.getElementById('modalPhone').innerText = button.getAttribute('phone');
                 document.getElementById('modalMessage').innerText = button.getAttribute('message');
-                document.getElementById('modalImage').setAttribute('src', "{{ asset('uploads/contacts/:image') }}".replace(":image", button.getAttribute('image')));
+                let attachment = button.getAttribute('image');
+                if (attachment) {
+                    document.querySelector('#modalImage img').setAttribute('src', "{{ asset('uploads/contacts/:image') }}".replace(":image", button.getAttribute('image')));
+                } else {
+                    document.querySelector('#modalImage').style = "display:none";
+                }
                 if (viewModal.classList.contains('hidden')) {
                     viewModal.classList.remove('hidden');
                 }

@@ -19,17 +19,20 @@ class ContactController extends Controller
 
     public function store(StoreContactRequest $request)
     {
-        $image = $request->file('image');
-        $name = time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/uploads/contacts');
-        $image->move($destinationPath, $name);
+
         $data = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'message' => $request->input('message'),
-            'image' => $name
         ];
+        if($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/contacts');
+            $image->move($destinationPath, $name);
+            $data['attachment'] = $name;
+        }
         Contact::create($data);
         return redirect(route('contact'))->with('success', 'Your Message Sent Successfully!!!');
 

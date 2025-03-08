@@ -32,8 +32,7 @@ class StoreContactRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|string',
             'message' => 'required|string',
-            'image' => 'required|mimes:png,jpg',
-
+            'image' => 'nullable|image|mimes:png,jpg,jpeg',
         ];
     }
 }
