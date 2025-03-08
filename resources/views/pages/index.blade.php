@@ -45,11 +45,11 @@
 
 <!-- Product Galery Start-->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-10 lg:px-24 md:px-20 px-16 text-center uppercase text-lg">
-  @foreach($categories as $category)
+  @foreach($products as $product)
   <div>
-    <a href="{{ route('categories.show', ['slug' => $category->slug]) }}">
-      <img src="{{ asset('uploads/galleries/' . $category->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
-      <h3 class="pt-3">{{$category->name}}</h3>
+    <a href="{{ route('product.show', ['slug' => $product->slug]) }}">
+      <img src="{{ asset('uploads/galleries/' . $product->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+      <h3 class="pt-3">{{$product->name}}</h3>
     </a>
   </div>
   @endforeach
