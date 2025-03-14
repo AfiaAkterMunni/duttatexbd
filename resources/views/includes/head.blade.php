@@ -1,7 +1,25 @@
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DuttaTex</title>
-  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@isset($seo)
+    @if(!empty($seo->meta_description))
+        <meta name="description" content="{{ $seo->meta_description }}"/>
+    @endif
+    @if(!empty($seo->meta_keywords))
+        <meta name="keywords" content="{{ $seo->meta_keywords }}"/>
+    @endif
+    <meta name="robots" content="index,follow" />
+    @if (!empty($seo->meta_robots))
+        <meta name="robots" content="{{ $seo->meta_robots }}">
+    @endif
+@endisset
+<link rel="profile" href="https://gmpg.org/xfn/11">
+{{-- TODO: create your own index. I just copied from nrbfashion.com --}}
+{{-- <meta name="yandex-verification" content="6d993c4241bdbef3" />
+<meta name="msvalidate.01" content="15A832B60D26B0503268A251C2AFE01D" />
+<meta name="msvalidate.01" content="A235C4575D8E0CF4C83A5717C1A56147" />
+<meta name="google-site-verification" content="8EQwjGpsRQy8lz9q9VhD_Amnpde4i2enPqhp8QAeGy4" /> --}}
+
+
   <!-- cdn link for tailwind css -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -19,7 +37,7 @@
 
   <!-- cdn link for font-awesome icon -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  
+
 
   @if(request()->is('/subcategory'))
       <!-- subcategory -->
