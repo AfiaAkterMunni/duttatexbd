@@ -17,6 +17,7 @@ class SubcategoryController extends Controller
             'subcategory' => $subcategory,
             'products' => $products,
             'categories' => $categories,
+            'seo' => $subcategory->getSeoSettings(),
         ]);
     }
 }

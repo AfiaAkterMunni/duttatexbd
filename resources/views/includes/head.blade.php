@@ -7,7 +7,6 @@
     @if(!empty($seo->meta_keywords))
         <meta name="keywords" content="{{ $seo->meta_keywords }}"/>
     @endif
-    <meta name="robots" content="index,follow" />
     @if (!empty($seo->meta_robots))
         <meta name="robots" content="{{ $seo->meta_robots }}">
     @endif
