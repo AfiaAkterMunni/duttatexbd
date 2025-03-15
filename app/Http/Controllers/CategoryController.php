@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\SeoSetting;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,12 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        $seo = SeoSetting::where('page_name', 'product')->first();
         $categories = Category::latest()->paginate(12);
-        return view('pages.category', ['categories' => $categories]);
+        return view('pages.category', [
+            'categories' => $categories,
+            'seo' => $seo,
+        ]);
     }
 
     public function show($slug)
