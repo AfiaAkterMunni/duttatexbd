@@ -73,4 +73,18 @@ class Product extends Model
     {
         return $this->belongsTo(Gallery::class);
     }
+
+    /**
+     * Get the seo data for the Category.
+     */
+    public function getSeoSettings()
+    {
+        return new SeoSetting([
+            'meta_robots' => $this->meta_robots,
+            'seo_title' => $this->seo_title,
+            'h1_text' => $this->h1_text,
+            'meta_description' => $this->meta_description,
+            'meta_keywords' => $this->meta_keywords,
+        ]);
+    }
 }

@@ -43,6 +43,7 @@ class ProductController extends Controller
         return view('pages.product', [
             'product' => $product,
             'relatedProducts' => $relatedProducts,
+            'seo' => $product->getSeoSettings(),
         ]);
     }
 }
