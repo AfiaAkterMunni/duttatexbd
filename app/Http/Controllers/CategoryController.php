@@ -27,7 +27,8 @@ class CategoryController extends Controller
         return view('pages.subcategory', [
             'category' => $category,
             'categories' => $categories,
-            'subcategories' => $subcategories
+            'subcategories' => $subcategories,
+            'seo' => $category->getSeoSettings(),
         ]);
     }
 }

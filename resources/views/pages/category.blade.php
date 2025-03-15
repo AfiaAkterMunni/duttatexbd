@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Category')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - Categories')
 @section('content')
 <!-- Breadcrumb Start-->
 <!-- <div class="px-24 w-1/4">

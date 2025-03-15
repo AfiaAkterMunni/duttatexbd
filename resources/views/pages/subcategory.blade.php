@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'SubCategory')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - Subcategory')
 @section('content')
 <!-- Category sidebar Start-->
 <div class="flex flex-row">
