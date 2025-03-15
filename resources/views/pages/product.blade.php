@@ -29,7 +29,7 @@
         <h1 class="text-3xl font-semibold">{{ $product->name }}</h1>
       </div>
       <div>{!! $product->description !!}</div>
-      <button class="openModalButton border border-slate-300 px-3 py-1.5 text-blue-500 font-semibold rounded-lg mt-6 hover:bg-sky-600 hover:text-white tracking-wider uppercase">quick inquiry</button>
+      {{-- <button class="openModalButton border border-slate-300 px-3 py-1.5 text-blue-500 font-semibold rounded-lg mt-6 hover:bg-sky-600 hover:text-white tracking-wider uppercase">quick inquiry</button> --}}
     </div>
   </div>
   <!-- Single Product End-->
