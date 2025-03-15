@@ -21,8 +21,8 @@ class CategoryController extends Controller
 
     public function show($slug)
     {
+        $category = Category::where('slug', $slug)->firstOrFail();
         $categories = Category::get();
-        $category = Category::where('slug', $slug)->first();
         $subcategories = Subcategory::where('category_id', $category->id)->paginate(12);
         return view('pages.subcategory', [
             'category' => $category,

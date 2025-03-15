@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function show($slug)
     {
-        $product = Product::whereSlug($slug)->first();
+        $product = Product::whereSlug($slug)->firstOrFail();
         $fetchedProductIds = [$product->id];
         $relatedProducts = Product::with('gallery:id,name,image')
             ->where('subcategory_id', $product->subcategory_id)
