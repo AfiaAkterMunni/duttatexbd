@@ -29,7 +29,7 @@ class UpdateSeoRequest extends FormRequest
     public function rules()
     {
         return [
-            'page_name' => 'required|string|in:home,about,service,contact',
+            'page_name' => 'required|string|in:home,about,service,contact,product',
             'meta_robots' => 'nullable|string',
             'seo_title' => 'nullable|string',
             'h1_text' => 'nullable|string',

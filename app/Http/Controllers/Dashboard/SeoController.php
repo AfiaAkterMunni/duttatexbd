@@ -14,11 +14,13 @@ class SeoController extends Controller
         $seoData = SeoSetting::all();
         $home = $seoData->where('page_name', 'home')->first();
         $about = $seoData->where('page_name', 'about')->first();
+        $product = $seoData->where('page_name', 'product')->first();
         $service = $seoData->where('page_name', 'service')->first();
         $contact = $seoData->where('page_name', 'contact')->first();
         return view('dashboard.pages.seo', [
             'home' => $home,
             'about' => $about,
+            'product' => $product,
             'service' => $service,
             'contact' => $contact,
         ]);
