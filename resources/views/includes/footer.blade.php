@@ -57,12 +57,11 @@
       <p class="text-md text-gray-500">Copyright © 2024 Duttatex | Powered by Duttatex</p>
     </div>
     <div class="md:basis-1/2 text-center md:pt-0 pt-5">
-      <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="mr-4"><ion-icon name="logo-linkedin" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-      <a href="https://twitter.com/NrBfashion" class="mr-4"><ion-icon name="logo-twitter" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-      <a href="" class="mr-4"><ion-icon name="logo-skype" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-      <a href="" class="mr-4"><ion-icon name="logo-whatsapp" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-      <a href="" class="mr-4"><ion-icon name="videocam-outline" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
-      <a href=""><ion-icon name="mail-outline" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="mr-4" target="_blank"><ion-icon name="logo-linkedin" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href="https://twitter.com/NrBfashion" class="mr-4" target="_blank"><ion-icon name="logo-twitter" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href="mailto:prabir@nrbfashion.com" class="mr-4" target="_blank"><ion-icon name="mail" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href="skype:username?call" class="mr-4" target="_blank"><ion-icon name="logo-skype" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
+        <a href="https://api.whatsapp.com/send?phone=8801715819086" class="mr-4" target="_blank"><ion-icon name="logo-whatsapp" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
     </div>
   </div>
 </div>
@@ -70,11 +69,11 @@
 
 <!-- Social icon bar Start-->
 <div class="fixed right-0 top-2/4 translate-y-[-50%]">
-  <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="text-white bg-[#0076B3] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-linkedin"></i></a>
-  <a href="https://twitter.com/NrBfashion" class="text-white bg-[#50A4D5] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="text-white bg-[#D74B40] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-envelope"></i></a>
-  <a href="#" class="text-white bg-[#36A4DC] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-skype"></i></a>
-  <a href="#" class="text-white bg-[#299580] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-whatsapp"></i></a>
+  <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="text-white bg-[#0076B3] block text-center p-3 text-lg hover:bg-black transition-all" target="_blank"><i class="fa fa-linkedin"></i></a>
+  <a href="https://twitter.com/NrBfashion" target="_blank" class="text-white bg-[#50A4D5] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-twitter"></i></a>
+  <a href="mailto:prabir@nrbfashion.com" target="_blank" class="text-white bg-[#D74B40] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-envelope"></i></a>
+  <a href="skype:username?call" target="_blank" class="text-white bg-[#36A4DC] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-skype"></i></a>
+  <a href="https://api.whatsapp.com/send?phone=8801715819086" class="text-white bg-[#299580] block text-center p-3 text-lg hover:bg-black transition-all"><i class="fa fa-whatsapp"></i></a>
 </div>
 <!-- Social icon bar End-->
 

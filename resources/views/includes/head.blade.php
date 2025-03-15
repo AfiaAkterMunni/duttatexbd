@@ -24,10 +24,6 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 
-  <!-- cdn link for ionicons icon -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
 
 
