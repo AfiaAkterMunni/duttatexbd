@@ -21,7 +21,7 @@
   @foreach($categories as $category)
   <div>
     <a href="{{route('categories.show', ['slug' => $category->slug])}}">
-      <img src="{{ asset('uploads/galleries/' . $category->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+      <img src="{{ asset('uploads/galleries/' . $category->gallery->image) }}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="{{ $category->gallery->name }}">
       <h3 class="pt-3">{{$category->name}}</h3>
     </a>
   </div>

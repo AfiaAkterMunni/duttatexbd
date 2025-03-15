@@ -146,10 +146,7 @@
                             <p id="modalMessage" class="text-sm text-gray-500 dark:text-gray-400"></p>
                         </div>
                     </div>
-                    <div class="flex items-center" id="modalImage">
-                        <p class="text-sm font-medium text-gray-700 dark:text-gray-300 w-24">Image:</p>
-                        <img alt="Image" class="w-32 h-32 object-cover rounded-lg">
-                    </div>
+                    <div class="flex items-center" id="modalImage"></div>
                 </div>
             </div>
 
@@ -228,7 +225,9 @@
                 document.getElementById('modalMessage').innerText = button.getAttribute('message');
                 let attachment = button.getAttribute('image');
                 if (attachment) {
-                    document.querySelector('#modalImage img').setAttribute('src', "{{ asset('uploads/contacts/:image') }}".replace(":image", button.getAttribute('image')));
+                    document.querySelector('#modalImage').innerHTML = `<p class="text-sm font-medium text-gray-700 dark:text-gray-300 w-24">Image:</p>
+                    <img src="{{ asset('uploads/contacts/:image') }}" alt="Uploaded Image" class="w-32 h-32 object-cover rounded-lg">`.replace(':image', attachment);
+                    document.querySelector('#modalImage').style = "display:block";
                 } else {
                     document.querySelector('#modalImage').style = "display:none";
                 }

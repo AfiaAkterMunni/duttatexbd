@@ -4,7 +4,7 @@
   <!-- Single Product Start-->
   <div class="lg:flex lg:flex-row m-16">
     <div class="lg:basis-1/2">
-        <img src="{{ asset('uploads/galleries/' . $product->gallery->image) }}" alt="" class="mx-auto w-80">
+        <img src="{{ asset('uploads/galleries/' . $product->gallery->image) }}" alt="{{ $product->gallery->name }}" class="mx-auto w-80">
         @if (count($relatedProducts))
             <div class="py-7">
                 <div>
@@ -15,42 +15,14 @@
                         <div class="w-36 p-3 relative inline-block group">
                             <span class="invisible bg-[black] text-[#fff] text-center rounded-[6px] px-2 py-[5px] absolute top-[100%] left-2/4 -ml-[60px] after:content-[''] after:absolute  after:bottom-full after:left-1/2 after:-ml-[5px] after:border-[5px] after:border-solid after:border-transparent after:border-b-black group-hover:visible">{{ $relProduct->name }}</span>
                             <a href="{{ route('product.show', ['slug' => $relProduct->slug]) }}">
-                                <img src="{{ asset('uploads/galleries/'. $relProduct->gallery->image) }}" alt="" class="rounded-lg border-2">
+                                <img src="{{ asset('uploads/galleries/'. $relProduct->gallery->image) }}" alt="{{ $relProduct->gallery->name }}" class="rounded-lg border-2">
                             </a>
 
                         </div>
                     @endforeach
-
                 </div>
             </div>
         @endif
-      {{-- <div class="py-7 ">
-        <div>
-          <h1 class="text-center text-2xl font-semibold">You May Also Like</h1>
-        </div>
-        <div class="flex w-3/4 mx-auto">
-          <div class="w-36 p-3">
-            <a href="#">
-              <img src="{{asset('images/1.jpg')}}" alt="" class="rounded-lg border-2">
-            </a>
-          </div>
-          <div class="w-36 p-3">
-            <a href="#">
-              <img src="{{asset('images/3.jpg')}}" alt="" class="rounded-lg border-2">
-            </a>
-          </div>
-          <div class="w-36 p-3">
-            <a href="#">
-              <img src="{{asset('images/4.jpg')}}" alt="" class="rounded-lg border-2">
-            </a>
-          </div>
-          <div class="w-36 p-3">
-            <a href="#">
-              <img src="{{asset('images/12.jpg')}}" alt="" class="rounded-lg border-2">
-            </a>
-          </div>
-        </div>
-      </div> --}}
     </div>
     <div class="lg:basis-1/2 lg:order-last order-none pt-2 text-justify pr-24">
       <div class="pb-5">

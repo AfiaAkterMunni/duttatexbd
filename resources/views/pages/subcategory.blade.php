@@ -29,7 +29,7 @@
       @foreach($subcategories as $subcategory)
       <div>
         <a href="{{route('subcategories.show', ['slug' => $subcategory->slug])}}">
-          <img src="{{asset('uploads/galleries/' . $subcategory->gallery->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="">
+          <img src="{{asset('uploads/galleries/' . $subcategory->gallery->image)}}" class="h-auto max-w-full rounded-lg border-2 transition duration-300 ease-in-out hover:scale-110" alt="{{ $subcategory->gallery->name }}">
           <h3 class="pt-3">{{$subcategory->name}}</h3>
         </a>
       </div>
