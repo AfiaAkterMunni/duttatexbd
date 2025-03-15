@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'SubCategory')
+@section('title', optional($seo)->seo_title ?? 'DuttaTex - ' . $product->name)
 @section('content')
   <!-- Single Product Start-->
   <div class="lg:flex lg:flex-row m-16">
