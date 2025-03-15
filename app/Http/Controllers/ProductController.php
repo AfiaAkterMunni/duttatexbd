@@ -9,6 +9,7 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = Product::whereSlug($slug)->firstOrFail();
+        $productJsonLD = $this->productJsonLD($product);
         $fetchedProductIds = [$product->id];
         $relatedProducts = Product::with('gallery:id,name,image')
             ->where('subcategory_id', $product->subcategory_id)
@@ -44,6 +45,23 @@ class ProductController extends Controller
             'product' => $product,
             'relatedProducts' => $relatedProducts,
             'seo' => $product->getSeoSettings(),
+            'jsonLD' => $productJsonLD,
         ]);
+    }
+
+    public function productJsonLD($product)
+    {
+        if ($product) {
+            $productJsonLD = [
+                "@context" => "https://schema.org",
+                "@type" => "Product",
+                "name" => $product->name,
+                "url" => route('product.show', ['slug' => $product->slug]),
+                "image" => asset('uploads/galleries/' . $product->gallery->image),
+                "description" => $product->description,
+            ];
+            return $productJsonLD;
+        }
+        return null;
     }
 }

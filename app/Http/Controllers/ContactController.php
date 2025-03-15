@@ -12,8 +12,10 @@ class ContactController extends Controller
     public function show()
     {
         $seo = SeoSetting::where('page_name', 'contact')->first();
+        $jsonLD = $this->seoSettingJsonLD($seo);
         return view('pages.contact', [
-            'seo' => $seo
+            'seo' => $seo,
+            'jsonLD' => $jsonLD,
         ]);
     }
 
@@ -63,5 +65,23 @@ class ContactController extends Controller
         return view('dashboard.pages.contact', ['contacts' => $contacts]);
     }
 
-
+    public function seoSettingJsonLD($seoSetting)
+    {
+        if ($seoSetting) {
+            $seoJsonLD = [
+                "@context" => "https://schema.org",
+                "@type" => "WebPage",
+                "name" => $seoSetting->seo_title,
+                "url" => route('contact'),
+                "description" => $seoSetting->meta_description ?? "",
+                "publisher" => [
+                    "@type" => "Organization",
+                    "name" => "Nrb fashion",
+                    "logo" => asset("images/duttatex-Logo.png"),
+                ]
+            ];
+            return $seoJsonLD;
+        }
+        return null;
+    }
 }

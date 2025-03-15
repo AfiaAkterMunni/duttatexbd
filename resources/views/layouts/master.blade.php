@@ -3,7 +3,13 @@
     <head>
         <title>@yield('title')</title>
         @include('includes.head')
-
+        {{-- @dump(isset($jsonLD)) --}}
+        @if(isset($jsonLD))
+            <!-- JSON-LD -->
+            <script type="application/ld+json">
+                {!! json_encode($jsonLD) !!}
+            </script>
+        @endif
     </head>
 
     <body>
