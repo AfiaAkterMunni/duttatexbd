@@ -15,7 +15,7 @@ class ProductController extends Controller
 {
     public function show()
     {
-        $products = Product::paginate(15);
+        $products = Product::latest()->paginate(15);
         return view('dashboard.pages.products.index', ['products' => $products]);
     }
 
@@ -29,7 +29,8 @@ class ProductController extends Controller
         ]);
     }
 
-    public function store(StoreProductRequest $request) {
+    public function store(StoreProductRequest $request)
+    {
         Product::create([
             'name' => $request->input('name'),
             'category_id' => $request->input('category'),
@@ -79,9 +80,8 @@ class ProductController extends Controller
     public function delete(Request $request, $id)
     {
         $product = Product::find($id);
-        if($product->image)
-        {
-            unlink('uploads/products/'.$product->image);
+        if ($product->image) {
+            unlink('uploads/products/' . $product->image);
         }
         $product->delete();
         return redirect(route('product.index'))->with('success', 'Product Deleted Successfully!!!');
@@ -97,5 +97,4 @@ class ProductController extends Controller
         $subcategories = Subcategory::where('category_id', $id)->get(['id', 'name']);
         return response()->json($subcategories);
     }
-
 }

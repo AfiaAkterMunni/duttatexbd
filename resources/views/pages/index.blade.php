@@ -25,17 +25,17 @@
   <div class="md:pr-10 md:my-2 my-10">
     <h4 class="pb-5 text-2xl font-bold text-center">What We Provide</h4>
     <p class="text-justify text-sm leading-6 mb-5">At DuttaTex, we take pride in being a premier workwear
-        manufacturer, dedicated to providing businesses and individuals with top-notch workwear solutions. With
-        a rich history spanning 25 Years , we have honed our expertise to become a trusted partner in the
-        industry...</p>
+      manufacturer, dedicated to providing businesses and individuals with top-notch workwear solutions. With
+      a rich history spanning 25 Years , we have honed our expertise to become a trusted partner in the
+      industry...</p>
     <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
   </div>
   <div class="md:my-2 my-10">
     <h4 class="pb-5 text-2xl font-bold text-center">Our Mission</h4>
     <p class="text-justify text-sm leading-6 mb-5">At Duttatex Workwear Factory, our mission is clear and resolute:
-        to be a driving force behind excellence in workwear manufacturing. Since our establishment, we have been
-        dedicated to producing workwear solutions that not only meet industry standards but also exceed the
-        expectations of our valued clients...</p>
+      to be a driving force behind excellence in workwear manufacturing. Since our establishment, we have been
+      dedicated to producing workwear solutions that not only meet industry standards but also exceed the
+      expectations of our valued clients...</p>
     <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
   </div>
 </div>
