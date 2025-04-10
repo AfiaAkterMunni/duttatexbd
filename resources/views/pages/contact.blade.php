@@ -16,9 +16,6 @@
                 <li class="pt-2.5"><ion-icon name="call-outline"
                         class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
                         Urgent Call: +88 01715 819 086</a></li>
-                <li class="pt-2.5"><ion-icon name="call-outline"
-                        class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        +8801329692666</a></li>
                 <li class="pt-2.5"><ion-icon name="logo-whatsapp"
                         class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
                         whatsapp: +88 01715 819 086</a></li>
