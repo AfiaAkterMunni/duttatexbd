@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\SitemapService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -57,5 +58,14 @@ class Category extends Model
             'meta_description' => $this->meta_description,
             'meta_keywords' => $this->meta_keywords,
         ]);
+    }
+
+    protected static function booted()
+    {
+        parent::booted();
+        static::saved(function ($category) {
+            $sitemapService = app(SitemapService::class);
+            $sitemapService->addCategoryToSitemap($category);
+        });
     }
 }

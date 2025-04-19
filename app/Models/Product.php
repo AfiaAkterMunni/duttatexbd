@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\SitemapService;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -47,6 +48,12 @@ class Product extends Model
                 $slug .= '-' . ($number + 1);
             }
             $product->slug = $slug;
+        });
+
+        //saved model hook for sitemap
+        static::saved(function ($product) {
+            $sitemapService = app(SitemapService::class);
+            $sitemapService->addProductToSitemap($product);
         });
     }
 

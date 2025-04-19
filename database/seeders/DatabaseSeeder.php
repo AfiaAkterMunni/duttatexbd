@@ -20,7 +20,12 @@ class DatabaseSeeder extends Seeder
         User::firstOrCreate([
             'name' => 'Munni',
             'email' => 'munni@gmail.com',
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('duttatexbd@munni'),
+        ]);
+        User::firstOrCreate([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('duttatexbd@admin'),
         ]);
     }
 }

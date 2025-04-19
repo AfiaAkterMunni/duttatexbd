@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\SitemapService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -46,6 +47,12 @@ class Subcategory extends Model
                 $slug .= '-' . ($number + 1);
             }
             $model->slug = $slug;
+        });
+
+        //saved model hook for sitemap
+        static::saved(function ($subcategory) {
+            $sitemapService = app(SitemapService::class);
+            $sitemapService->addSubcategoryToSitemap($subcategory);
         });
     }
 
