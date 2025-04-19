@@ -206,7 +206,9 @@
 
 <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('description');
+    CKEDITOR.replace('description', {
+        versionCheck: false
+    });
 
     function showSubcategory(categoryId) {
         if (categoryId == "") {
