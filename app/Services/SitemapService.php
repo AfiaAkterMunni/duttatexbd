@@ -25,13 +25,16 @@ class SitemapService
      */
     public function generateSitemapIndex()
     {
+        $baseUrl = config('app.url');
         // Create sitemap index file
         SitemapIndex::create()
-            ->add(asset('static-sitemap.xml'))
-            ->add(asset('categories-sitemap.xml'))
-            ->add(asset('subcategories-sitemap.xml'))
-            ->add(asset('products-sitemap.xml'))
+            ->add("$baseUrl/static-sitemap.xml")
+            ->add("$baseUrl/categories-sitemap.xml")
+            ->add("$baseUrl/subcategories-sitemap.xml")
+            ->add("$baseUrl/products-sitemap.xml")
             ->writeToFile(public_path('sitemap.xml'));
+
+
     }
 
     /**
