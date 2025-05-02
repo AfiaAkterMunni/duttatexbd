@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 use App\Models\Category;
@@ -47,10 +48,13 @@ class SitemapService
         $about = Url::create('/about')
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
-        $services = Url::create('/services')
+        $services = Url::create('/service')
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
         $contact = Url::create('/contact')
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
+            ->setPriority(1.0);
+        $categories = Url::create('/categories')
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
         Sitemap::create()
@@ -58,6 +62,7 @@ class SitemapService
             ->add($about)
             ->add($services)
             ->add($contact)
+            ->add($categories)
             ->writeToFile(public_path('static-sitemap.xml'));
     }
 
