@@ -52,13 +52,17 @@ class ProductController extends Controller
     public function productJsonLD($product)
     {
         if ($product) {
+            $descriptionAsText = strip_tags($product->description);
+            $descriptionAsText = html_entity_decode($descriptionAsText);
+            $descriptionAsText = preg_replace('/\s+/', ' ', $descriptionAsText);
+            $descriptionAsText = trim($descriptionAsText);
             $productJsonLD = [
                 "@context" => "https://schema.org",
                 "@type" => "Product",
                 "name" => $product->name,
                 "url" => route('product.show', ['slug' => $product->slug]),
                 "image" => asset('uploads/galleries/' . $product->gallery->image),
-                "description" => $product->description,
+                "description" => $descriptionAsText,
             ];
             return $productJsonLD;
         }
