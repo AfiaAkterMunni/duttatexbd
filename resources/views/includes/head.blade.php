@@ -1,5 +1,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="{{ url()->current() }}" />
 @isset($seo)
     @if(!empty($seo->meta_description))
         <meta name="description" content="{{ $seo->meta_description }}"/>
