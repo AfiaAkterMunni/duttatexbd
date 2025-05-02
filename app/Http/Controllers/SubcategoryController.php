@@ -43,7 +43,6 @@ class SubcategoryController extends Controller
                                 "name" => $p->name,
                                 "url" => route('product.show', ['slug' => $p->slug]),
                                 "image" => asset('uploads/galleries/' . $p->gallery->image),
-                                "description" => $p->description,
                             ]
                         ];
                     })->toArray(),
