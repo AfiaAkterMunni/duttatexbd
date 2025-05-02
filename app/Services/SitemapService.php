@@ -45,19 +45,21 @@ class SitemapService
      */
     public function addToStaticSitemap()
     {
-        $home = Url::create('/')
+        $base = config('app.url');
+
+        $home = Url::create("$base/")
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
-        $about = Url::create('/about')
+        $about = Url::create("$base/about")
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
-        $services = Url::create('/service')
+        $services = Url::create("$base/service")
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
-        $contact = Url::create('/contact')
+        $contact = Url::create("$base/contact")
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
-        $categories = Url::create('/categories')
+        $categories = Url::create("$base/categories")
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_NEVER)
             ->setPriority(1.0);
         Sitemap::create()
