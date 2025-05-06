@@ -42,7 +42,7 @@
 <!-- About End-->
 
 <!-- Product Galery Start-->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-10 lg:px-24 md:px-20 px-16 text-center uppercase text-lg">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 py-10 lg:px-24 md:px-20 px-16 text-center text-lg">
   @foreach($products as $product)
   <div>
     <a href="{{ route('product.show', ['slug' => $product->slug]) }}">

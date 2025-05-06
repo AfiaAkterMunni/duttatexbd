@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 <head>
-  <title>DuttaTex Dashboard - @yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('images/fav-icon.jpg')}}">
+    <title>DuttaTex Dashboard - @yield('title')</title>
     @include('dashboard.includes.head')
 
 </head>

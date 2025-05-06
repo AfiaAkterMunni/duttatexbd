@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
     <head>
+        <link rel="icon" type="image/x-icon" href="{{asset('images/fav-icon.jpg')}}">
         <title>@yield('title')</title>
         @include('includes.head')
         {{-- @dump(isset($jsonLD)) --}}

@@ -3,7 +3,7 @@
 @section('content')
   <!-- Single Product Start-->
   <div class="lg:flex lg:flex-row m-16">
-    <div class="lg:basis-1/2">
+    <div class="sticky top-16 self-start lg:basis-1/2">
         <img src="{{ asset('uploads/galleries/' . $product->gallery->image) }}" alt="{{ $product->gallery->name }}" class="mx-auto w-80">
         @if (count($relatedProducts))
             <div class="py-7">
