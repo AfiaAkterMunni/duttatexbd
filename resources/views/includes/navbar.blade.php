@@ -1,5 +1,5 @@
   <!-- Navigation Start-->
-  <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2">
+  <nav class="bg-[#027DAE] md:flex md:justify-between md:items-center py-2.5 md:px-8 px-2 sticky top-0 z-50">
     <div class="flex justify-between items-center ">
       <a href="{{route('homepage')}}" class="md:pl-10 pl-0 z-[16] md:z-auto ">
         <img src="{{asset('images/duttatex-Logo.png')}}" class="h-14 sm:h-20" alt="Duttatex Logo" />
