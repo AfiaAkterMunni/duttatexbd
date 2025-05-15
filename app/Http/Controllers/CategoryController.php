@@ -13,7 +13,7 @@ class CategoryController extends Controller
     {
         $seo = SeoSetting::where('page_name', 'product')->first();
         $jsonLD = $this->seoSettingJsonLD($seo);
-        $categories = Category::latest()->paginate(12);
+        $categories = Category::latest()->paginate(16);
         return view('pages.category', [
             'categories' => $categories,
             'seo' => $seo,
@@ -26,7 +26,7 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $categoryJsonLD = $this->categoryJsonLD($category);
         $categories = Category::get();
-        $subcategories = Subcategory::where('category_id', $category->id)->paginate(12);
+        $subcategories = Subcategory::where('category_id', $category->id)->latest()->paginate(16);
         return view('pages.subcategory', [
             'category' => $category,
             'categories' => $categories,

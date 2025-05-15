@@ -13,7 +13,7 @@ class SubcategoryController extends Controller
         $subcategory = Subcategory::where('slug', $slug)->firstOrFail();
         $subcategoryJsonLD = $this->subcategoryJsonLD($subcategory);
         $categories = Category::get();
-        $products = Product::where('subcategory_id', $subcategory->id)->paginate(12);
+        $products = Product::where('subcategory_id', $subcategory->id)->latest()->paginate(16);
         return view('pages.productsBySubCategory', [
             'subcategory' => $subcategory,
             'products' => $products,
@@ -34,7 +34,7 @@ class SubcategoryController extends Controller
                 "description" => $subcategory->meta_description,
                 "mainEntity" => [
                     "@type" => "ItemList",
-                    "itemListElement" => $subcategory->product->map(function($p, $index) {
+                    "itemListElement" => $subcategory->product->map(function ($p, $index) {
                         return [
                             "@type" => "ListItem",
                             "position" => $index + 1,
@@ -54,5 +54,4 @@ class SubcategoryController extends Controller
 
         return null;
     }
-
 }

@@ -11,15 +11,16 @@
         <a href="{{ route('categories.show', ['slug' => $cat->slug]) }}" class="mx-[20px] text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-sky-100 hover:text-gray-600 @if ($category->id == $cat->id) bg-sky-100 text-gray-600 @endif" href="javascript:void(0);">{{ $cat->name }}</a>
         {{-- <ul class="pl-10 hidden">
           @foreach($cat->subcategories as $subcategory)
-          <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-blue-50">{{$subcategory->name}}</a></li>
-          @endforeach
-        </ul> --}}
+          <li><a href="javascript:void(0);" class="text-[#9c9c9c] text-base py-4 px-4 block rounded relative transition-all hover:bg-blue-50">{{$subcategory->name}}</a>
       </li>
       @endforeach
+    </ul> --}}
+    </li>
+    @endforeach
     </ul>
   </div>
   <div class="lg:basis-4/5 basis-4/6">
-  @if(count($subcategories)>0)
+    @if(count($subcategories)>0)
     <!-- Product Categories title Start-->
     <div class="px-16 pt-8 pb-2">
       <h2 class="text-[22px] text-gray-500">Product Subcategories</h2>
@@ -34,6 +35,12 @@
         </a>
       </div>
       @endforeach
+    </div>
+    <div class="flex justify-center py-8 px-4 text-xs tracking-wide text-blue-500 font-semibold">
+      <!-- Pagination -->
+      <div>
+        {{ $subcategories->links('includes.paginator') }}
+      </div>
     </div>
     @else
     <div class="pt-12">
