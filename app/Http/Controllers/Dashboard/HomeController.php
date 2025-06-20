@@ -12,9 +12,9 @@ class HomeController extends Controller
 {
     public function show()
     {
-        $products = Product::all();
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
+        $products = Product::count();
+        $categories = Category::count();
+        $subcategories = Subcategory::count();
         return view('dashboard.pages.index', ['products' => $products, 'categories' => $categories, 'subcategories' => $subcategories]);
     }
 }
