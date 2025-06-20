@@ -27,10 +27,10 @@
                             'url' => route('category.search'),
                             'placeholder' => 'Search for Category'
                         ],
-                        'subcategory.index' => [
-                            'url' => route('subcategory.search'),
-                            'placeholder' => 'Search for Subcategory'
-                        ],
+                        // 'subcategory.index' => [
+                        //     'url' => route('subcategory.search'),
+                        //     'placeholder' => 'Search for Subcategory'
+                        // ],
                         'product.index' => [
                             'url' => route('product.search'),
                             'placeholder' => 'Search for Product'
