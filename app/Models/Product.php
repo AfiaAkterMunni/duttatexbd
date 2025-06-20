@@ -20,7 +20,7 @@ class Product extends Model
         'name',
         'gallery_id',
         'category_id',
-        'subcategory_id',
+        // 'subcategory_id',
         'description',
         'meta_robots',
         'seo_title',
@@ -68,10 +68,10 @@ class Product extends Model
     /**
      * Get the subcategory data for the product.
      */
-    public function subcategory()
-    {
-        return $this->belongsTo(Subcategory::class);
-    }
+    // public function subcategory()
+    // {
+    //     return $this->belongsTo(Subcategory::class);
+    // }
 
     /**
      * Get the gallery data for the Category.
