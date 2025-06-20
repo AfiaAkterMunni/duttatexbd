@@ -42,7 +42,7 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
 
 // frontend subcategory page route
-Route::get('/subcategories/{slug}', [SubcategoryController::class, 'show'])->name('subcategories.show');
+// Route::get('/subcategories/{slug}', [SubcategoryController::class, 'show'])->name('subcategories.show');
 
 // frontend product page route
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('product.show');

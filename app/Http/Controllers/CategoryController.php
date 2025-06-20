@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\SeoSetting;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
@@ -26,11 +27,13 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $categoryJsonLD = $this->categoryJsonLD($category);
         $categories = Category::get();
-        $subcategories = Subcategory::where('category_id', $category->id)->latest()->paginate(16);
-        return view('pages.subcategory', [
+        // $subcategories = Subcategory::where('category_id', $category->id)->latest()->paginate(16);
+        $products = Product::where('category_id', $category->id)->latest()->paginate(16);
+        return view('pages.productsByCategory', [
             'category' => $category,
             'categories' => $categories,
-            'subcategories' => $subcategories,
+            'products' => $products,
+            // 'subcategories' => $subcategories,
             'seo' => $category->getSeoSettings(),
             'jsonLD' => $categoryJsonLD,
         ]);
