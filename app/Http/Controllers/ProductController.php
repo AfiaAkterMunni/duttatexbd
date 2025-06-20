@@ -11,24 +11,24 @@ class ProductController extends Controller
         $product = Product::whereSlug($slug)->firstOrFail();
         $productJsonLD = $this->productJsonLD($product);
         $fetchedProductIds = [$product->id];
-        $relatedProducts = Product::with('gallery:id,name,image')
-            ->where('subcategory_id', $product->subcategory_id)
-            ->whereNotIn('id', $fetchedProductIds)
-            ->latest()
-            ->limit(4)
-            ->get(['id', 'name', 'slug', 'gallery_id']);
-        $fetchedProductIds = array_merge($fetchedProductIds, $relatedProducts->pluck('id')->toArray());
+        // $relatedProducts = Product::with('gallery:id,name,image')
+        //     ->where('subcategory_id', $product->subcategory_id)
+        //     ->whereNotIn('id', $fetchedProductIds)
+        //     ->latest()
+        //     ->limit(4)
+        //     ->get(['id', 'name', 'slug', 'gallery_id']);
+        // $fetchedProductIds = array_merge($fetchedProductIds, $relatedProducts->pluck('id')->toArray());
 
         // If less than 5 products in the same subcategory, fetch from the same category
         if (count($fetchedProductIds) < 5) {
-            $categoryProducts = Product::with('gallery:id,name,image')
+            $relatedProducts = Product::with('gallery:id,name,image')
                 ->where('category_id', $product->category_id)
                 ->whereNotIn('id', $fetchedProductIds)
                 ->latest()
                 ->limit(5 - count($fetchedProductIds))
                 ->get(['id', 'name', 'slug', 'gallery_id']);
-            $relatedProducts = $relatedProducts->merge($categoryProducts);
-            $fetchedProductIds = array_merge($fetchedProductIds, $categoryProducts->pluck('id')->toArray());
+            // $relatedProducts = $relatedProducts->merge($categoryProducts);
+            $fetchedProductIds = array_merge($fetchedProductIds, $relatedProducts->pluck('id')->toArray());
         }
 
         // If less than 5 products in the same category, fetch any product
