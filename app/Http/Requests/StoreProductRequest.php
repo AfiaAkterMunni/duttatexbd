@@ -31,7 +31,7 @@ class StoreProductRequest extends FormRequest
             'name' => 'required|string',
             'gallery_id' => 'required|integer',
             'category' => 'required|numeric',
-            'subcategory' => 'required|numeric',
+            // 'subcategory' => 'required|numeric',
             'description' => 'required|string',
             'meta_robots' => 'nullable|string',
             'seo_title' => 'nullable|string',

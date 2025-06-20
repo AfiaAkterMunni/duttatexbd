@@ -44,7 +44,8 @@
                     <span class="text-gray-700 dark:text-gray-400">
                         Select Category
                     </span>
-                    <select name="category" onchange="showSubcategory(this.value)" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                    {{-- <select name="category" onchange="showSubcategory(this.value)" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"> --}}
+                        <select name="category" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                         <option disabled selected>-- Select a Category --</option>
                         @foreach ($categories as $category)
                             <option @if ($category->id === $product->category_id) selected @endif value="{{ $category->id }}">
@@ -56,7 +57,7 @@
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
                 </label>
-                <label class="block mb-6 text-md">
+                {{-- <label class="block mb-6 text-md">
                     <span class="text-gray-700 dark:text-gray-400">
                         Select SubCategory
                     </span>
@@ -71,7 +72,7 @@
                     @error('subcategory')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
-                </label>
+                </label> --}}
                 <label class="block mb-6 text-md">
                     <span class="text-gray-700 dark:text-gray-400">Product Description</span>
                     <textarea name="description" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" rows="3" placeholder="Enter some long form content.">{{ $product->description }}</textarea>

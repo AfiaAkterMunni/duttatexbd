@@ -48,7 +48,7 @@
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
                     </label>
-                    <label class="block mb-6 text-md">
+                    {{-- <label class="block mb-6 text-md">
                         <span class="text-gray-700 dark:text-gray-400">
                             Select SubCategory
                         </span>
@@ -59,7 +59,7 @@
                         @error('subcategory')
                             <p class="text-red-500">{{ $message }}</p>
                         @enderror
-                    </label>
+                    </label> --}}
                     <label class="block mb-6 text-md">
                         <span class="text-gray-700 dark:text-gray-400">Product Description</span>
                         <textarea name="description"

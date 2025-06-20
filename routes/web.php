@@ -87,7 +87,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     Route::post('/product/update/{id}', [DashboardProductController::class, 'update'])->name('product.update');
     Route::get('/product/delete/{id}', [DashboardProductController::class, 'delete'])->name('product.delete');
     Route::get('/product/search', [DashboardProductController::class, 'search'])->name('product.search');
-    Route::get('/categoryBySubcategory/{id}', [DashboardProductController::class, 'categoryBySubcategory'])->name('categoryBySubcategory');
+    // Route::get('/categoryBySubcategory/{id}', [DashboardProductController::class, 'categoryBySubcategory'])->name('categoryBySubcategory');
 
 
     // Dashboard Quick Inquiry

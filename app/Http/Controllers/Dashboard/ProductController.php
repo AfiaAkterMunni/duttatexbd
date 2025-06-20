@@ -34,7 +34,7 @@ class ProductController extends Controller
         Product::create([
             'name' => $request->input('name'),
             'category_id' => $request->input('category'),
-            'subcategory_id' => $request->input('subcategory'),
+            // 'subcategory_id' => $request->input('subcategory'),
             'description' => $request->input('description'),
             'gallery_id' => $request->input('gallery_id'),
             'meta_robots' => $request->input('meta_robots', null),
@@ -51,11 +51,11 @@ class ProductController extends Controller
         $product = Product::find($id);
         $categories = Category::all();
         $galleries = Gallery::latest()->paginate(12);
-        $subcategories = Subcategory::where('category_id', $product->category_id)->get();
+        // $subcategories = Subcategory::where('category_id', $product->category_id)->get();
         return view('dashboard.pages.products.edit', [
             'product' => $product,
             'categories' => $categories,
-            'subcategories' => $subcategories,
+            // 'subcategories' => $subcategories,
             'galleries' => $galleries,
         ]);
     }
@@ -67,7 +67,7 @@ class ProductController extends Controller
             'name' => $request->input('name'),
             'gallery_id' => $request->input('gallery_id'),
             'category_id' => $request->input('category'),
-            'subcategory_id' => $request->input('subcategory'),
+            // 'subcategory_id' => $request->input('subcategory'),
             'description' => $request->input('description'),
             'meta_robots' => $request->input('meta_robots', null),
             'seo_title' => $request->input('seo_title', null),
