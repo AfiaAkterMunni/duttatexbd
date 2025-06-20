@@ -76,7 +76,7 @@ class CategoryController extends Controller
 
     public function search(Request $request)
     {
-        $categories = Category::where('name', 'LIKE', "$request->search")->paginate(15);
+        $categories = Category::where('name', 'LIKE', "%$request->search%")->paginate(15);
         return view('dashboard.pages.categories.index', [
             'categories' => $categories
         ]);

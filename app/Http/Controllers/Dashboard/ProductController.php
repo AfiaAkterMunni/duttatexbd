@@ -88,7 +88,7 @@ class ProductController extends Controller
     }
     public function search(Request $request)
     {
-        $products = Product::where('name', 'LIKE', "$request->search")->paginate(15);
+        $products = Product::where('name', 'LIKE', "%$request->search%")->paginate(15);
         return view('dashboard.pages.products.index', ['products' => $products]);
     }
 

@@ -73,7 +73,7 @@ class SubCategoryController extends Controller
 
     public function search(Request $request)
     {
-        $subcategories = Subcategory::where('name', 'LIKE', "$request->search")->paginate(15);
+        $subcategories = Subcategory::where('name', 'LIKE', "%$request->search%")->paginate(15);
         return view('dashboard.pages.subcategories.index', ['subcategories' => $subcategories]);
     }
 
