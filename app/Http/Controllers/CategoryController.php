@@ -48,20 +48,7 @@ class CategoryController extends Controller
                 "name" => $category->name,
                 "url" => route('categories.show', ['slug' => $category->slug]),
                 "description" => $category->meta_description,
-                "mainEntity" => [
-                    "@type" => "ItemList",
-                    "itemListElement" => $category->subcategories->map(function ($subcategory, $index) {
-                        return [
-                            "@type" => "ListItem",
-                            "position" => $index + 1,
-                            "item" => [
-                                "@type" => "Category",
-                                "name" => $subcategory->name,
-                                "url" => route('subcategories.show', ['slug' => $subcategory->slug]),
-                            ]
-                        ];
-                    })->toArray(),
-                ]
+
             ];
 
             return $categoryJsonLD;
