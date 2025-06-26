@@ -1,19 +1,19 @@
 <!-- Footer Start-->
 <div>
-  <footer class="bg-[#027DAE] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 md:py-2 py-5">
+  <footer class="bg-[#E6E6E6] mb-0 w-full md:flex md:justify-between md:items-center lg:px-20 md:px-7 px-16 md:py-2 py-5">
     <div class="pb-5 md:pb-0">
       <a href="{{route('homepage')}}" class="">
-        <img src="{{asset('images/duttatex-Logo.png')}}" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo" />
+        <img src="{{asset('images/nrbFashion.png')}}" class="h-14 sm:h-20 md:h-14 lg:h-20" alt="Duttatex Logo" />
       </a>
     </div>
-    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+    <div class="text-black text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
       <ul>
         <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819 086</li>
         <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715 819 086</li>
         <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
       </ul>
     </div>
-    <div class="text-white text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
+    <div class="text-black text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
       <ul>
         <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('homepage')}}" class="hover:underline">Home</a></li>
         <li class="pb-1"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon><a href="{{route('about')}}" class="hover:underline">About</a></li>
@@ -42,7 +42,7 @@
       @endif
       <form action="{{route('subscribe.store')}}" class="" method="POST" id="footerSub">
         @csrf
-        <label for="" class="block pb-2 text-white text-base">Get Notified About The Next Update!</label>
+        <label for="" class="block pb-2 text-black text-base">Get Notified About The Next Update!</label>
         <input class="p-2 mr-1 rounded" type="email" name="email" placeholder="Enter Email">
         <button class="bg-sky-700 p-2 rounded text-white font-semibold hover:bg-sky-800" type="submit" value="">Subscribe</button>
         @error('email')

@@ -3,11 +3,11 @@
 @section('content')
 
 <!-- slider Start-->
-<div class="w-full">
-  <img class="mySlides w-full min-h-40" src="{{asset('images/banner_1.jpg')}}">
-  <img class="mySlides w-full min-h-40" src="{{asset('images/banner_3.jpg')}}">
-  <img class="mySlides w-full min-h-40" src="{{asset('images/banner_4.jpg')}}">
-  <img class="mySlides w-full min-h-40" src="{{asset('images/banner_5.jpg')}}">
+<div class="w-full mt-[-120px]">
+  <img class="mySlides w-full min-h-40" src="{{asset('images/1.jpg')}}">
+  <img class="mySlides w-full min-h-40" src="{{asset('images/2.jpg')}}">
+  <img class="mySlides w-full min-h-40" src="{{asset('images/3.jpg')}}">
+  <img class="mySlides w-full min-h-40" src="{{asset('images/4.jpg')}}">
 </div>
 <!-- slider End-->
 
