@@ -9,35 +9,19 @@
             <h1 class="text-3xl lg:text-2xl font-semibold tracking-wider">Locate Our Presence</h1>
         </div>
         <div class="pb-7">
-            <h3 class="text-lg font-semibold tracking-wider pb-3 tracking-widest">Head Office</h3>
+            <h3 class="text-lg font-semibold tracking-wider pb-3 tracking-widest">Our Office</h3>
             <p class="pb-3 text-sm tracking-wider leading-6">House# 21, Flat# 102 Road# 06, Block-D, Niketon,
                 Gulshan-1, Dhaka-1212, Bangladesh.</p>
             <ul class="text-sm">
                 <li class="pt-2.5"><ion-icon name="call-outline"
                         class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        Urgent Call: +88 01715 819 086</a></li>
+                        Urgent Call: +8801711596529</a></li>
                 <li class="pt-2.5"><ion-icon name="logo-whatsapp"
                         class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        whatsapp: +88 01715 819 086</a></li>
+                        whatsapp: +8801711596529</a></li>
                 <li class="pt-2.5"><ion-icon name="mail-outline"
                         class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        E-mail: prabir@duttatex.com</a></li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="text-lg font-semibold tracking-wider pb-3 tracking-widest">Italy Office</h3>
-            <p class="pb-3 text-sm tracking-wider leading-6">Via Ferdinando Magellano, 820863 Concorezzo (MB) Italia
-            </p>
-            <ul class="text-sm">
-                <li class="pt-2.5"><ion-icon name="call-outline"
-                        class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        Mobile: +39 329 193 4197</a> </li>
-                <li class="pt-2.5"><ion-icon name="logo-whatsapp"
-                        class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        whatsapp: +39 329 193 4197</a> </li>
-                <li class="pt-2.5"><ion-icon name="mail-outline"
-                        class="p-px rounded bg-sky-600 text-white size-3.5"></ion-icon><a href="" class="pl-3">
-                        E-mail: info@duttatex.com</a> </li>
+                        E-mail: info@nrbfashion.com</a></li>
             </ul>
         </div>
     </div>

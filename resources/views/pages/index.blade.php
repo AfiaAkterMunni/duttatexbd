@@ -14,28 +14,18 @@
 <!-- About Start-->
 <div class="md:flex md:justify-between md:items-center my-10 lg:px-24 md:px-16 px-12">
   <div class="md:pr-10 md:my-2 my-10">
-    <h4 class="pb-5 text-2xl font-bold text-center">What We Do</h4>
-    <p class="text-justify text-sm leading-6 mb-5">We proudly present ourselves as proactive Manufacturers and Exporters, a
-      legacy we’ve
-      upheld since 1995. Our expertise spans Fashion-Casual, Sports, Work, and Promotional Wear, offering a
-      comprehensive Total Look solution. Our operations are 100% based in Bangladesh. Our product range caters to
-      diverse…</p>
+    <h4 class="pb-5 text-xl font-bold text-center">Designing & Sampling</h4>
+    <p class="text-justify text-sm leading-6 mb-5">Our team of skilled craftsmen and women possess a remarkable ability to transform tech packs into garments with unparalleled accuracy, achieving an impressive 99% precision right from the initial sample development stage. With a collective experience of over two decades, their expertise shines…</p>
     <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
   </div>
   <div class="md:pr-10 md:my-2 my-10">
-    <h4 class="pb-5 text-2xl font-bold text-center">What We Provide</h4>
-    <p class="text-justify text-sm leading-6 mb-5">At DuttaTex, we take pride in being a premier workwear
-      manufacturer, dedicated to providing businesses and individuals with top-notch workwear solutions. With
-      a rich history spanning 25 Years , we have honed our expertise to become a trusted partner in the
-      industry...</p>
+    <h4 class="pb-5 text-xl font-bold text-center">Personalized or Private Labels</h4>
+    <p class="text-justify text-sm leading-6 mb-5">Add a personal touch to our garments with your own brand label through our personalized or private labeling services. Add a personal touch to our garments with your own brand label through our personalized or private labeling services. Add a personal touch…</p>
     <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
   </div>
   <div class="md:my-2 my-10">
-    <h4 class="pb-5 text-2xl font-bold text-center">Our Mission</h4>
-    <p class="text-justify text-sm leading-6 mb-5">At Duttatex Workwear Factory, our mission is clear and resolute:
-      to be a driving force behind excellence in workwear manufacturing. Since our establishment, we have been
-      dedicated to producing workwear solutions that not only meet industry standards but also exceed the
-      expectations of our valued clients...</p>
+    <h4 class="pb-5 text-xl font-bold text-center">Extraordinary Quality Guaranteed</h4>
+    <p class="text-justify text-sm leading-6 mb-5">Our garments factory thrives on delivering products that perfectly match our customers' specifications through a rigorous ODM/OEM process. The smiles of our satisfied clients are a testament to our unwavering commitment to providing exceptional quality. With a focus on excellence, we go the…</p>
     <a class="bg-cyan-600 px-3 py-2 text-white rounded-lg hover:bg-sky-600" href="{{route('about').'#about'}}">Read more</a>
   </div>
 </div>
@@ -54,29 +44,9 @@
 </div>
 <!-- Product Galery End-->
 
-<!-- Services Start-->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 lg:mx-36 md:mx-30 sm:mx-24 mx-10 py-16">
-  <div class="sm:pb-10">
-    <img src="{{asset('images/dev1.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
-    <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Development</h1>
-  </div>
-  <div class="sm:pb-10">
-    <img src="{{asset('images/glo.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
-    <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Global Sourcing</h1>
-  </div>
-  <div class="sm:pb-10">
-    <img src="{{asset('images/2402475.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
-    <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">Merchandising</h1>
-  </div>
-  <div class="sm:pb-10">
-    <img src="{{asset('images/ship1.png')}}" alt="" class="w-20 h-20 mx-auto transition duration-300 ease-in-out hover:scale-125">
-    <h1 class="text-sm sm:text-xl md:text-sm lg:text-xl font-semibold pt-3 text-center">shipping</h1>
-  </div>
-</div>
-<!-- Services End-->
 
 <!-- certificate Start-->
-<div>
+<div class="py-16">
   <div>
     <h1 class="md:text-3xl text-lg font-semibold text-center">COMPLIANCE CERTIFICATE</h1>
     <hr class="md:w-96 w-16 h-0.5 mx-auto my-4 bg-gray-500 border-0 md:my-2">

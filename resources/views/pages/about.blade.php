@@ -5,7 +5,7 @@
 <div class="lg:flex lg:flex-row py-20 font-[Roboto] px-12">
     <div class="lg:basis-1/2 p-6">
         <h1 class="text-2xl font-semibold pb-5 tracking-wider">Established in 1995</h1>
-        <img src="{{asset('images/img8.png')}}" alt="" class="mx-auto">
+        <img src="{{asset('images/aboutNrbfashion.jpg')}}" alt="" class="mx-auto">
     </div>
     <div class="lg:basis-1/2 p-6 text-justify">
         <h1 class="text-2xl font-extrabold border-b-2 border-y-stone-500">ABOUT DUTTATEX…</h1>
@@ -27,7 +27,7 @@
 <!-- About Provide Start-->
 <div class="lg:flex lg:flex-row  xl:px-28 lg:px-18 md:px-16 px-12 bg-cyan-50 py-10">
     <div class="lg:basis-1/3 lg:mr-12">
-        <h4 class="pb-5 text-2xl font-bold text-center" id="about">What We Do</h4>
+        <h4 class="pb-5 text-xl font-bold text-center" id="about">Designing & Sampling</h4>
         <p class="text-justify text-sm leading-6">We proudly present ourselves as proactive Manufacturers and
             Exporters, a legacy we’ve upheld since 1995. Our expertise spans Fashion-Casual, Sports, Work, and
             Promotional Wear, offering a comprehensive Total Look solution. Our operations are 100% based in
@@ -52,7 +52,7 @@
             class="bg-cyan-600 px-3 py-1 text-white rounded-lg mt-3 hover:bg-sky-600">Read more</button>
     </div>
     <div class="lg:basis-1/3 lg:mr-12">
-        <h4 class="pb-5 text-2xl font-bold text-center">What We Provide</h4>
+        <h4 class="pb-5 text-xl font-bold text-center">Personalized or Private Labels</h4>
         <p class="text-justify text-sm leading-6">At DuttaTex, we take pride in being a premier workwear
             manufacturer, dedicated to providing businesses and individuals with top-notch workwear solutions. With
             a rich history spanning 25Years , we have honed our expertise to become a trusted partner in the
@@ -84,7 +84,7 @@
             class="bg-cyan-600 px-3 py-1 text-white rounded-lg mt-3 hover:bg-sky-600">Read more</button>
     </div>
     <div class="basis-1/3">
-        <h4 class="pb-5 text-2xl font-bold text-center">Our Mission</h4>
+        <h4 class="pb-5 text-xl font-bold text-center">Extraordinary Quality Guaranteed</h4>
         <p class="text-justify text-sm leading-6">At Duttatex Workwear Factory, our mission is clear and resolute:
             to be a driving force behind excellence in workwear manufacturing. Since our establishment, we have been
             dedicated to producing workwear solutions that not only meet industry standards but also exceed the
@@ -125,9 +125,9 @@
 </div>
 <!-- About Provide End-->
 
-  <!-- scroll on top button Start-->
-  <a id="button" class="inline-block bg-blue-600 w-9 h-9 text-center rounded fixed bottom-5 right-5 opacity-0 invisible z-[1000] after:content-['\f077'] font-['FontAwesome'] text-2xl text-white hover:cursor-pointer hover:bg-gray-500 active:bg-sky-400"></a>
-  <!-- scroll on top button End-->
+<!-- scroll on top button Start-->
+<a id="button" class="inline-block bg-blue-600 w-9 h-9 text-center rounded fixed bottom-5 right-5 opacity-0 invisible z-[1000] after:content-['\f077'] font-['FontAwesome'] text-2xl text-white hover:cursor-pointer hover:bg-gray-500 active:bg-sky-400"></a>
+<!-- scroll on top button End-->
 
 <script type="text/javascript" src="{{asset('js/frontend/menu.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/frontend/scrollbutton.js')}}"></script>

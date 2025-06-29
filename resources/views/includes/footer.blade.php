@@ -8,9 +8,9 @@
     </div>
     <div class="text-black text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
       <ul>
-        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +88 01715 819 086</li>
-        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +88 01715 819 086</li>
-        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : prabir@duttatex.com</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>WhatsApp : +8801711596529</li>
+        <li class="pb-2"><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>Urgent Call : +8801711596529</li>
+        <li><ion-icon name="play-outline" class="size-2.5 pr-2"></ion-icon>E-mail : info@nrbfashion.com</li>
       </ul>
     </div>
     <div class="text-black text-sm md:text-xs lg:text-sm pb-5 md:pb-0">
@@ -53,7 +53,7 @@
   </footer>
   <div class="md:flex md:flex-row mt-3 mb-1 mx-5">
     <div class="md:basis-1/2 text-center">
-      <p class="text-md text-gray-500">Copyright © 2025 Duttatex | Powered by Duttatex</p>
+      <p class="text-md text-gray-500">Copyright © 2025 Nrb Fashion | Powered by Nrb Fashion</p>
     </div>
     <div class="md:basis-1/2 text-center md:pt-0 pt-5">
       <a href="https://www.linkedin.com/in/nrb-fashion-prabir-87159934/" class="mr-4" target="_blank"><ion-icon name="logo-linkedin" class="md:size-3.5 size-4 rounded bg-sky-700 text-white md:p-0.5 p-1"></ion-icon></a>
